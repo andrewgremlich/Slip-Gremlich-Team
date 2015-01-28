@@ -15,6 +15,7 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     //Class instance variables
+    //test
     private String name; 
     private double bestTime;
     private double attackingPower;
