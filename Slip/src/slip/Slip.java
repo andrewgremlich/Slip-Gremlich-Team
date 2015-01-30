@@ -88,7 +88,7 @@ public class Slip {
         //Test Scene
         Scene grassLand = new Scene();
         
-        grassLand.setDescription("You are standing in a beautiful filed of clover");
+        grassLand.setDescription("You are standing in a beautiful field of clover");
         grassLand.setTravelTime(14.5);
         grassLand.setBlocked(false);
         grassLand.setSteepTerrain(5);
