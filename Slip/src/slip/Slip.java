@@ -85,6 +85,7 @@ public class Slip {
         
         backpackOne.setContains(true);
         backpackOne.setBackpackStatus(true);
+        backpackOne.setMaxCapacity(10);
         
         String backpackInfo = backpackOne.toString();
         System.out.println(backpackInfo);
