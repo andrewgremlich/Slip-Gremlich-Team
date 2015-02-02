@@ -15,11 +15,10 @@ public class Backpack implements Serializable{
     
     private boolean contains;
     private boolean backpackStatus;
+    private int maxCapacity;
 
     public Backpack() {
     }
-    
-    
 
     public boolean isContains() {
         return contains;
@@ -37,16 +36,25 @@ public class Backpack implements Serializable{
         this.backpackStatus = backpackStatus;
     }
 
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
     @Override
     public String toString() {
-        return "Backpack{" + "contains=" + contains + ", backpackStatus=" + backpackStatus + '}';
+        return "Backpack{" + "contains=" + contains + ", backpackStatus=" + backpackStatus + ", maxCapacity=" + maxCapacity + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 19 * hash + (this.contains ? 1 : 0);
-        hash = 19 * hash + (this.backpackStatus ? 1 : 0);
+        int hash = 7;
+        hash = 67 * hash + (this.contains ? 1 : 0);
+        hash = 67 * hash + (this.backpackStatus ? 1 : 0);
+        hash = 67 * hash + this.maxCapacity;
         return hash;
     }
 
@@ -65,8 +73,12 @@ public class Backpack implements Serializable{
         if (this.backpackStatus != other.backpackStatus) {
             return false;
         }
+        if (this.maxCapacity != other.maxCapacity) {
+            return false;
+        }
         return true;
     }
+   
 
 
     
