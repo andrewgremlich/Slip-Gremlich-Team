@@ -5,6 +5,8 @@
  */
 package byui.cit260.slip.control;
 
+import java.io.IOException;
+
 /**
  *
  * @author Andrew
