@@ -31,7 +31,7 @@ public class InventoryControlTest {
      * Test of calcBoilingPoint method, of class InventoryControl.
      */
     @Test
-    public void testCalcBoilingPoint() {
+    public void testCalcBoilingPoint1() {
         
         
         //Test Case #1: Valid Input
@@ -50,10 +50,11 @@ public class InventoryControlTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
+    
     @Test
-    public void testCalcBoilingPointInvalid1() {
+    public void testCalcBoilingPointInvalid2() {
         
-        //Test Case #2: Invalid Input for Temperature
+        //Test Case #2: Invalid Input for Temperature with letter
         System.out.println("calcBoilingPoint");
         
         double airPressure = 5.0;
@@ -70,4 +71,123 @@ public class InventoryControlTest {
         fail("The test case is a prototype.");
     }
     
+    @Test
+    public void testCalcBoilingPointInvalid3() {
+        
+        //Test Case #3: Invalid Input for Temperature with symbol
+        System.out.println("calcBoilingPoint");
+        
+        double airPressure = 5.0;
+        int temperature = '&';
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = -1.0;
+        double result = instance.calcBoilingPoint(airPressure, temperature);
+        
+        assertEquals(expResult, result, 0.0001);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testCalcBoilingPointInvalid4() {
+        
+        //Test Case #4: Invalid Input for airPressure for symbol
+        System.out.println("calcBoilingPoint");
+        
+        double airPressure = '&';
+        int temperature = 3;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = -1.0;
+        double result = instance.calcBoilingPoint(airPressure, temperature);
+        
+        assertEquals(expResult, result, 0.0001);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testCalcBoilingPointInvalid5() {
+        
+        //Test Case #5: Invalid Input for airPressure with 0
+        System.out.println("calcBoilingPoint");
+        
+        double airPressure = 0;
+        int temperature = 3;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = -1.0;
+        double result = instance.calcBoilingPoint(airPressure, temperature);
+        
+        assertEquals(expResult, result, 0.0001);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testCalcBoilingPointInvalid6() {
+        
+        //Test Case #6: Invalid Input for airPressure with -3
+        System.out.println("calcBoilingPoint");
+        
+        double airPressure = -3;
+        int temperature = 3;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = -1.0;
+        double result = instance.calcBoilingPoint(airPressure, temperature);
+        
+        assertEquals(expResult, result, 0.0001);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testCalcBoilingPointInvalid7() {
+        
+        //Test Case #7: lowest boundary test
+        System.out.println("calcBoilingPoint");
+        
+        double airPressure = 1;
+        int temperature = -20;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = 400.0;
+        double result = instance.calcBoilingPoint(airPressure, temperature);
+        
+        assertEquals(expResult, result, 0.0001);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testCalcBoilingPointInvalid8() {
+        
+        //Test Case #8: High boundary test
+        System.out.println("calcBoilingPoint");
+        
+        double airPressure = 50;
+        int temperature = 20;
+        
+        InventoryControl instance = new InventoryControl();
+        
+        double expResult = 4.0;
+        double result = instance.calcBoilingPoint(airPressure, temperature);
+        
+        assertEquals(expResult, result, 0.0001);
+        
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
 }
