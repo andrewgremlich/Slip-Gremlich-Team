@@ -101,7 +101,7 @@ public class InventoryControlTest {
         System.out.println("calcBoilingPoint");
         
 
-        int airPressure = 'q';
+        int airPressure = 'h';
         int temperature = 3;
         
         InventoryControl instance = new InventoryControl();
