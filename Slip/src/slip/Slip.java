@@ -32,8 +32,10 @@ public class Slip {
      */
     public static void main(String[] args) {
         
+        
+        
 
-        Resources resourcesOne = new Resources();
+       Resources resourcesOne = new Resources();
         
        resourcesOne.setRequiredAmount(6);
        resourcesOne.setQuantityInStock(10);
