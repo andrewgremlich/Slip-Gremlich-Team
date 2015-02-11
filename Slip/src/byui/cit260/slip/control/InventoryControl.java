@@ -11,26 +11,34 @@ package byui.cit260.slip.control;
  */
 public class InventoryControl {
     
-        public double calcBoilingPoint(double airPressure, int temperature){
+        public double calcBoilingPoint(int airPressure, int temperature){
             
             //the time variable is a static constant for the equation
-            int time = 20;
-            
-            //This is checking for if a number is an integer by verifying if it is odd or even.
-            if (temperature%2!=0 || temperature%2!=1) {
-                return -1;
-            }
-            
+            int TIME = 20;
+         
             //check if the airPressure is inbetween 1-50
             if (airPressure<1 || 50<airPressure) {
                 return -1;
             }
             
-            //this is a hand-made equation to find boiling point
-            double boil = Math.abs((temperature*time)/airPressure);
+            //check if the temperature is between -20 and 20
+            if (temperature<-20 || 20<temperature) {
+                return -1;
+            }
             
-            return boil;
-                    
+            //this is a hand-made equation to find boiling point and if it is a number
+            
+            if (temperature%2==0 || temperature%2==1 && airPressure%2==0 || airPressure%2==1) {
+                double boil = Math.abs((temperature*TIME)/airPressure);
+               return boil;
+            }
+            
+            else {
+             return -1;   
+            }
+            }
+             
+            
         }
-    }
-}
+    
+

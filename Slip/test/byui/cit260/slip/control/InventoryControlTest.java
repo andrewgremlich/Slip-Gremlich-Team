@@ -37,7 +37,8 @@ public class InventoryControlTest {
         //Test Case #1: Valid Input
         System.out.println("calcBoilingPoint");
         
-        double airPressure = 5.0;
+       
+        int airPressure = 5;
         int temperature = 3;
         
         InventoryControl instance = new InventoryControl();
@@ -48,7 +49,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //
     }
     
     @Test
@@ -57,7 +58,8 @@ public class InventoryControlTest {
         //Test Case #2: Invalid Input for Temperature with letter
         System.out.println("calcBoilingPoint");
         
-        double airPressure = 5.0;
+        
+        int airPressure = 5;
         int temperature = 'R';
         
         InventoryControl instance = new InventoryControl();
@@ -68,7 +70,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
     @Test
@@ -77,7 +79,8 @@ public class InventoryControlTest {
         //Test Case #3: Invalid Input for Temperature with symbol
         System.out.println("calcBoilingPoint");
         
-        double airPressure = 5.0;
+        
+        int airPressure = 5;
         int temperature = '&';
         
         InventoryControl instance = new InventoryControl();
@@ -88,7 +91,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
     @Test
@@ -97,7 +100,8 @@ public class InventoryControlTest {
         //Test Case #4: Invalid Input for airPressure for symbol
         System.out.println("calcBoilingPoint");
         
-        double airPressure = '&';
+
+        int airPressure = 'q';
         int temperature = 3;
         
         InventoryControl instance = new InventoryControl();
@@ -108,7 +112,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
     @Test
@@ -117,7 +121,8 @@ public class InventoryControlTest {
         //Test Case #5: Invalid Input for airPressure with 0
         System.out.println("calcBoilingPoint");
         
-        double airPressure = 0;
+        
+        int airPressure = 0;
         int temperature = 3;
         
         InventoryControl instance = new InventoryControl();
@@ -128,7 +133,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
     @Test
@@ -137,7 +142,8 @@ public class InventoryControlTest {
         //Test Case #6: Invalid Input for airPressure with -3
         System.out.println("calcBoilingPoint");
         
-        double airPressure = -3;
+        
+        int airPressure = -3;
         int temperature = 3;
         
         InventoryControl instance = new InventoryControl();
@@ -148,7 +154,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
     @Test
@@ -157,7 +163,8 @@ public class InventoryControlTest {
         //Test Case #7: lowest boundary test
         System.out.println("calcBoilingPoint");
         
-        double airPressure = 1;
+       
+        int airPressure = 1;
         int temperature = -20;
         
         InventoryControl instance = new InventoryControl();
@@ -168,7 +175,7 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
     
     @Test
@@ -177,17 +184,18 @@ public class InventoryControlTest {
         //Test Case #8: High boundary test
         System.out.println("calcBoilingPoint");
         
-        double airPressure = 50;
+       
+        int airPressure = 50;
         int temperature = 20;
         
         InventoryControl instance = new InventoryControl();
         
-        double expResult = 4.0;
+        double expResult = 8.0;
         double result = instance.calcBoilingPoint(airPressure, temperature);
         
         assertEquals(expResult, result, 0.0001);
         
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 }
