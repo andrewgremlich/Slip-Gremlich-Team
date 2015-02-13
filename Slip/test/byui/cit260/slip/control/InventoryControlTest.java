@@ -52,7 +52,7 @@ public class InventoryControlTest {
         //
     }
     
-    @Test
+    /*@Test
     public void testCalcBoilingPointInvalid2() {
         
         //Test Case #2: Invalid Input for Temperature with letter
@@ -71,9 +71,9 @@ public class InventoryControlTest {
         
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
     
-    @Test
+   /* @Test
     public void testCalcBoilingPointInvalid3() {
         
         //Test Case #3: Invalid Input for Temperature with symbol
@@ -93,8 +93,8 @@ public class InventoryControlTest {
         // TODO review the generated test code and remove the default call to fail.
         
     }
-    
-    @Test
+    */
+    /*@Test
     public void testCalcBoilingPointInvalid4() {
         
         //Test Case #4: Invalid Input for airPressure for symbol
@@ -113,7 +113,7 @@ public class InventoryControlTest {
         
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
     
     @Test
     public void testCalcBoilingPointInvalid5() {

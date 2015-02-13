@@ -28,7 +28,7 @@ public class InventoryControl {
             
             //this is a hand-made equation to find boiling point and if it is a number
             
-            if (temperature%2==0 || temperature%2==1 && airPressure%2==0 || airPressure%2==1) {
+            if (temperature%1 == 0 && airPressure%1 == 0) {
                 double boil = Math.abs((temperature*TIME)/airPressure);
                return boil;
             }
