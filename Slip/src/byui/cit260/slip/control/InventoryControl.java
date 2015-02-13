@@ -41,7 +41,7 @@ public class InventoryControl {
             }
         
         
-        public double calRadiusWolf(double circumference) {
+        public double calcRadiusWolf(double circumference) {
 
             //Check to see if circumerfernce is greater than zero and a number.	
             if (circumference > 0) { 
