@@ -43,7 +43,7 @@ public class InventoryControl {
         
         public double calcRadiusWolf(double circumference) {
 
-            //Check to see if circumerfernce is greater than zero and a number.	
+            //Check to see if circumerfernce input is greater than zero.	
             if (circumference > 0) { 
             
             double radius = Math.round(circumference/(2*Math.PI)*100.0)/100.0;
