@@ -24,7 +24,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower1() {
         
         //Test Case #1 - Valid Inputs
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 1");
         
         int energyLevel = 10;
         int toolPower = 7;
@@ -42,7 +42,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower2() {
         
         //Test Case #2 - Invalid input too high energy level
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 2");
         
         int energyLevel = 11;
         int toolPower = 7;
@@ -60,7 +60,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower3() {
         
         //Test Case #3 - Invalid input too high toolPower
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 3");
         
         int energyLevel = 8;
         int toolPower = 11;
@@ -78,7 +78,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower4() {
         
         //Test Case #4 - Invalid input for energy level, too low
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 4");
         
         int energyLevel = -2;
         int toolPower = 3;
@@ -96,7 +96,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower5() {
         
         //Test Case #5 - Invalid input for tool power, too low
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 5");
         
         int energyLevel = 3;
         int toolPower = -4;
@@ -114,7 +114,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower6() {
         
         //Test Case #6 - Invalid input for energy level, can't be a character
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 6");
         
         int energyLevel = 'a';
         int toolPower = 4;
@@ -132,7 +132,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower7() {
         
         //Test Case #7 - Invalid input for toolPower, must be a number
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 7");
         
         int energyLevel = 2;
         int toolPower = 'a';
@@ -150,7 +150,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower8() {
         
         //Test Case #8 - Boundary test for energyLevel
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 8");
         
         int energyLevel = 10;
         int toolPower = 0;
@@ -168,7 +168,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower9() {
         
         //Test Case #9 - Boundary test for toolpower
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 9");
         
         int energyLevel = 0;
         int toolPower = 8;
@@ -186,7 +186,7 @@ public class FactorControlTest {
     public void testCalcAttackingPower10() {
         
         //Test Case #10 - Boundary test with energylevel and toolpower high.
-        System.out.println("calcAttackingPower");
+        System.out.println("calcAttackingPower 10");
         
         int energyLevel = 10;
         int toolPower = 8;
