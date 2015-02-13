@@ -10,17 +10,17 @@ package byui.cit260.slip.control;
  * @author Richard
  */
 public class calcRadiusWolf {
-    public static void main(String args[]) {
-	
-         double circumference = 0;
-                 
+    public double calRadiusWolf(double circumference) {
+
         //Check to see if circumerfernce is greater than zero and a number.	
-	if (circumference>0 && circumference%2==0 || circumference%2==1) {
-		
+	if (circumference > 0) { 
+            
             double radius = Math.round(circumference/(2*Math.PI)*100.0)/100.0;
+            return radius;
         }
-	else; 
-        			
+	else {
+            return -1;	
+        }
     }
 }    
 	
