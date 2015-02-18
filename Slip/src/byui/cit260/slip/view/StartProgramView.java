@@ -5,6 +5,10 @@
  */
 package byui.cit260.slip.view;
 
+import byui.cit260.slip.control.ProgramControl;
+import byui.cit260.slip.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author Richard
@@ -26,6 +30,12 @@ END */
    
     this.displayBanner();
     
+    //prompt the player to enter their name
+    String playersName = this.getPlayersName();
+    
+    //Create and save the player object
+    Player player = ProgramControl.createPlayer(playersName);
+    
     } 
 
     private void displayBanner() {
@@ -40,6 +50,31 @@ END */
                 + "\n You will need to battle the environemnt and depression as you summit the mountain.");
                 
         }
+
+    private String getPlayersName() {
+        boolean valid = false; //Indicates if the name has been retrived.
+        String playersName = null;
+        Scanner keyboard = new Scanner(System.in); //Keyboard input 
+        
+        while(!valid) { // while a valid name has not been retrived
+        
+            //prompt for the player's name
+            System.out.println("Enter your name below:");
+            
+            //Get the name from the keyboard and trim off the blanks
+            playersName = keyboard.nextLine();
+            playersName = playersName.trim();
+            
+            //If the name is invalid (less than two characters in length)
+         if (playersName.length() < 2) {
+             System.out.println("Invalid name - the name must not be blank");
+             continue; //and rpeat again
+         }
+         break; //stops repetiotion
+         
+    }   
+    return playersName; // returns the players name.
+    }
     
             
 }
