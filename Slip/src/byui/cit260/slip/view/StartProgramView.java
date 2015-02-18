@@ -45,9 +45,11 @@ END */
         System.out.println(""
                 + "\n In this text based role playing game, "
                 + "\n you will be put into a futuristic extreme "
-                + "\n camping experience. You will be hiking on Mt. McKinley in Alaska."
-                + "\n The goal is to hike to the summit of the mountain. "
-                + "\n You will need to battle the environemnt and depression as you summit the mountain.");
+                + "\n camping experience. "
+                + "\n\n The goal is to hike to the summit of Mt. McKinley. "
+                + "\n You will need to pit your wits against the environemnt and depression as you summit the mountain. "
+                + "\n Let's hope you have the wits to pit with. "
+                + "\n\n Keep telling yourself...it's only a game");
         
         System.out.println("\n***************************************************************************");        
         }
