@@ -39,8 +39,8 @@ END */
     } 
 
     private void displayBanner() {
-        System.out.println("\n\n************************************************"
-                 + "           \n Welcome to Slip");
+        System.out.println("\n\n*************************************************************************"
+                 + "\n Welcome to Slip");
                         
         System.out.println(""
                 + "\n In this text based role playing game, "
@@ -48,7 +48,8 @@ END */
                 + "\n camping experience. You will be hiking on Mt. McKinley in Alaska."
                 + "\n The goal is to hike to the summit of the mountain. "
                 + "\n You will need to battle the environemnt and depression as you summit the mountain.");
-        System.out.println("\n\n************************************************");        
+        
+        System.out.println("\n***************************************************************************");        
         }
 
     private String getPlayersName() {
@@ -59,7 +60,7 @@ END */
         while(!valid) { // while a valid name has not been retrived
         
             //prompt for the player's name
-            System.out.println("Enter your name below:");
+            System.out.println("Please enter your name below:");
             
             //Get the name from the keyboard and trim off the blanks
             playersName = keyboard.nextLine();
@@ -67,7 +68,7 @@ END */
             
             //If the name is invalid (less than two characters in length)
          if (playersName.length() < 2) {
-             System.out.println("Invalid name - the name must not be blank");
+             System.out.println("Invalid name - the name must not be shorter than two characters");
              continue; //and rpeat again
          }
          break; //stops repetiotion
