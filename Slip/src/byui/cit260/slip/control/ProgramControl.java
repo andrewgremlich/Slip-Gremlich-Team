@@ -6,6 +6,7 @@
 package byui.cit260.slip.control;
 
 import byui.cit260.slip.model.Player;
+import slip.Slip;
 
 /**
  *
@@ -14,7 +15,17 @@ import byui.cit260.slip.model.Player;
 public class ProgramControl {
 
     public static Player createPlayer(String playersName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        if (playersName==null) {
+            return null;
+        }
+        
+        Player player = new Player ();
+        player.setName(playersName);
+        
+        Slip.setPlayer(player);
+        
+        return player;
     }
     
 }
