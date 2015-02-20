@@ -70,7 +70,7 @@ END */
             
             //If the name is invalid (less than two characters in length)
          if (playersName.length() < 2) {
-             System.out.println("Invalid name - the name must not be shorter than two characters");
+             System.out.println("Sorry - your name must be greater than two characters");
              continue; //and rpeat again
          }
          break; //stops repetiotion
