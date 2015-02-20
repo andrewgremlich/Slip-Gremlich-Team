@@ -27,6 +27,10 @@ import byui.cit260.slip.view.StartProgramView;
  * @author Richard
  */
 public class Slip {
+    
+    private static Game currentgame = null;
+    private static Player player = null;
+   
 
     /**
      * @param args the command line arguments
@@ -181,15 +185,24 @@ public class Slip {
         System.out.println(grassLandInfo);
         
         
+              
         
-        
-        
-        
-                
-        
-        
-        
-        
+    }
+
+    public static Game getCurrentgame() {
+        return currentgame;
+    }
+
+    public static void setCurrentgame(Game currentgame) {
+        Slip.currentgame = currentgame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Slip.player = player;
     }
     
 }
