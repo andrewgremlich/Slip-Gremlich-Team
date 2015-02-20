@@ -5,6 +5,10 @@
  */
 package byui.cit260.slip.view;
 
+import byui.cit260.slip.control.GameControl;
+import java.util.Scanner;
+import slip.Slip;
+
 /**
  *
  * @author Andrew
@@ -12,8 +16,8 @@ package byui.cit260.slip.view;
 public class MainMenuView {
 
     private final String MENU = "\n"
-            +"\n--------------------------------"
-            + "\n| Main Menu                   |"
+            +"\n-------------------------------"
+            + "\n|        Main Menu            |"
             + "\n-------------------------------"
             + "\nS - Start Game"
             + "\nL - Load Game"
@@ -21,9 +25,11 @@ public class MainMenuView {
             + "\nP - Player Menu"
             + "\n|                             |"
             + "\nQ - Quit Program";         
-               
-    void displayMenu() {
-       char selection = '';
+         
+  
+    
+    public void displayMenu() {
+       char selection = ' ';
        do {
            
            System.out.println(MENU); // display main menu
@@ -44,13 +50,13 @@ public class MainMenuView {
             case 'L' : //load game
                 this.loadGame();
                 break;
-            case "I" : //Instructions
-                this.seeInstructions();
+            case 'I' : //Instructions
+                this.displayMenu();
                 break;
-            case "P" : // Player Menu
+            case 'P' : // Player Menu
                 this.seePlayerMenu();
                 break;
-            case "Q" : //Quit program
+            case 'Q' : //Quit program
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
@@ -81,6 +87,32 @@ public class MainMenuView {
          
     }   
     return playersName; // returns the players name.
+    }
+
+    private void startNewGame() {
+        //Create new game
+        GameControl.createNewGame(Slip.getPlayer()); 
+        
+        //display the game
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+    }
+
+    private void loadGame() {
+        System.out.println("*** startExistingGame function called ***"); 
+    }
+
+    private void seeInstructions() {
+        System.out.println("*** seeInstructions function called ***");
+    }
+
+    private void seePlayerMenu() {
+        System.out.println("*** seePlayerMenu function called ***");
+    }
+
+    private String getInput() {
+        System.out.println("*** seePlayerMenu input ***");
+        return null;
     }
     
 }
