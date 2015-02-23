@@ -44,19 +44,19 @@ public class MainMenuView {
     
     public void doAction (char choice) {
         switch (choice) {
-            case 'S' : //Start a new game
+            case 's' : //Start a new game
                 this.startNewGame();
                 break;
-            case 'L' : //load game
+            case 'l' : //load game
                 this.loadGame();
                 break;
-            case 'I' : //Instructions
+            case 'i' : //Instructions
                 this.displayMenu();
                 break;
-            case 'P' : // Player Menu
+            case 'p' : // Player Menu
                 this.seePlayerMenu();
                 break;
-            case 'Q' : //Quit program
+            case 'q' : //Quit program
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
@@ -88,6 +88,32 @@ public class MainMenuView {
     }   
     return playersName; // returns the players name.
     }
+    
+       private String getInput() {
+        boolean valid = false; //Indicates if the name has been retrived.
+        String inputSelection = null;
+        Scanner keyboard = new Scanner(System.in); //Keyboard input 
+        
+        while(!valid) { // while a valid name has not been retrived
+        
+            //prompt for the player's name
+            System.out.println("Please make a menu selection:");
+            
+            //Get the name from the keyboard and trim off the blanks
+            inputSelection = keyboard.nextLine();
+            inputSelection = inputSelection.trim();
+            
+//            If the name is invalid (less than two characters in length)
+//         if (inputSelection != 's', 'l', 'i' ,'p', 'q' ) {
+//             System.out.println("Invalid input please make another selection");
+         
+         break; //stops repetiotion
+         
+    }   
+    return inputSelection; // returns the players menu selection.
+    }
+       
+       
 
     private void startNewGame() {
         //Create new game
@@ -110,9 +136,9 @@ public class MainMenuView {
         System.out.println("*** seePlayerMenu function called ***");
     }
 
-    private String getInput() {
-        System.out.println("*** seePlayerMenu input ***");
-        return null;
-    }
+//    private String getInput() {
+//        System.out.println("*** seePlayerMenu input ***");
+//        return null;
+    
     
 }
