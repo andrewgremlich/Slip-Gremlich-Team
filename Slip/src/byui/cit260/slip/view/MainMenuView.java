@@ -88,6 +88,8 @@ public class MainMenuView {
     }   
     return playersName; // returns the players name.
     }
+    
+    
 
     private void startNewGame() {
         //Create new game
@@ -112,7 +114,6 @@ public class MainMenuView {
 
     private String getInput() {
         System.out.println("*** seePlayerMenu input ***");
-        return null;
     }
     
 }
