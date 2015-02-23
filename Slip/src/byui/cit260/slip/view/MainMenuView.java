@@ -104,9 +104,7 @@ public class MainMenuView {
             inputSelection = keyboard.nextLine();
             inputSelection = inputSelection.trim();
             
-//            If the name is invalid (less than two characters in length)
-//         if (inputSelection != 's', 'l', 'i' ,'p', 'q' ) {
-//             System.out.println("Invalid input please make another selection");
+
          
          break; //stops repetiotion
          
