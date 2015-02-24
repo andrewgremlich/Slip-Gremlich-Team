@@ -34,18 +34,19 @@ public class PlayerMenuView {
            
            this.doAction(selection); //do action based on selection
            
-        } while (selection != 'Q'); //an selection is not "Quit"
+        } while (selection != 'q'); //an selection is not "Quit"
     }
       
        public void doAction (char choice) {
         switch (choice) {
-            case 'h' : //How to move
-                System.out.println("*****Test Hair Color Input****");
+            case 'h' : //Hair Color Input
+               System.out.println("*****Test Hair Color Input****");
+                // this.getPlayersHair();
                 break;
-            case 'e' : //Resources info
+            case 'e' : //Eye Color Input
                 System.out.println("*****Test Eye Color Input****");
                 break;
-            case 'g' : //Instructions
+            case 'g' : //Gender Input
                 System.out.println("*****Test Gender Input****");
                 break;
             case 'q' : //Quit program
@@ -77,7 +78,30 @@ private String getInput() {
     }   
     return inputSelection; // returns the players menu selection.
     }  
-
-    
+ /*  private String getPlayersHair() {
+        boolean valid = false; //Indicates if the name has been retrived.
+        String playersHair = null;
+        Scanner keyboard = new Scanner(System.in); //Keyboard input 
+        
+        while(!valid) { // while a valid name has not been retrived
+        
+            //prompt for the player's name
+            System.out.println("Please enter your hair color below:");
+            
+            //Get the name from the keyboard and trim off the blanks
+            playersHair = keyboard.nextLine();
+            playersHair = playersHair.trim();
+            
+            //If they are bald 
+         if (playersHair == 'none') {
+             System.out.println("You might get very cold");
+             continue; //and repeat again
+         }
+         break; //stops repetiotion
+         
+    }   
+    return playersHair; // returns the players name.
+    }
+  */  
     
 }
