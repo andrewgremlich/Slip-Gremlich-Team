@@ -127,7 +127,8 @@ public class MainMenuView {
     }
 
     private void seeInstructions() {
-        System.out.println("*** seeInstructions function called ***");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
 
     private void seePlayerMenu() {

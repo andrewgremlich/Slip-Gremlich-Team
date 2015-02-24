@@ -5,6 +5,8 @@
  */
 package byui.cit260.slip.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Richard
@@ -36,16 +38,16 @@ public class HelpMenuView {
       
        public void doAction (char choice) {
         switch (choice) {
-            case 'H' : //How to move
+            case 'h' : //How to move
                 System.out.println("*****Test How to move****");
                 break;
-            case 'R' : //Resources info
+            case 'r' : //Resources info
                 System.out.println("*****Test Gather Resources****");
                 break;
-            case 'G' : //Instructions
+            case 'g' : //Instructions
                 System.out.println("*****Test Goal of game****");
                 break;
-            case 'Q' : //Quit program
+            case 'q' : //Quit program
                 return;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
@@ -53,10 +55,26 @@ public class HelpMenuView {
             }
     }
 
-    private String getInput() {
-            System.out.println("Test input blalllll");
-            //String return;
-          return null;
+private String getInput() {
+        boolean valid = false; //Indicates if the name has been retrived.
+        String inputSelection = null;
+        Scanner keyboard = new Scanner(System.in); //Keyboard input 
+        
+        while(!valid) { // while a valid name has not been retrived
+        
+            //prompt for the player's name
+            System.out.println("Please make a menu selection:");
+            
+            //Get the name from the keyboard and trim off the blanks
+            inputSelection = keyboard.nextLine();
+            inputSelection = inputSelection.trim();
+            
+
+         
+         break; //stops repetiotion
+         
+    }   
+    return inputSelection; // returns the players menu selection.
     }
     
 }
