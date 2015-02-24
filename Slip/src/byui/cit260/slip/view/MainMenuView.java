@@ -54,7 +54,7 @@ public class MainMenuView {
                 this.seeInstructions();
                 break;
             case 'p' : // Player Menu
-                this.seePlayerMenu();
+                this.seePlayer();
                 break;
             case 'q' : //Quit program
                 return;
@@ -131,8 +131,9 @@ public class MainMenuView {
         helpMenu.displayHelpMenu();
     }
 
-    private void seePlayerMenu() {
-        System.out.println("*** seePlayerMenu function called ***");
+    private void seePlayer() {
+        PlayerMenuView playerMenu = new PlayerMenuView();
+        playerMenu.displayPlayerMenu();
     }
    
 }
