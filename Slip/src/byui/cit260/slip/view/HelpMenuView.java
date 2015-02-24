@@ -22,7 +22,7 @@ public class HelpMenuView {
             + "\nG - Goal of the Game"
             + "\nQ - Quit the Instructions Menu";
       
-       public void displayMenu() {
+       public void displayHelpMenu() {
        char selection = ' ';
        do {
            

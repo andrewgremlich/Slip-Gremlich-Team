@@ -51,7 +51,7 @@ public class MainMenuView {
                 this.loadGame();
                 break;
             case 'i' : //Instructions
-                this.displayMenu();
+                this.seeInstructions();
                 break;
             case 'p' : // Player Menu
                 this.seePlayerMenu();
@@ -128,7 +128,7 @@ public class MainMenuView {
 
     private void seeInstructions() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.displayHelpMenu();
     }
 
     private void seePlayerMenu() {
