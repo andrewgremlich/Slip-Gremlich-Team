@@ -17,9 +17,9 @@ public class InventoryMenuView {
     
  private final String WOLF = "\n"
             + "\n -------------------------------"
-            + "\n ******* Anti Wolf Tool Menu ********"
+            + "\n ******* Inventory Menu ********"
             + "\n--------------------------------"
-            + "\nh - Input the Circumference"
+            + "\nh - Input Data for the Anti-Wolf Tool"
             + "\nq - Quit to Previous Menu";
             
 
