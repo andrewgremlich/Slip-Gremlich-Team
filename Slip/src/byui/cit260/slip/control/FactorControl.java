@@ -14,7 +14,7 @@ public class FactorControl {
         System.out.println();
     }
 
-    public double calcAttackingPower (int energyLevel, int toolPower) {
+    public double calcAttackingPower (double energyLevel, double toolPower) {
         
         //Check if any input is 0
         if (energyLevel == 0 || toolPower == 0) {
@@ -37,7 +37,7 @@ public class FactorControl {
         
         //Calculate attacking power and return value;
         else {
-        int attackingPower = energyLevel + toolPower;
+        double attackingPower = energyLevel + toolPower;
         return attackingPower;
                 }
 
