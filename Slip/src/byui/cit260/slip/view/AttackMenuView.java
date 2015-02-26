@@ -5,8 +5,9 @@
  */
 package byui.cit260.slip.view;
 
-import java.util.Scanner;
 import byui.cit260.slip.control.FactorControl;
+import java.util.Scanner;
+
 
 /**
  *
@@ -23,8 +24,9 @@ public class AttackMenuView {
             + "\n";
   
     
-    public void displayMenu() {
+    public double displayMenu() {
        boolean valid = false;
+       double display = 0;
        
        while (!valid) {
            
@@ -38,15 +40,11 @@ public class AttackMenuView {
            input = this.getInput(); //get the user's selection
            double energyLevel = Double.parseDouble(input);          
            
-           FactorControl factorControl = new FactorControl(energyLevel, toolPower);
-           double calcAttackingPower = factorControl.calcAttackingPower(energyLevel, toolPower);
-           
-           //String attackDisplay = factorControl.calcAttackingPower(energyLevel, toolPower);
-           //System.out.println(attackDisplay);
-           
-           break;
+           display = new FactorControl().calcAttackingPower(energyLevel, toolPower);
+              
         } 
        
+       return display;
     }
     
     private String getInput() {

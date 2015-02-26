@@ -10,11 +10,9 @@ package byui.cit260.slip.control;
  */
 public class FactorControl {
 
-    public FactorControl(double energyLevel, double toolPower) {
-        System.out.println();
-    }
-
-    public double calcAttackingPower (double energyLevel, double toolPower) {
+    
+    
+    public double calcAttackingPower ( double energyLevel, double toolPower) {
         
         //Check if any input is 0
         if (energyLevel == 0 || toolPower == 0) {
@@ -38,10 +36,14 @@ public class FactorControl {
         //Calculate attacking power and return value;
         else {
         double attackingPower = energyLevel + toolPower;
+        System.out.println("Your attacking about is " + attackingPower + ".");
+        
         return attackingPower;
                 }
 
     }
+
+    
     
 }
 
