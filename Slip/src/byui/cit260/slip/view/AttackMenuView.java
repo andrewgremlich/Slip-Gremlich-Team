@@ -39,7 +39,7 @@ public class AttackMenuView {
            double energyLevel = Double.parseDouble(input);          
            
            FactorControl factorControl = new FactorControl(energyLevel, toolPower);
-           factorControl.calcAttackingPower(energyLevel, toolPower);
+           double calcAttackingPower = factorControl.calcAttackingPower(energyLevel, toolPower);
            
            //String attackDisplay = factorControl.calcAttackingPower(energyLevel, toolPower);
            //System.out.println(attackDisplay);
