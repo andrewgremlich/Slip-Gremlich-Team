@@ -30,8 +30,9 @@ public class InventoryMenuView {
            
            System.out.println(WOLF); // display Tool menu
            
-           String  input = new MainMenuView().getInput();
+           String  input = new MainMenuView().getInput().toLowerCase(); //The .toLowerCase() converts all input to lowercase
            //String input = this.getInput(); //get the user's selection
+           
            selection = input.charAt(0); //get first character of string
            
            this.doAction(selection); //do action baseSd on selection
