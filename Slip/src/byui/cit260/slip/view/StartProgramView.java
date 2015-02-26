@@ -20,7 +20,6 @@ public class StartProgramView {
  
     public void startProgram() {
     
-   
     this.displayBanner();
     
     //prompt the player to enter their name
@@ -73,7 +72,7 @@ public class StartProgramView {
              System.out.println("Sorry - your name must be greater than two characters");
              continue; //and rpeat again
          }
-         break; //stops repetiotion
+         break; //stops repetition
          
     }   
     return playersName; // returns the players name.

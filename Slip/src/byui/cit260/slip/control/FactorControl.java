@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.control;
 
+import byui.cit260.slip.view.AttackMenuView;
 /**
  *
  * @author Andrew

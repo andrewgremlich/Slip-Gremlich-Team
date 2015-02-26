@@ -19,6 +19,7 @@ import byui.cit260.slip.model.Player;
 import byui.cit260.slip.model.Resources;
 import byui.cit260.slip.model.Sled;
 import byui.cit260.slip.model.Scene;
+import byui.cit260.slip.view.AttackMenuView;
 import byui.cit260.slip.view.StartProgramView;
 
 
@@ -37,8 +38,12 @@ public class Slip {
      */
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+       AttackMenuView attackMenuView = new AttackMenuView();
+       attackMenuView.displayMenu();
+       
+        
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.startProgram();
         
 
        Resources resourcesOne = new Resources();
