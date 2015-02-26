@@ -76,12 +76,10 @@ public class InventoryMenuView {
                 break;
           
             else 
-                System.out.println("Please enter a number greater than zero");
-              
-                    
-       
+                System.out.println("Please enter a number greater than zero");                   
         }    
-       //  break; //stops repetiotion
+       
+        //  break; //stops repetiotion
        // InventoryControl inv = new InventoryControl();  Another way to access method if I want to use 
        // double radius = inv.calcRadiusWolf(inputSelection);
         
