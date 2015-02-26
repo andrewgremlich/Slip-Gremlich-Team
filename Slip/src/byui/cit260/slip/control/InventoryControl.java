@@ -47,7 +47,10 @@ public class InventoryControl {
             if (circumference > 0) { 
             
             double radius = Math.round(circumference/(2*Math.PI)*100.0)/100.0;
-            return radius;
+            System.out.println( "The radius of the Anti-Wolf tool is " + radius);
+            
+            return radius; //return to view layer InventoryMenuView
+            
             }
             else {
             return -1;	

@@ -23,6 +23,8 @@ public class MainMenuView {
             + "\nL - Load Game"
             + "\nI - Instructions"
             + "\nP - Player Menu"
+            + "\n                             "
+            + "\nT  - Inventory Menu"
             + "\n|                             |"
             + "\nQ - Quit Program";         
          
@@ -56,6 +58,9 @@ public class MainMenuView {
             case 'p' : // Player Menu
                 this.seePlayer();
                 break;
+            case 't' : // Inventory Menu
+                this.seeInventory();
+                break;    
             case 'q' : //Quit program
                 return;
             default:
@@ -90,7 +95,7 @@ public class MainMenuView {
     }
     
 
-       private String getInput() {
+       public String getInput() {
         boolean valid = false; //Indicates if the name has been retrived.
         String inputSelection = null;
         Scanner keyboard = new Scanner(System.in); //Keyboard input 
@@ -136,4 +141,9 @@ public class MainMenuView {
         playerMenu.displayPlayerMenu();
     }
    
+    private void seeInventory() {
+        InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.displayInventoryMenuView();
+}
+    
 }
