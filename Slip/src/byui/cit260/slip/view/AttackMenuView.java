@@ -6,6 +6,7 @@
 package byui.cit260.slip.view;
 
 import java.util.Scanner;
+import byui.cit260.slip.control.FactorControl;
 
 /**
  *
@@ -36,6 +37,9 @@ public class AttackMenuView {
            System.out.println("Enter health level.");
            input = this.getInput(); //get the user's selection
            double energyLevel = Double.parseDouble(input);          
+           
+           FactorControl displayAttackingPower = new FactorControl(energyLevel, toolPower);
+           
            
            break;
         } 

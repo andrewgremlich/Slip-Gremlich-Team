@@ -4,14 +4,16 @@
  * and open the template in the editor.
  */
 package byui.cit260.slip.control;
-
-import byui.cit260.slip.view.AttackMenuView;
 /**
  *
  * @author Andrew
  */
 public class FactorControl {
-    
+
+    public FactorControl(double energyLevel, double toolPower) {
+        System.out.println();
+    }
+
     public double calcAttackingPower (int energyLevel, int toolPower) {
         
         //Check if any input is 0
@@ -42,3 +44,4 @@ public class FactorControl {
     }
     
 }
+
