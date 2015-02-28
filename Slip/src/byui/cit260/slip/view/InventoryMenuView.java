@@ -42,7 +42,7 @@ public class InventoryMenuView {
       
        public void doAction (char choice) {
         switch (choice) {
-            case 'h' : //Hair Color Input
+            case 'h' : //Input for data wolf-tool
                //System.out.println("*****Test Circumference Input****");
                 this.getCircumference();
                 // this.getPlayersHair();s
