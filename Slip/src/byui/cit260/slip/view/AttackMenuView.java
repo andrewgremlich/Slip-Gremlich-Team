@@ -13,24 +13,27 @@ import java.util.Scanner;
  *
  * @author Andrew
  */
-public class AttackMenuView {
+public class AttackMenuView extends View{
     
    
-    
-    private final String ATTACKMENU = "\n"
+    public AttackMenuView(){
+            super("\n"
             +"\n-------------------------------"
             + "\n|        Attack Input         |"
-            + "\n-------------------------------"
-            + "\n";
+            + "\n-------------------------------");
+            
+            
+    }
   
-    
-    public double displayMenu() {
+    @Override
+    public void display() {
+        
        boolean valid = false;
        double display = 0;
        
        while (!valid) {
            
-           System.out.println(ATTACKMENU); // display main menu
+           System.out.println(this.getPromptMessage()); // display main menu
            
            System.out.println("Enter tool power.");
            String input = this.getInput(); //get the user's selection
@@ -40,36 +43,23 @@ public class AttackMenuView {
            input = this.getInput(); //get the user's selection
            double energyLevel = Double.parseDouble(input);          
            
-           display = new FactorControl().calcAttackingPower(energyLevel, toolPower);
+           double[] inputs = new double[2];
+           inputs[0] = toolPower;
+           inputs[1] = energyLevel;
+           
+           this.doAction(inputs);
               
         } 
-       
-       return display;
+      
+    }
+
+    @Override
+    public void doAction(Object obj) { 
+        double[] inputs = (double[]) obj;
+        double attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]);
+        System.out.println("Your attack power is " + attackPower);
     }
     
-    private String getInput() {
-        boolean valid = false; //Indicates if the name has been retrived.
-        String input = "";
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
-        
-        while(!valid) { // while a valid input has not been retrived
-        
-            //prompt for the tool power
-            System.out.println("Enter Value");
-            
-            //Get the number from the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            
-        if (input.length()<1){
-            System.out.println("Invalid inputs.  Please try again.");
-            continue;
-        }
-         break; //stops repetiotion
-    }   
-    return input;  // returns the players tool power selection.
-    
-    }
+   
    
 }

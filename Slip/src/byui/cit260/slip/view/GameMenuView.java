@@ -9,10 +9,20 @@ package byui.cit260.slip.view;
  *
  * @author Richard
  */
-public class GameMenuView {
+public class GameMenuView extends View{
 
-    void displayMenu() {
+    GameMenuView(String promptMessage) {
+        super(promptMessage);
+    }
+
+    @Override
+    public void display() {
         System.out.println("\n*** displayMenu Stub function called *** ");
+    }
+
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

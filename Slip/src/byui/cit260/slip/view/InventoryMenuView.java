@@ -13,32 +13,18 @@ import byui.cit260.slip.view.MainMenuView;
  *
  * @author Richard
  */
-public class InventoryMenuView {
+public class InventoryMenuView extends View{
     
- private final String WOLF = "\n"
+        public InventoryMenuView(){
+            super("\n"
             + "\n -------------------------------"
             + "\n ******* Inventory Menu ********"
             + "\n--------------------------------"
             + "\nh - Input Data for the Anti-Wolf Tool"
-            + "\nq - Quit to Previous Menu";
+            + "\nq - Quit to Previous Menu"
+             + "\n--------------------------------");
             
-
-    
-       public void displayInventoryMenuView() {
-       char selection = ' ';
-       do {
-           
-           System.out.println(WOLF); // display Tool menu
-           
-           String  input = new MainMenuView().getInput().toLowerCase(); //The .toLowerCase() converts all input to lowercase
-           //String input = this.getInput(); //get the user's selection
-           
-           selection = input.charAt(0); //get first character of string
-           
-           this.doAction(selection); //do action baseSd on selection
-           
-        } while (selection != 'q'); //an selection is not "Quit"
-    }
+        }
       
        public void doAction (char choice) {
         switch (choice) {
@@ -88,6 +74,11 @@ public class InventoryMenuView {
          //Call Function to find radius
           //public double calcRadiusWolf(double circumference)          
     return radius; // returns the players menu selection.
+    }
+
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }    
     

@@ -11,32 +11,22 @@ import java.util.Scanner;
  *
  * @author Richard
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
     
-      private final String INSTRUCTIONS = "\n"
+      public HelpMenuView(){
+            super("\n"
             + "\n -------------------------------"
             + "\n ***** Instruction Menu ********"
             + "\n--------------------------------"
             + "\nH - How to Move"
             + "\nR - Retrieving Resources"
             + "\nG - Goal of the Game"
-            + "\nQ - Quit the Instructions Menu";
+            + "\nQ - Quit the Instructions Menu"
+            + "\n--------------------------------");
+            
+      }
       
-       public void displayHelpMenu() {
-       char selection = ' ';
-       do {
-           
-           System.out.println(INSTRUCTIONS); // display instruction menu
-           
-           String input = this.getInput(); //get the user's selection
-           selection = input.charAt(0); //get first character of string
-           
-           this.doAction(selection); //do action based on selection
-           
-        } while (selection != 'Q'); //an selection is not "Quit"
-    }
-      
-       public void doAction (char choice) {
+      public void doAction (char choice) {
         switch (choice) {
             case 'h' : //How to move
                 System.out.println("*****Test How to move****");
@@ -55,26 +45,8 @@ public class HelpMenuView {
             }
     }
 
-private String getInput() {
-        boolean valid = false; //Indicates if the name has been retrived.
-        String inputSelection = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
-        
-        while(!valid) { // while a valid name has not been retrived
-        
-            //prompt for the player's name
-            System.out.println("Please make a menu selection:");
-            
-            //Get the name from the keyboard and trim off the blanks
-            inputSelection = keyboard.nextLine();
-            inputSelection = inputSelection.trim();
-            
-
-         
-         break; //stops repetiotion
-         
-    }   
-    return inputSelection; // returns the players menu selection.
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

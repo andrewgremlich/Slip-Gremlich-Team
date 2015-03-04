@@ -39,11 +39,11 @@ public class Slip {
     public static void main(String[] args) {
         
        AttackMenuView attackMenuView = new AttackMenuView();
-       attackMenuView.displayMenu();
+       attackMenuView.display();
        
         
-       StartProgramView startProgramView = new StartProgramView();
-       startProgramView.startProgram();
+       //StartProgramView startProgramView = new StartProgramView();
+       //startProgramView.startProgram();
         
 
        Resources resourcesOne = new Resources();

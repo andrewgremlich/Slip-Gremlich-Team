@@ -13,9 +13,10 @@ import java.util.Scanner;
  *
  * @author Richard
  */
-public class StartProgramView {
+public class StartProgramView extends View{
 
-    public StartProgramView() {
+    public StartProgramView(String promptMessage) {
+        super(promptMessage);
     }
  
     public void startProgram() {
@@ -33,7 +34,7 @@ public class StartProgramView {
     
     //Display the Main Menu
     MainMenuView mainMenuView = new MainMenuView();
-    mainMenuView.displayMenu();
+    mainMenuView.display();
     
     } 
 
@@ -83,6 +84,11 @@ public class StartProgramView {
         System.out.println("\tWelcome to the game " + player.getName());
         System.out.println("\tWe hope that you have a lot of fun!");
         System.out.println("=======================================");
+    }
+
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
             

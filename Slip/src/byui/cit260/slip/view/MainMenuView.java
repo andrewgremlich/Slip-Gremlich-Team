@@ -13,9 +13,10 @@ import slip.Slip;
  *
  * @author Andrew
  */
-public class MainMenuView {
+public class MainMenuView extends View{
 
-    private final String MENU = "\n"
+    public MainMenuView(){
+            super("\n"
             +"\n-------------------------------"
             + "\n|        Main Menu            |"
             + "\n-------------------------------"
@@ -26,22 +27,8 @@ public class MainMenuView {
             + "\n                             "
             + "\nT  - Inventory Menu"
             + "\n|                             |"
-            + "\nQ - Quit Program";         
-         
-  
-    
-    public void displayMenu() {
-       char selection = ' ';
-       do {
-           
-           System.out.println(MENU); // display main menu
-           
-           String input = this.getInput(); //get the user's selection
-           selection = input.charAt(0); //get first character of string
-           
-           this.doAction(selection); //do action based on selection
-           
-        } while (selection != 'Q'); //an selection is not "Quit"
+            + "\nQ - Quit Program"
+            +"\n-------------------------------");         
     }
     
     public void doAction (char choice) {
@@ -69,7 +56,7 @@ public class MainMenuView {
             }
     }
     
-    private String doAction() {
+    private String playName() {
         boolean valid = false; //Indicates if the name has been retrived.
         String playersName = null;
         Scanner keyboard = new Scanner(System.in); //Keyboard input 
@@ -93,29 +80,6 @@ public class MainMenuView {
     }   
     return playersName; // returns the players name.
     }
-    
-
-       public String getInput() {
-        boolean valid = false; //Indicates if the name has been retrived.
-        String inputSelection = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
-        
-        while(!valid) { // while a valid name has not been retrived
-        
-            //prompt for the player's name
-            System.out.println("Please make a menu selection:");
-            
-            //Get the name from the keyboard and trim off the blanks
-            inputSelection = keyboard.nextLine();
-            inputSelection = inputSelection.trim();
-            
-
-         
-         break; //stops repetiotion
-         
-    }   
-    return inputSelection; // returns the players menu selection.
-    }
       
 
     private void startNewGame() {
@@ -124,7 +88,7 @@ public class MainMenuView {
         
         //display the game
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void loadGame() {
@@ -133,17 +97,22 @@ public class MainMenuView {
 
     private void seeInstructions() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.HelpMenuView();
     }
 
     private void seePlayer() {
         PlayerMenuView playerMenu = new PlayerMenuView();
-        playerMenu.displayPlayerMenu();
+        playerMenu.PlayerMenuView();
     }
    
     private void seeInventory() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.displayInventoryMenuView();
+        inventoryMenu.InventoryMenuView();
 }
+
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
