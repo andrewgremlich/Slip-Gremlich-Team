@@ -11,10 +11,8 @@ package byui.cit260.slip.view;
  */
 public class GameMenuView extends View {
 
-    private final String GAMEVIEW = "";
-
     public GameMenuView() {
-        super(GAMEVIEW);
+        super("");
     }
 
     public GameMenuView(String promptMessage) {

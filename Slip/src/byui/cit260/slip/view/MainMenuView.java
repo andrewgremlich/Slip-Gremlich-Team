@@ -98,17 +98,14 @@ public class MainMenuView extends View {
 
     private void seeInstructions() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.HelpMenuView();
     }
 
     private void seePlayer() {
         PlayerMenuView playerMenu = new PlayerMenuView();
-        playerMenu.PlayerMenuView();
     }
 
     private void seeInventory() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.InventoryMenuView();
     }
 
 }

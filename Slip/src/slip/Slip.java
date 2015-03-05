@@ -38,8 +38,8 @@ public class Slip {
      */
     public static void main(String[] args) {
         
-       AttackMenuView attackMenuView = new AttackMenuView();
-       attackMenuView.display();
+       //AttackMenuView attackMenuView = new AttackMenuView();
+       //attackMenuView.display();
        
         
        //StartProgramView startProgramView = new StartProgramView();
