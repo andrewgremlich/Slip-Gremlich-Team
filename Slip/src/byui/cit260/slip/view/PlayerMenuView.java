@@ -11,45 +11,42 @@ import java.util.Scanner;
  *
  * @author Richard
  */
-public class PlayerMenuView extends View{
-    
-    public PlayerMenuView(){
-            super("\n"
-            + "\n -------------------------------"
-            + "\n ******* Player Menu ********"
-            + "\n--------------------------------"
-            + "\nH - Input Hair Color"
-            + "\nE - Input Eye Color"
-            + "\nG - Input Gender"
-            + "\nQ - Quit the Player Menu"
-            + "\n -------------------------------");
-            
-    }
-       public void doAction (char choice) {
-        switch (choice) {
-            case 'h' : //Hair Color Input
-               System.out.println("*****Test Hair Color Input****");
-                // this.getPlayersHair();
-                break;
-            case 'e' : //Eye Color Input
-                System.out.println("*****Test Eye Color Input****");
-                break;
-            case 'g' : //Gender Input
-                System.out.println("*****Test Gender Input****");
-                break;
-            case 'q' : //Quit program
-                return;
-            default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
-                break;
-            }
+public class PlayerMenuView extends View {
+
+    public PlayerMenuView() {
+        super("\n"
+                + "\n -------------------------------"
+                + "\n ******* Player Menu ********"
+                + "\n--------------------------------"
+                + "\nH - Input Hair Color"
+                + "\nE - Input Eye Color"
+                + "\nG - Input Gender"
+                + "\nQ - Quit the Player Menu"
+                + "\n -------------------------------");
+
     }
 
     @Override
     public void doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        char choice = ((String) obj).toLowerCase().charAt(0);
+        switch (choice) {
+            case 'h': //Hair Color Input
+                System.out.println("*****Test Hair Color Input****");
+                // this.getPlayersHair();
+                break;
+            case 'e': //Eye Color Input
+                System.out.println("*****Test Eye Color Input****");
+                break;
+            case 'g': //Gender Input
+                System.out.println("*****Test Gender Input****");
+                break;
+            case 'q': //Quit program
+                return;
+            default:
+                System.out.println("\n*** Invalid Selection *** Please Try again");
+                break;
+        }
     }
 
 
-    
 }

@@ -9,9 +9,15 @@ package byui.cit260.slip.view;
  *
  * @author Richard
  */
-public class GameMenuView extends View{
+public class GameMenuView extends View {
 
-    GameMenuView(String promptMessage) {
+    private final String GAMEVIEW = "";
+
+    public GameMenuView() {
+        super(GAMEVIEW);
+    }
+
+    public GameMenuView(String promptMessage) {
         super(promptMessage);
     }
 
@@ -24,5 +30,5 @@ public class GameMenuView extends View{
     public void doAction(Object obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
