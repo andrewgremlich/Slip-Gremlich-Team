@@ -32,7 +32,7 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
         String value;
         boolean done = false;
         do {
-
+            //This line should be the only one to show that it works.
             System.out.println(this.promptMessage); // display main menu
 
             value = this.getInput(); //get the user's selection
