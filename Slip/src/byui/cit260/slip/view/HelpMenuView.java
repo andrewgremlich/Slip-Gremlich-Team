@@ -27,7 +27,7 @@ public class HelpMenuView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': //How to move
@@ -39,12 +39,13 @@ public class HelpMenuView extends View {
             case 'g': //Instructions
                 System.out.println("*****Test Goal of game****");
                 break;
-            case 'q': //Quit program
-                return;
+            case 'q': //return to main menu
+                return true;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
-                break;
+                return false;
         }
+        return true;
     }
 
 }

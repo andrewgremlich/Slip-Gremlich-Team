@@ -51,10 +51,11 @@ public class AttackMenuView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         double[] inputs = (double[]) obj;
         double attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]);
         System.out.println("Your attack power is " + attackPower);
+        return false;
     }
 
 }

@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface { //View SuperClass!!!
 
-    private String promptMessage;
+    String promptMessage;
 
     public View(String promptMessage) {//Contructor Function!!!!
         this.promptMessage = promptMessage;
@@ -30,6 +30,7 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
     @Override
     public void display() {
         String value;
+        boolean done = false;
         do {
 
             System.out.println(this.promptMessage); // display main menu
@@ -37,9 +38,9 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
             value = this.getInput(); //get the user's selection
             //selection = input.charAt(0); //get first character of string
 
-            this.doAction(value); //do action based on selection
+            done = this.doAction(value); //do action based on selection
 
-        } while (!value.equals("Q")); //an selection is not "Quit"
+        } while (!done); //an selection is not "Quit"
     }
 
     @Override

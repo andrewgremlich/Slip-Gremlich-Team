@@ -27,7 +27,7 @@ public class InventoryMenuView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': //Input for data wolf-tool
@@ -36,11 +36,12 @@ public class InventoryMenuView extends View {
                 // this.getPlayersHair();s
                 break;
             case 'q': //Quit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
-                break;
+                return false;
         }
+        return true;
     }
 
     //Find the radius for the Anti-Wolf Tool

@@ -27,7 +27,7 @@ public class PlayerMenuView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': //Hair Color Input
@@ -41,11 +41,12 @@ public class PlayerMenuView extends View {
                 System.out.println("*****Test Gender Input****");
                 break;
             case 'q': //Quit program
-                return;
+                 return true;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
-                break;
+                return false;
         }
+        return true;
     }
 
 

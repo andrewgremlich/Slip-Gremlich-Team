@@ -18,6 +18,9 @@ public class StartProgramView extends View {
     public StartProgramView(String promptMessage) {
         super(promptMessage);
     }
+    public StartProgramView(){
+        super("");
+    }
 
     public void startProgram() {
 
@@ -87,8 +90,9 @@ public class StartProgramView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean doAction(Object obj) {
+        System.out.println("Start program view called.");
+        return false;
     }
 
 }

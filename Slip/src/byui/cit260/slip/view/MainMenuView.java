@@ -32,7 +32,7 @@ public class MainMenuView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 's': //Start a new game
@@ -51,11 +51,12 @@ public class MainMenuView extends View {
                 this.seeInventory();
                 break;
             case 'q': //Quit program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
-                break;
+                return false;
         }
+        return true;
     }
 
     private String playName() {
@@ -98,14 +99,17 @@ public class MainMenuView extends View {
 
     private void seeInstructions() {
         HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
     }
 
     private void seePlayer() {
         PlayerMenuView playerMenu = new PlayerMenuView();
+        playerMenu.display();
     }
 
     private void seeInventory() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.display();
     }
 
 }
