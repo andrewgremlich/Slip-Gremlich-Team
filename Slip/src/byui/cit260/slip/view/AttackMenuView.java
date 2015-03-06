@@ -55,7 +55,7 @@ public class AttackMenuView extends View {
         double[] inputs = (double[]) obj;
         double attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]);
         System.out.println("Your attack power is " + attackPower);
-        return false;
+        return true;
     }
 
 }

@@ -22,6 +22,7 @@ import byui.cit260.slip.model.Scene;
 import byui.cit260.slip.view.AttackMenuView;
 import byui.cit260.slip.view.StartProgramView;
 
+
 /**
  *
  * @author Richard
@@ -40,7 +41,7 @@ public class Slip {
         //attackMenuView.display();
         
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        startProgramView.doAction();
 
         Resources resourcesOne = new Resources();
 

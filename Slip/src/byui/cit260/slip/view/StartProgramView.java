@@ -15,14 +15,39 @@ import java.util.Scanner;
  */
 public class StartProgramView extends View {
 
-    public StartProgramView(String promptMessage) {
-        super(promptMessage);
+    public StartProgramView() {
+        super("(\"\\n\\n*************************************************************************\"\n"
+                + "\\n Welcome to Slip\"\n"
+                + "\\n\\n In this text based role playing game, \"\n"
+                + "\\n you will be put into a futuristic extreme \"\n"
+                + "\\n camping experience. \"\n"
+                + "\\n\\n The goal is to hike to the summit of Mt. McKinley. \"\n"
+                + "\\n You will need to pit your wits against the environemnt and depression as you summit the mountain. \"\n"
+                + "\\n Let's hope you have the wits to pit with. \"\n"
+                + "\\n\\n Keep telling yourself...it's only a game\"\n"
+                + "\\n***************************************************************************\");");
     }
-    public StartProgramView(){
-        super("");
+    
+    @Override
+    public boolean doAction(Object obj) {
+        
+        //prompt the player to enter their name
+        String playersName = this.getPlayersName();
+        
+        //Create and save the player object
+        Player player = ProgramControl.createPlayer(playersName);
+
+        //Display personal welcome message
+        this.displayWelcomeMessage(player);
+
+        //Display the Main Menu
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
+        return true;
     }
 
-    public void startProgram() {
+
+    /*public void startProgram() {
 
         this.displayBanner();
 
@@ -40,21 +65,19 @@ public class StartProgramView extends View {
         mainMenuView.display();
 
     }
+    */
 
     private void displayBanner() {
         System.out.println("\n\n*************************************************************************"
-                + "\n Welcome to Slip");
-
-        System.out.println(""
-                + "\n In this text based role playing game, "
+                + "\n Welcome to Slip"
+                + "\n\n In this text based role playing game, "
                 + "\n you will be put into a futuristic extreme "
                 + "\n camping experience. "
                 + "\n\n The goal is to hike to the summit of Mt. McKinley. "
                 + "\n You will need to pit your wits against the environemnt and depression as you summit the mountain. "
                 + "\n Let's hope you have the wits to pit with. "
-                + "\n\n Keep telling yourself...it's only a game");
-
-        System.out.println("\n***************************************************************************");
+                + "\n\n Keep telling yourself...it's only a game"
+                + "\n***************************************************************************");
     }
 
     private String getPlayersName() {
@@ -89,10 +112,5 @@ public class StartProgramView extends View {
         System.out.println("=======================================");
     }
 
-    @Override
-    public boolean doAction(Object obj) {
-        System.out.println("Start program view called.");
-        return false;
-    }
-
+    
 }
