@@ -41,6 +41,7 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
             done = this.doAction(value); //do action based on selection
 
         } while (!done); //an selection is not "Quit"
+        
     }
 
     @Override

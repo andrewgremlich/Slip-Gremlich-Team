@@ -40,8 +40,10 @@ public class Slip {
         //AttackMenuView attackMenuView = new AttackMenuView();
         //attackMenuView.display();
         
+        Object obj = new Object();
+        
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.doAction();
+        startProgramView.startProgram();
 
         Resources resourcesOne = new Resources();
 
