@@ -16,10 +16,10 @@ public class MoveView extends View {
                 + "\n-------------------------------"
                 + "\n| Select Direction to Move    |"
                 + "\n-------------------------------"
-                + "\n-- N -North                  "
-                + "\n-- S -South                  "
-                + "\n-- E -East            "
-                + "\n-- W -West          "
+                + "\n-- N -North                    "
+                + "\n-- S -South                    "
+                + "\n-- E -East                     "
+                + "\n-- W -West                     "
                 + "\n                               "
                 + "\n  Q - Return                   ");
 
