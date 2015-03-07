@@ -26,6 +26,7 @@ public class MainMenuView extends View {
                 + "\nP - Player Menu"
                 + "\n                             "
                 + "\nT  - Inventory Menu"
+                + "\nW  - Move Menu"
                 + "\n|                             |"
                 + "\nQ - Quit Program"
                 + "\n-------------------------------");
@@ -49,6 +50,9 @@ public class MainMenuView extends View {
                 break;
             case 't': // Inventory Menu
                 this.seeInventory();
+                break;
+            case 'w': // Player Menu
+                this.seeMove();
                 break;
             case 'q': //Quit program
                 return true;
@@ -110,6 +114,11 @@ public class MainMenuView extends View {
     private void seeInventory() {
         InventoryMenuView inventoryMenu = new InventoryMenuView();
         inventoryMenu.display();
+    }
+
+    private void seeMove() {
+        MoveView moveView = new MoveView();
+        moveView.display();
     }
 
 }
