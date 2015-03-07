@@ -20,6 +20,7 @@ import byui.cit260.slip.model.Resources;
 import byui.cit260.slip.model.Sled;
 import byui.cit260.slip.model.Scene;
 import byui.cit260.slip.view.AttackMenuView;
+import byui.cit260.slip.view.HealthView;
 import byui.cit260.slip.view.StartProgramView;
 
 
@@ -39,6 +40,9 @@ public class Slip {
 
         //AttackMenuView attackMenuView = new AttackMenuView();
         //attackMenuView.display();
+        
+        HealthView healthView = new HealthView();
+        healthView.display();
         
         Object obj = new Object();
         
