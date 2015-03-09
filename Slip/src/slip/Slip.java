@@ -41,13 +41,16 @@ public class Slip {
         //AttackMenuView attackMenuView = new AttackMenuView();
         //attackMenuView.display();
         
-        HealthView healthView = new HealthView();
-        healthView.display();
+        //HealthView healthView = new HealthView();
+        //healthView.display();
         
         Object obj = new Object();
         
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+        StartProgramView startProgram = new StartProgramView();
+        startProgram.display();
+        
+//        StartProgramView startProgramView = new StartProgramView();
+//        startProgramView.startProgram();
 
         Resources resourcesOne = new Resources();
 

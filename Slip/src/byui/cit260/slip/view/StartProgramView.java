@@ -7,25 +7,38 @@ package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.ProgramControl;
 import byui.cit260.slip.model.Player;
-import java.util.Scanner;
 
 /**
  *
  * @author Richard
  */
 public class StartProgramView extends View {
-    
+
+    public StartProgramView() {
+        super("\n*************************************************************************"
+                + "\n Welcome to Slip"
+                + "\n In this text based role playing game, "
+                + "\n you will be put into a futuristic extreme "
+                + "\n camping experience. "
+                + "\n The goal is to hike to the summit of Mt. McKinley. "
+                + "\n You will need to pit your wits against the environemnt and depression as you summit the mountain. "
+                + "\n Let's hope you have the wits to pit with. "
+                + "\n Keep telling yourself...it's only a game"
+                + "\n  "
+                + "\n Please input your name below."
+                + "\n***************************************************************************");
+    }
+
     //This code does not run because it is not called.
     @Override
     public boolean doAction(Object obj) {
         
+        //This code calls for the input received.
+        String playersName = ((String) obj);
+
         //This code calls the StartProgramView super display reference
         //The way that this way works is commenting out the "value" from the display of the superclass.
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-
         //prompt the player to enter their name
-        String playersName = this.getPlayersName();
 
         //Create and save the player object
         Player player = ProgramControl.createPlayer(playersName);
@@ -38,76 +51,6 @@ public class StartProgramView extends View {
         mainMenuView.display();
 
         return true;
-    }    
-    
-    public StartProgramView() {
-        super("\n*************************************************************************"
-                + "\n Welcome to Slip"
-                + "\n In this text based role playing game, "
-                + "\n you will be put into a futuristic extreme "
-                + "\n camping experience. "
-                + "\n The goal is to hike to the summit of Mt. McKinley. "
-                + "\n You will need to pit your wits against the environemnt and depression as you summit the mountain. "
-                + "\n Let's hope you have the wits to pit with. "
-                + "\n Keep telling yourself...it's only a game"
-                + "\n***************************************************************************");
-    }
-   
-    public void startProgram() {
-
-        this.displayBanner();
-
-        //prompt the player to enter their name
-        String playersName = this.getPlayersName();
-
-        //Create and save the player object
-        Player player = ProgramControl.createPlayer(playersName);
-
-        //Display personal welcome message
-        this.displayWelcomeMessage(player);
-
-        //Display the Main Menu
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.display();
-
-    }
-
-    private void displayBanner() {
-        System.out.println("\n\n*************************************************************************"
-                + "\n Welcome to Slip"
-                + "\n\n In this text based role playing game, "
-                + "\n you will be put into a futuristic extreme "
-                + "\n camping experience. "
-                + "\n\n The goal is to hike to the summit of Mt. McKinley. "
-                + "\n You will need to pit your wits against the environemnt and depression as you summit the mountain. "
-                + "\n Let's hope you have the wits to pit with. "
-                + "\n\n Keep telling yourself...it's only a game"
-                + "\n***************************************************************************");
-    }
-
-    private String getPlayersName() {
-        boolean valid = false; //Indicates if the name has been retrived.
-        String playersName = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
-
-        while (!valid) { // while a valid name has not been retrived
-
-            //prompt for the player's name
-            System.out.println("Please enter your name below:");
-
-            //Get the name from the keyboard and trim off the blanks
-            playersName = keyboard.nextLine();
-            playersName = playersName.trim();
-
-            //If the name is invalid (less than two characters in length)
-            if (playersName.length() < 2) {
-                System.out.println("Sorry - your name must be greater than two characters");
-                continue; //and repeat again
-            }
-            break; //stops repetition
-
-        }
-        return playersName; // returns the players name.
     }
 
     private void displayWelcomeMessage(Player player) {

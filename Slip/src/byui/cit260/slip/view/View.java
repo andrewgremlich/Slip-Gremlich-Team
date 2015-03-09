@@ -53,14 +53,14 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
         while (!valid) { // while a valid name has not been retrived
 
             //prompt for the player's name
-            System.out.println("Please make a menu selection:");
+            System.out.println("Please put in your input:");
 
             //Get the name from the keyboard and trim off the blanks
             selection = keyboard.nextLine();
             selection = selection.trim();
 
             if (selection.length() < 1) {
-                System.out.println("\n**** Invalide Selection.  Please try again...");
+                System.out.println("\n**** Invalid Selection.  Please try again...");
                 continue;
             }
             break; //stops repetiotion
