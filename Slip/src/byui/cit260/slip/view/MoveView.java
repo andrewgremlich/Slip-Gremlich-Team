@@ -45,7 +45,7 @@ public class MoveView extends View {
                 break;
             case 'w': //Move Player West
                 System.out.println("Amazinlgy you move West" );
-            case 'q': //Quit program
+            case 'q': //Quit Menu
                 return true;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
