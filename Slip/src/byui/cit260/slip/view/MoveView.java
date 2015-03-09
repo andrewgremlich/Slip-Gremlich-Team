@@ -38,13 +38,13 @@ public class MoveView extends View {
                 System.out.println("You move slowly, but assuredly North");
                 break;
             case 's': //Move Player South
-                System.out.println("Good job. You carefully move South");
+                System.out.println("Good job, you are moving South");
                 break;
             case 'e': //Move Player East
                 System.out.println("Putting one foot in-front of the other you are moving East");
                 break;
             case 'w': //Move Player West
-                System.out.println("Amazinlgy you move West" );
+                System.out.println("Pleased with your ability to walk upright, you move West" );
             case 'q': //Quit Menu
                 return true;
             default:
