@@ -23,7 +23,6 @@ import byui.cit260.slip.view.AttackMenuView;
 import byui.cit260.slip.view.HealthView;
 import byui.cit260.slip.view.StartProgramView;
 
-
 /**
  *
  * @author Richard
@@ -44,13 +43,8 @@ public class Slip {
         //HealthView healthView = new HealthView();
         //healthView.display();
         
-        Object obj = new Object();
-        
         StartProgramView startProgram = new StartProgramView();
         startProgram.display();
-        
-//        StartProgramView startProgramView = new StartProgramView();
-//        startProgramView.startProgram();
 
         Resources resourcesOne = new Resources();
 
