@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.model;
 
+import byui.cit260.slip.control.GameControl;
 import java.io.Serializable;
 
 /**
@@ -12,12 +13,47 @@ import java.io.Serializable;
  * @author Richard
  */
 public class Map implements Serializable{
+
+    private static Scene[] createScenes() {
+        System.out.println("CALLEDDDD createScenes");
+        return null;
+    }
     
     //Class instance variables
     private int rowCount;
     private int columnCount;
+    private Location[][] locations;
+    private int noOfRows;
+    private int noOfColumns;
 
     public Map() {
+    }
+    
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows and columns must be > zero.");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        //creat 2-D  array for location objects
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++){
+                //create and intiialize location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                //assign the location object to the current position in the array.
+                locations [row][column] = location;
+            }
+            
+        }
     }
 
     public int getRowCount() {
@@ -67,6 +103,18 @@ public class Map implements Serializable{
         return true;
     }
     
+    private static Map createMap(){
+        //create map
+        Map map = new Map(10, 10);
+        
+        //create the scenes for the game
+        Scene[] scenes = createScenes();
+        
+        //assign scene to locations
+        GameControl.assignScenesToLocations(map, scenes);
+        
+        return map;
+    }
     
     
 }

@@ -18,6 +18,9 @@ public class Backpack implements Serializable{
     private int maxCapacity;
 
     public Backpack() {
+        this.contains = false;
+        this.backpackStatus = false;
+        this.maxCapacity = 0;
     }
 
     public boolean isContains() {
@@ -48,7 +51,7 @@ public class Backpack implements Serializable{
     public String toString() {
         return "Backpack{" + "contains=" + contains + ", backpackStatus=" + backpackStatus + ", maxCapacity=" + maxCapacity + '}';
     }
-
+/*
     @Override
     public int hashCode() {
         int hash = 7;
@@ -79,7 +82,7 @@ public class Backpack implements Serializable{
         return true;
     }
    
-
+*/
 
     
     

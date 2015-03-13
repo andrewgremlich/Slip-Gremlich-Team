@@ -12,21 +12,36 @@ import java.util.Objects;
  *
  * @author Richard
  */
-public class Actor implements Serializable{
-    
+public enum Actor implements Serializable {
+
+    //Enum List of Actors
+    Bill("He is the leader of the expedition."),
+    John("The wealthy and stuck up expedition member."),
+    Sarah("The sweet girl that breaks her leg."),
+    Samantha("Sarah's best friend. She is crazy."),
+    Travis("The big clown of the group, heart bigger than his head"),
+    Wil("Big lovly bear of a fella, your close associate."),
+    Santa_Claus("Yes. That Sanata Claus. Fat joyful individual."),
+    Buddy_the_Elf("Santa's prideful servant."),
+    Abominable_Snowman("Constantly hungry and dangerous."),
+    Felecious("The big bad wolf that is always on the prowl");
+
     //Class instance variables
-    private String name;
-    private String description;
+    private final String description;
 
-    public Actor() {
+    private final Point coordinates;
+
+    public Point getCoordinates() {
+        return coordinates;
     }
 
-    public String getName() {
-        return name;
+    public Point setCoordinates() {
+        this.coordinates = coordinates;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    Actor(String description) {
+        this.description = description;
+        coordinates = new Point(1, 1);
     }
 
     public String getDescription() {
@@ -67,7 +82,5 @@ public class Actor implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }
