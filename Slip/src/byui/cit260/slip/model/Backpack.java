@@ -5,14 +5,14 @@
  */
 package byui.cit260.slip.model;
 
-
 import java.io.Serializable;
+
 /**
  *
  * @author Andrew
  */
-public class Backpack implements Serializable{
-    
+public class Backpack implements Serializable {
+
     private boolean contains;
     private boolean backpackStatus;
     private int maxCapacity;
@@ -78,11 +78,5 @@ public class Backpack implements Serializable{
         }
         return true;
     }
-   
 
-
-    
-    
-    
-    
 }
