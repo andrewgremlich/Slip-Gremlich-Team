@@ -12,76 +12,82 @@ import java.io.Serializable;
  *
  * @author Richard
  */
-public class Map implements Serializable{
+public class Map implements Serializable {
 
-    private static Scene[] createScenes() {
-        System.out.println("CALLEDDDD createScenes");
-        return null;
-    }
-    
     //Class instance variables
-    private int rowCount;
-    private int columnCount;
-    private Location[][] locations;
     private int noOfRows;
     private int noOfColumns;
+    private Location[][] locations;
 
     public Map() {
     }
-    
+
     public Map(int noOfRows, int noOfColumns) {
         if (noOfRows < 1 || noOfColumns < 1) {
             System.out.println("The number of rows and columns must be > zero.");
             return;
         }
-        
+
         this.noOfRows = noOfRows;
         this.noOfColumns = noOfColumns;
-        
+
         //creat 2-D  array for location objects
         this.locations = new Location[noOfRows][noOfColumns];
-        
+
         for (int row = 0; row < noOfRows; row++) {
-            for (int column = 0; column < noOfColumns; column++){
+            for (int column = 0; column < noOfColumns; column++) {
                 //create and intiialize location object instance
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
                 location.setVisited(false);
-                
+
                 //assign the location object to the current position in the array.
-                locations [row][column] = location;
+                locations[row][column] = location;
             }
-            
+
         }
     }
 
-    public int getRowCount() {
-        return rowCount;
+    public int getNoOfRows() {
+        return noOfRows;
     }
 
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
-    public int getColumnCount() {
-        return columnCount;
+    public int getNoOfColumns() {
+        return noOfColumns;
     }
 
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
+    private static Scene[] createScenes() {
+        System.out.println("CALLEDDDD createScenes");
+        return null;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
     @Override
     public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+        return "Map{" + "rowCount=" + noOfRows + ", columnCount=" + noOfColumns + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 37 * hash + this.rowCount;
-        hash = 37 * hash + this.columnCount;
+        hash = 37 * hash + this.noOfRows;
+        hash = 37 * hash + this.noOfColumns;
         return hash;
     }
 
@@ -94,27 +100,13 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (this.rowCount != other.rowCount) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (this.columnCount != other.columnCount) {
+        if (this.noOfColumns != other.noOfColumns) {
             return false;
         }
         return true;
     }
-    
-    private static Map createMap(){
-        //create map
-        Map map = new Map(10, 10);
-        
-        //create the scenes for the game
-        Scene[] scenes = createScenes();
-        
-        //assign scene to locations
-        GameControl.assignScenesToLocations(map, scenes);
-        
-        return map;
-    }
-    
-    
+
 }

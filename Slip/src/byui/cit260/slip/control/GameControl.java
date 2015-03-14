@@ -5,11 +5,13 @@
  */
 package byui.cit260.slip.control;
 
+
+import static byui.cit260.slip.control.MapControl.createMap;
+import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Backpack;
 import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Player;
-import byui.cit260.slip.model.Resources;
 import byui.cit260.slip.model.Scene;
 import byui.cit260.slip.model.Sled;
 import slip.Slip;
@@ -27,8 +29,8 @@ public class GameControl {
 
         game.setPlayer(player);
 
-        Resources[] resourcesList = GameControl.createResourcesList();
-        game.setResources(resourcesList);
+        InventoryItem[] inventoryList = InventoryItem.createInventoryList();
+        game.setInventory(inventoryList);
 
         Sled sled = new Sled();
         game.setSled(sled);
@@ -36,11 +38,40 @@ public class GameControl {
         Backpack backpack = new Backpack();
         game.setBackpack(backpack);
 
-        Map map = new MapControl.createMap();
+        Map map = new createMap();
         game.setMap(map);
 
         MapControl.moveActorsToStartingLocation(map);
 
+    }
+    
+    public static InventoryItem[] getSortedInventoryList() {
+        
+        //get inventory list for the current game
+        InventoryItem[] originalInventoryList = 
+                    Slip.getCurrentGame().getInventory();
+        
+        //clone make a copy of original list
+        InventoryItem[] inventoryList = originalInventoryList.clone();
+        
+        //using a bubblesort to sort the list of inventoryList by name
+        InventoryItem tempInventoryItem;
+        for (int i=0; i<inventoryList.length-1; i++) {
+            for (int j=0; j < inventoryList.length-1-i; j++) {
+                if (inventoryList[j].getDescription().
+                        compareToIgnoreCase(inventoryList[j + 1].getDescription())> 0) {
+                    tempInventoryItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j+1];
+                    inventoryList[j+1] = tempInventoryItem;
+                }
+            }
+        }
+        
+        return inventoryList;
+    }
+    
+    public int compareToIgnoreCase(String str){
+        return 0;
     }
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {

@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,66 +22,26 @@ public enum Actor implements Serializable {
     Samantha("Sarah's best friend. She is crazy."),
     Travis("The big clown of the group, heart bigger than his head"),
     Wil("Big lovly bear of a fella, your close associate."),
-    Santa_Claus("Yes. That Sanata Claus. Fat joyful individual."),
-    Buddy_the_Elf("Santa's prideful servant."),
-    Abominable_Snowman("Constantly hungry and dangerous."),
+    SantaClaus("Yes. That Sanata Claus. Fat joyful individual."),
+    BuddytheElf("Santa's prideful servant."),
+    AbominableSnowman("Constantly hungry and dangerous."),
     Felecious("The big bad wolf that is always on the prowl");
+    
 
     //Class instance variables
     private final String description;
-
     private final Point coordinates;
-
-    public Point getCoordinates() {
-        return coordinates;
-    }
-
-    public Point setCoordinates() {
-        this.coordinates = coordinates;
-    }
 
     Actor(String description) {
         this.description = description;
-        coordinates = new Point(1, 1);
+        coordinates = new Point(1,1);
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public Point getCoordinates() {
+        return coordinates;
     }
-
-    @Override
-    public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 19 * hash + Objects.hashCode(this.name);
-        hash = 19 * hash + Objects.hashCode(this.description);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
-    }
-
 }

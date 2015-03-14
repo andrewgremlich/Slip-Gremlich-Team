@@ -6,6 +6,7 @@
 package byui.cit260.slip.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -80,6 +81,10 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+    }
+
+    public void setScene(Scene scene) {
+        System.out.println("Set Scene function called");
     }
     
     

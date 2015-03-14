@@ -14,6 +14,8 @@ import java.util.Objects;
  */
 public class Scene implements Serializable{
     
+    public static Object SceneType;
+    
     //Class instance variables
     private String description;
     private double travelTime;
@@ -24,7 +26,9 @@ public class Scene implements Serializable{
     private boolean exploredLocation;
 
     public Scene() {
-    }
+    }   
+    
+    
 
     public String getDescription() {
         return description;
@@ -128,6 +132,10 @@ public class Scene implements Serializable{
             return false;
         }
         return this.exploredLocation == other.exploredLocation;
+    }
+
+    public void setMapSymbol(String _st_) {
+        System.out.println("MAPSYMBOLLL");
     }
 
     
