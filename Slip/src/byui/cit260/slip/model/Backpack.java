@@ -18,6 +18,9 @@ public class Backpack implements Serializable {
     private int maxCapacity;
 
     public Backpack() {
+        this.contains = false;
+        this.backpackStatus = false;
+        this.maxCapacity = 0;
     }
 
     public boolean isContains() {

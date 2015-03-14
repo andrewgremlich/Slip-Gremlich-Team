@@ -18,6 +18,15 @@ public class Game implements Serializable{
     private double time;
     private String winner;
 
+    //cardinality from UML diagram
+    private Sled sled; 
+    private Resources[] resources; 
+    private String[] actor;
+    private Map map;
+    private Equipment[] equipment;
+    private Player player;
+    
+    
     public Game() {
     }
     

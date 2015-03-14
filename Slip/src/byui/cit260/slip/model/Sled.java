@@ -21,6 +21,11 @@ public class Sled implements Serializable{
 
     
     public Sled() {
+        this.description= "\nYour life depends on this sled.  It will contain all that you need to survive.";
+        
+        this.width=0;
+        this.length=0;
+        this.maxCapacity=0;
     }
     
     
