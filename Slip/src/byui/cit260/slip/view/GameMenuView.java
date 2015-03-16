@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.view;
 
+import byui.cit260.slip.control.FactorControl;
 import byui.cit260.slip.control.GameControl;
 import byui.cit260.slip.model.InventoryItem;
 
@@ -24,6 +25,8 @@ public class GameMenuView extends View {
                 + "\nA - View Actors"
                 + "\nS - Sled Status"
                 + "\nQ - Resume Game"
+                + "\n"
+                + "\nH - Average health of ALL characters"
                 + "\n--------------------------------");
     }
 
@@ -49,6 +52,9 @@ public class GameMenuView extends View {
                 break;
             case 'q': //return to main menu
                 return true;
+            case 'h'://view average health of all players.
+                this.viewAverageHealth();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Please Try again");
                 return false;
@@ -84,6 +90,15 @@ public class GameMenuView extends View {
 
     private void displayMap() {
         System.out.println("display map stubfunction");
+    }
+
+    private void viewAverageHealth(String[] arg) {
+        
+    }
+
+    private void viewAverageHealth() {
+        String[] arg = null;
+        System.out.println("The average health of all players is " + FactorControl.calculateAverageHealth());    
     }
 
 }
