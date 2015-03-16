@@ -97,7 +97,6 @@ public class GameMenuView extends View {
     }
 
     private void viewAverageHealth() {
-        String[] arg = null;
         System.out.println("The average health of all players is " + FactorControl.calculateAverageHealth());    
     }
 
