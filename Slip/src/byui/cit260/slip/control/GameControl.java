@@ -5,8 +5,8 @@
  */
 package byui.cit260.slip.control;
 
-
-import static byui.cit260.slip.control.MapControl.createMap;
+import byui.cit260.slip.control.MapControl;
+import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Backpack;
 import byui.cit260.slip.model.Game;
@@ -21,6 +21,7 @@ import slip.Slip;
  * @author Andrew
  */
 public class GameControl {
+   private static Actor tempActorlist;
 
     public static void createNewGame(Player player) {
 
@@ -38,39 +39,40 @@ public class GameControl {
         Backpack backpack = new Backpack();
         game.setBackpack(backpack);
 
-        Map map = new createMap();
+        Map map = new MapControl().createMap();
         game.setMap(map);
 
         MapControl.moveActorsToStartingLocation(map);
 
     }
-    
+
     public static InventoryItem[] getSortedInventoryList() {
-        
+
         //get inventory list for the current game
-        InventoryItem[] originalInventoryList = 
-                    Slip.getCurrentGame().getInventory();
-        
+        InventoryItem[] originalInventoryList
+                = Slip.getCurrentGame().getInventory();
+
         //clone make a copy of original list
         InventoryItem[] inventoryList = originalInventoryList.clone();
-        
+
         //using a bubblesort to sort the list of inventoryList by name
         InventoryItem tempInventoryItem;
-        for (int i=0; i<inventoryList.length-1; i++) {
-            for (int j=0; j < inventoryList.length-1-i; j++) {
+        for (int i = 0; i < inventoryList.length - 1; i++) {
+            for (int j = 0; j < inventoryList.length - 1 - i; j++) {
                 if (inventoryList[j].getDescription().
-                        compareToIgnoreCase(inventoryList[j + 1].getDescription())> 0) {
+                       compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
                     tempInventoryItem = inventoryList[j];
-                    inventoryList[j] = inventoryList[j+1];
-                    inventoryList[j+1] = tempInventoryItem;
+                    inventoryList[j] = inventoryList[j + 1];
+                    inventoryList[j + 1] = tempInventoryItem;
                 }
             }
         }
-        
+
         return inventoryList;
     }
-    
-    public int compareToIgnoreCase(String str){
+    private Iterable<String> Actor;
+
+    public int compareToIgnoreCase(String str) {
         return 0;
     }
 
@@ -78,4 +80,27 @@ public class GameControl {
         System.out.println("Called assignScenesToLocation");
     }
 
+    public static Actor[] getSortedActorList() {
+
+        //get actor list for the current game
+        Actor[] originalActorList = Slip.getCurrentGame().getActor();
+
+        //clone make a copy of original list
+        Actor[] actorList = originalActorList.clone();
+
+        //using a bubblesort to sort the list of actorList by name
+        Actor tempActorList;
+        for (int i = 0; i < actorList.length - 1; i++) {
+            for (int j = 0; j < actorList.length - 1 - i; j++) {
+                if (actorList[j].getDescription().
+                        compareToIgnoreCase(actorList[j + 1].getDescription()) > 0) {
+                    tempActorList = actorList[j];
+                    actorList[j] = actorList[j + 1];
+                    actorList[j + 1] = tempActorlist;
+                }  
+                
+}
+           
+        }   return actorList;
+    }
 }

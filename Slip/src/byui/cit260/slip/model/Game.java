@@ -19,7 +19,7 @@ public class Game implements Serializable {
     private String winner;
     private Sled sled;
     private InventoryItem[] inventory;
-    private String[] actor;
+    private Actor[] actor;
     private Map map;
     private Equipment[] equipment;
     private Player player;
@@ -49,11 +49,11 @@ public class Game implements Serializable {
         this.inventory = inventory;
     }
 
-    public String[] getActor() {
+    public Actor[] getActor() {
         return actor;
     }
 
-    public void setActor(String[] actor) {
+    public void setActor(Actor[] actor) {
         this.actor = actor;
     }
 

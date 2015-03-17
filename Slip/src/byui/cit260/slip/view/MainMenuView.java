@@ -24,6 +24,7 @@ public class MainMenuView extends View {
                 + "\nL - Load Game"
                 + "\nI - Instructions"
                 + "\nP - Player Menu"
+                + "\nG - Game Menu"
                 + "\n                             "
                 + "\nT  - Inventory Menu"
                 + "\nW  - Move Menu"
@@ -47,6 +48,9 @@ public class MainMenuView extends View {
                 break;
             case 'p': // Player Menu
                 this.seePlayer();
+                break;
+            case 'g': // Game Menu
+                this.seeGame();
                 break;
             case 't': // Inventory Menu
                 this.seeInventory();
@@ -119,6 +123,10 @@ public class MainMenuView extends View {
     private void seeMove() {
         MoveView moveView = new MoveView();
         moveView.display();
+    }
+     private void seeGame() {
+        GameMenuView gameView = new GameMenuView();
+        gameView.display();
     }
 
 }
