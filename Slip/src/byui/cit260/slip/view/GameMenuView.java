@@ -6,6 +6,7 @@
 package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.GameControl;
+import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.InventoryItem;
 
 /**
@@ -79,7 +80,8 @@ public class GameMenuView extends View {
     }
 
     private void viewActors() {
-        System.out.println("Stub function called.");
+        Actor[] sortedActorList = GameControl.getSortedActorList();
+        System.out.println(sortedActorList);
     }
 
     private void displayMap() {

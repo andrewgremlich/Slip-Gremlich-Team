@@ -5,7 +5,9 @@
  */
 package byui.cit260.slip.control;
 
+import byui.cit260.slip.model.InventoryItem;
 import java.io.IOException;
+import slip.Slip;
 
 /**
  *
@@ -28,7 +30,7 @@ public class InventoryControl {
             return -1;
         }
 
-            //this is a hand-made equation to find boiling point and if it is a number
+        //this is a hand-made equation to find boiling point and if it is a number
         if (temperature % 1 == 0 && airPressure % 1 == 0) {
             double boil = Math.abs((temperature * TIME) / airPressure);
             return boil;
@@ -52,4 +54,6 @@ public class InventoryControl {
         }
     }
 
-}
+  
+            }
+

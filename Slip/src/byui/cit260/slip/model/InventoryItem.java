@@ -170,9 +170,9 @@ public class InventoryItem {
         return null;    
     }
     
-     public Object getDescription() {
+     public String getDescription() {
         System.out.println("stub");
-        return null;
+        return "Description";
     }
          
 }

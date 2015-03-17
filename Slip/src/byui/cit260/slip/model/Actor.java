@@ -26,6 +26,46 @@ public enum Actor implements Serializable {
     BuddytheElf("Santa's prideful servant."),
     AbominableSnowman("Constantly hungry and dangerous."),
     Felecious("The big bad wolf that is always on the prowl");
+
+    public static Actor getBill() {
+        return Bill;
+    }
+
+    public static Actor getJohn() {
+        return John;
+    }
+
+    public static Actor getSarah() {
+        return Sarah;
+    }
+
+    public static Actor getSamantha() {
+        return Samantha;
+    }
+
+    public static Actor getTravis() {
+        return Travis;
+    }
+
+    public static Actor getWil() {
+        return Wil;
+    }
+
+    public static Actor getSantaClaus() {
+        return SantaClaus;
+    }
+
+    public static Actor getBuddytheElf() {
+        return BuddytheElf;
+    }
+
+    public static Actor getAbominableSnowman() {
+        return AbominableSnowman;
+    }
+
+    public static Actor getFelecious() {
+        return Felecious;
+    }
     
 
     //Class instance variables
