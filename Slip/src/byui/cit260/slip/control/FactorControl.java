@@ -4,46 +4,68 @@
  * and open the template in the editor.
  */
 package byui.cit260.slip.control;
+
+import byui.cit260.slip.model.Actor;
+
 /**
  *
  * @author Andrew
  */
 public class FactorControl {
 
-    
-    
-    public double calcAttackingPower ( double energyLevel, double toolPower) {
-        
+    public double calcAttackingPower(double energyLevel, double toolPower) {
+
         //Check if any input is 0
         if (energyLevel == 0 || toolPower == 0) {
             return 0;
         }
-        
+
         //Check for the boundaries of the function
-        if (energyLevel<0 || 10<energyLevel){
+        if (energyLevel < 0 || 10 < energyLevel) {
             return -1;
         }
-        
-        if (toolPower<0 || 8<toolPower){
+
+        if (toolPower < 0 || 8 < toolPower) {
             return -1;
         }
-        
+
         //Check for an integer number.
-        if (energyLevel%1 != 0 && toolPower%1 != 0) {
+        if (energyLevel % 1 != 0 && toolPower % 1 != 0) {
             return -1;
-        }
-        
-        //Calculate attacking power and return value;
+        } //Calculate attacking power and return value;
         else {
-        double attackingPower = energyLevel + toolPower;
-        System.out.println("Your attacking about is " + attackingPower + ".");
-        
-        return attackingPower;
-                }
+            double attackingPower = energyLevel + toolPower;
+            System.out.println("Your attacking about is " + attackingPower + ".");
+
+            return attackingPower;
+        }
 
     }
 
-    
-    
-}
+//    average(list): number
+//        BEGIN
+//        total = 0
+//            FOR index = 0 TO list.length -1
+//                total = total + list[index]
+//            ENDFOR
+//                average = total / sizeOfList
+//            RETURN average
+//        END
+    public static int calculateAverageHealth() {
+        
+        double findAverageHealth = FactorControl.findAverageHealth(int[] list);
+        return (int) findAverageHealth;
+    }
 
+    public static double findAverageHealth(int[] list) {
+        
+        double total = 0;
+        int i = 0;
+        for (i = 0; i < list.length - 1; i++) {
+            int = Actor.ordinal(i).getHealth
+            total = total + list[i];
+        }
+        double average = total / list.length;
+        return average;
+    }
+}

@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.model;
 
+import byui.cit260.slip.control.FactorControl;
 import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
@@ -16,65 +17,26 @@ import java.util.Objects;
 public enum Actor implements Serializable {
 
     //Enum List of Actors
-    Bill("He is the leader of the expedition."),
-    John("The wealthy and stuck up expedition member."),
-    Sarah("The sweet girl that breaks her leg."),
-    Samantha("Sarah's best friend. She is crazy."),
-    Travis("The big clown of the group, heart bigger than his head"),
-    Wil("Big lovly bear of a fella, your close associate."),
-    SantaClaus("Yes. That Sanata Claus. Fat joyful individual."),
-    BuddytheElf("Santa's prideful servant."),
-    AbominableSnowman("Constantly hungry and dangerous."),
-    Felecious("The big bad wolf that is always on the prowl");
-
-    public static Actor getBill() {
-        return Bill;
-    }
-
-    public static Actor getJohn() {
-        return John;
-    }
-
-    public static Actor getSarah() {
-        return Sarah;
-    }
-
-    public static Actor getSamantha() {
-        return Samantha;
-    }
-
-    public static Actor getTravis() {
-        return Travis;
-    }
-
-    public static Actor getWil() {
-        return Wil;
-    }
-
-    public static Actor getSantaClaus() {
-        return SantaClaus;
-    }
-
-    public static Actor getBuddytheElf() {
-        return BuddytheElf;
-    }
-
-    public static Actor getAbominableSnowman() {
-        return AbominableSnowman;
-    }
-
-    public static Actor getFelecious() {
-        return Felecious;
-    }
-    
+    Bill("He is the leader of the expedition.", 8),
+    John("The wealthy and stuck up expedition member.", 7),
+    Sarah("The sweet girl that breaks her leg.", 5),
+    Samantha("Sarah's best friend. She is crazy.", 5),
+    Travis("The big clown of the group, heart bigger than his head", 7),
+    Wil("Big lovly bear of a fella, your close associate.", 7),
+    SantaClaus("Yes. That Sanata Claus. Fat joyful individual.", 10),
+    BuddyTheElf("Santa's prideful servant.", 5),
+    AbominableSnowman("Constantly hungry and dangerous.", 10),
+    Felecious("The big bad wolf that is always on the prowl", 10);
 
     //Class instance variables
     private final String description;
     private final Point coordinates;
+    private final int health;
 
-    Actor(String description) {
+    Actor(String description, int health) {
         this.description = description;
-        coordinates = new Point(1,1);
+        coordinates = new Point(1, 1);
+        this.health = health;
     }
 
     public String getDescription() {
@@ -84,4 +46,9 @@ public enum Actor implements Serializable {
     public Point getCoordinates() {
         return coordinates;
     }
+
+    public int getHealth() {
+        return health;
+    }
+
 }

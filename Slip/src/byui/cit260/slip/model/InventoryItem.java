@@ -10,10 +10,14 @@ package byui.cit260.slip.model;
  * @author Andrew
  */
 public class InventoryItem {
+    
+    private String description;
+    private int quantityInStock;
+    private int requiredAmount;
 
     public InventoryItem() {
     }
-    
+
     public enum Item {
 
         wood,
@@ -145,34 +149,29 @@ public class InventoryItem {
 
         return inventory;
     }
-    
-    
-    
-    private void setDescription(String string) {
-        System.out.println("stub");
-    }
 
-    private void setQuantityInStock(int i) {
-        System.out.println("stub");
-    }
-
-    private void setRequiredAmount(int i) {
-        System.out.println("stub");
-    }
-
-    public String getRequiredAmount() {
-        System.out.println("stub");
-        return null;    
-    }
-
-    public String getQuantityInStock() {
-        System.out.println("stub");
-        return null;    
+    private void setDescription(String description) {
+        this.description = description;
     }
     
-     public String getDescription() {
-        System.out.println("stub");
-        return "Description";
+    public Object getDescription() {
+        return description;
     }
-         
+
+    private void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+    
+    public int getQuantityInStock() {
+        return quantityInStock;
+    }
+
+    private void setRequiredAmount(int requiredAmount) {
+        this.requiredAmount = requiredAmount;
+    }
+
+    public int getRequiredAmount() {
+        return requiredAmount;
+    } 
+
 }
