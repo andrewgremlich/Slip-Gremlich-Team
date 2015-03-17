@@ -23,7 +23,7 @@ public class GameMenuView extends View {
                 + "\n--------------------------------"
                 + "\nM - Display Map"
                 + "\nI - View Inventory"
-                + "\nA - View Actors"
+                + "\nA - View Characters"
                 + "\nS - Sled Status"
                 + "\nQ - Resume Game"
                 + "\n"
