@@ -51,21 +51,25 @@ public class FactorControl {
 //                average = total / sizeOfList
 //            RETURN average
 //        END
-    public static int calculateAverageHealth() {
+    
+    public double calculateAverageHealth() {
         
-        double findAverageHealth = FactorControl.findAverageHealth(int[] list);
-        return (int) findAverageHealth;
+        Actor[] health = Actor.values();
+        
+        double findAverageHealth = this.findAverageHealth(health);
+        return findAverageHealth;
     }
 
-    public static double findAverageHealth(int[] list) {
+    private double findAverageHealth(Actor[] health) {
         
-        double total = 0;
-        int i = 0;
-        for (i = 0; i < list.length - 1; i++) {
-            int = Actor.ordinal(i).getHealth
-            total = total + list[i];
+        int total = 0;
+        
+        for (Actor totalHealth : health) {
+            total = total + totalHealth.getHealth();
         }
-        double average = total / list.length;
+        
+        double average = total / health.length;
         return average;
     }
+
 }
