@@ -154,7 +154,7 @@ public class InventoryItem {
         this.description = description;
     }
     
-    public Object getDescription() {
+    public String getDescription() {
         return description;
     }
 

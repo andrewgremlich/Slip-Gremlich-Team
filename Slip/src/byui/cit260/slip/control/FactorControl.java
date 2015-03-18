@@ -43,15 +43,15 @@ public class FactorControl {
     }
 
     
-    public double calculateAverageHealth() {
+    public static double calculateAverageHealth() {
         
         Actor[] health = Actor.values();
         
-        double findAverageHealth = this.findAverageHealth(health);
+        double findAverageHealth = FactorControl.findAverageHealth(health);
         return findAverageHealth;
     }
 
-    private double findAverageHealth(Actor[] health) {
+    private static double findAverageHealth(Actor[] health) {
         
         int total = 0;
         

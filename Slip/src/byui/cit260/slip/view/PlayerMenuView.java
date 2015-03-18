@@ -5,9 +5,6 @@
  */
 package byui.cit260.slip.view;
 
-import static java.lang.reflect.Array.get;
-import java.util.Scanner;
-
 /**
  *
  * @author Richard

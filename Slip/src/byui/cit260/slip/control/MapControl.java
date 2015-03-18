@@ -5,10 +5,13 @@
  */
 package byui.cit260.slip.control;
 
+import byui.cit260.slip.exceptions.MapControlException;
+import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Scene;
+import java.awt.Point;
 import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import slip.Slip;
@@ -32,15 +35,40 @@ public class MapControl {
         return map;
     }
 
-    static void moveActorsToStartingLocation(Map map) {
-        System.out.println("Stubfunction called");
+    public static void moveActorsToStartingLocation(Map map)
+            throws MapControlException {
+        Actor[] actors = Actor.values();
+
+        for (Actor actor : actors) {
+            Point coordinates = actor.getCoordinates();
+            MapControl.moveActorToLocation(actor, coordinates);
+
+        }
+
+    }
+
+    public static void moveActorToLocation(Actor actor, Point coordinates)
+            throws MapControlException {
+
+        Map map = Slip.getCurrentGame().getMap();
+        int newRow = coordinates.x - 1;
+        int newColumn = coordinates.y - 1;
+
+        if (newRow < 0 || newRow >= map.getNoOfRows() || newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+            throw new MapControlException("Can not move actor to location "
+                    + coordinates.x + ", " + coordinates.y
+                    + "because that location is outside "
+                    + "the bounds of the map.");
+        }
+
     }
 
     private static ImageIcon getImage(Scene finishScene, String link_to_JPG) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     public enum SceneType {
+
         start,
         SantaClaus,
         elf,
@@ -62,8 +90,8 @@ public class MapControl {
         camp,
         finish;
     }
-    
-    private static Scene[] createScenes()  {
+
+    private static Scene[] createScenes() {
         BufferedImage image = null;
 
         Game game = Slip.getCurrentGame();
@@ -81,134 +109,134 @@ public class MapControl {
         startingScene.setTravelTime(240);
         ImageIcon startingSceneImage = MapControl.getImage(startingScene, "attach jpg picture here");
         /*startingScene.setIcon(startingSceneImage);
-        scenes[Scene.SceneType.start.ordinal()] = startingScene;*/
+         scenes[Scene.SceneType.start.ordinal()] = startingScene;*/
 
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
-         + "This experience is something you will share with your children, assuming you find a wife at BYUi.");
+                + "This experience is something you will share with your children, assuming you find a wife at BYUi.");
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
         ImageIcon finishSceneImage = MapControl.getImage(finishScene, "link to JPG");
         /*finishScene.setIcon(finishSceneImage);
-        scenes[Scene.SceneType.finish.ordinal()] = finishScene;*/
+         scenes[Scene.SceneType.finish.ordinal()] = finishScene;*/
 
         return null;
     }
-    
-    private static void assignScenesToLocations (Map map, Scene[] scenes) {
+
+    private static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
-        
-        locations[0][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[0][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[1][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[1][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[2][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[2][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[3][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[3][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[4][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[4][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[5][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[5][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[6][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[6][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[7][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[7][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[8][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[8][9].setScene(scenes [SceneType.start.ordinal()]);
-        
-        locations[9][0].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][1].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][2].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][3].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][4].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][5].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][6].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][7].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][9].setScene(scenes [SceneType.finish.ordinal()]);
-        
+
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[1][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[2][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[2][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[3][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[4][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[5][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[5][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[6][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[6][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[7][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[7][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[8][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][9].setScene(scenes[SceneType.start.ordinal()]);
+
+        locations[9][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][3].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][5].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][7].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
+
     }
 
 }

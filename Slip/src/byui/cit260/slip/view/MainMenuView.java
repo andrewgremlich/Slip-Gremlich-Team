@@ -6,7 +6,10 @@
 package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.GameControl;
+import byui.cit260.slip.exceptions.MapControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import slip.Slip;
 
 /**
@@ -37,8 +40,14 @@ public class MainMenuView extends View {
     public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
-            case 's': //Start a new game
+            case 's': {
+            try {
+                //Start a new game
                 this.startNewGame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'l': //load game
                 this.loadGame();
@@ -92,7 +101,8 @@ public class MainMenuView extends View {
         return playersName; // returns the players name.
     }
 
-    private void startNewGame() {
+    private void startNewGame() 
+            throws MapControlException {
         //Create new game
         GameControl.createNewGame(Slip.getPlayer());
 
