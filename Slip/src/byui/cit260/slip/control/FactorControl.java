@@ -42,15 +42,6 @@ public class FactorControl {
 
     }
 
-//    average(list): number
-//        BEGIN
-//        total = 0
-//            FOR index = 0 TO list.length -1
-//                total = total + list[index]
-//            ENDFOR
-//                average = total / sizeOfList
-//            RETURN average
-//        END
     
     public double calculateAverageHealth() {
         
