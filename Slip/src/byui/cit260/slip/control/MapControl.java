@@ -19,7 +19,7 @@ import slip.Slip;
  */
 public class MapControl {
 
-    public static Map createMap(){
+    public static Map createMap() {
         //create the map
         Map map = new Map(10, 10);
 
@@ -27,7 +27,7 @@ public class MapControl {
         Scene[] scenes = createScenes();
 
         //assign the different scens to locations in the map
-        GameControl.assignScenesToLocations(map, scenes);
+        assignScenesToLocations(map, scenes);
 
         return map;
     }
@@ -60,15 +60,15 @@ public class MapControl {
         tent,
         sleepingBag,
         camp,
-        finsih;
+        finish;
     }
     
-    private static Scene[] createScenes() throws MapControlException {
+    private static Scene[] createScenes()  {
         BufferedImage image = null;
 
         Game game = Slip.getCurrentGame();
 
-        Scene[] scenes = new Scene[Scene.SceneType.values().length];
+        Scene[] scenes = new Scene[SceneType.values().length];
 
         Scene startingScene = new Scene();
         startingScene.setDescription(""
@@ -84,7 +84,8 @@ public class MapControl {
         scenes[Scene.SceneType.start.ordinal()] = startingScene;*/
 
         Scene finishScene = new Scene();
-        finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!");
+        finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
+         + "This experience is something you will share with your children, assuming you find a wife at BYUi.");
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
@@ -95,7 +96,7 @@ public class MapControl {
         return null;
     }
     
-    private static void assignScenesToLocation (Map map, Scene[] scenes) {
+    private static void assignScenesToLocations (Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes [SceneType.start.ordinal()]);
@@ -206,7 +207,7 @@ public class MapControl {
         locations[9][6].setScene(scenes [SceneType.start.ordinal()]);
         locations[9][7].setScene(scenes [SceneType.start.ordinal()]);
         locations[9][8].setScene(scenes [SceneType.start.ordinal()]);
-        locations[9][9].setScene(scenes [SceneType.finsih.ordinal()]);
+        locations[9][9].setScene(scenes [SceneType.finish.ordinal()]);
         
     }
 

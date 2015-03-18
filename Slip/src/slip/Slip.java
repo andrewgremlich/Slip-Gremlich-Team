@@ -29,7 +29,7 @@ import byui.cit260.slip.view.StartProgramView;
  */
 public class Slip {
 
-    private static Game currentgame = null;
+    private static Game currentgame = new Game();
     private static Player player = null;
 
     /**
