@@ -37,8 +37,14 @@ public class Slip {
      */
     public static void main(String[] args) {
 
-        StartProgramView startProgram = new StartProgramView();
-        startProgram.display();
+        StartProgramView startProgramView = new StartProgramView();
+        try{
+        startProgramView.display();
+        } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
 
     }
 

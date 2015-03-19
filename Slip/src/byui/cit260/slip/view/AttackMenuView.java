@@ -31,7 +31,8 @@ public class AttackMenuView extends View {
         while (!valid) {
 
             System.out.println(this.getPromptMessage()); // display main menu
-
+            
+            try{
             System.out.println("Enter tool power.");
             String input = this.getInput(); //get the user's selection
             double toolPower = Double.parseDouble(input);
@@ -39,13 +40,17 @@ public class AttackMenuView extends View {
             System.out.println("Enter health level.");
             input = this.getInput(); //get the user's selection
             double energyLevel = Double.parseDouble(input);
-
+            
             double[] inputs = new double[2];
             inputs[0] = toolPower;
             inputs[1] = energyLevel;
-
+            
             this.doAction(inputs);
-
+            
+            } catch (NumberFormatException nf) {
+                System.out.println("\nYou must enter a valid number with in the range of 1-10."
+                        + "  Try again or enter Q to quit.");
+            }
         }
 
     }

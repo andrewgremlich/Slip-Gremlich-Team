@@ -42,7 +42,6 @@ public class MainMenuView extends View {
         switch (choice) {
             case 's': {
             try {
-                //Start a new game
                 this.startNewGame();
             } catch (MapControlException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);

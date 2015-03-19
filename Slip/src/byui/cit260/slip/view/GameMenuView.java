@@ -29,6 +29,8 @@ public class GameMenuView extends View {
                 + "\nS - Sled Status"
                 + "\nQ - Resume Game"
                 + "\n"
+                + "\nY - Attack Menu"
+                + "\n"
                 + "\nH - Average health of ALL characters"
                 + "\n--------------------------------");
     }
@@ -52,6 +54,9 @@ public class GameMenuView extends View {
                 break;
             case 's'://view sled
                 this.viewSledStatus();
+                break;
+            case 'y'://view sled
+                this.viewAttackMenu();
                 break;
             case 'q': //return to main menu
                 return true;
@@ -96,12 +101,13 @@ public class GameMenuView extends View {
         Map createMap = MapControl.createMap();
     }
 
-    private void viewAverageHealth(String[] arg) {
-        
-    }
-
     private void viewAverageHealth() {
         System.out.println("The average health of all players is " + FactorControl.calculateAverageHealth());    
+    }
+    
+    private void viewAttackMenu() {
+        AttackMenuView attackMenu = new AttackMenuView();
+        attackMenu.display();
     }
 
 }
