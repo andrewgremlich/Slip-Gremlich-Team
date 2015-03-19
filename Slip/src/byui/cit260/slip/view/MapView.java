@@ -46,7 +46,7 @@ public class MapView extends View {
                 + "****************************************************");
         for (int i = 0; i < Location.getRow(); i++) {
             System.out.print(i + " | ");
-            for (int j = 0; j < Location.GetColumn(); j++) {
+            for (int j = 0; j < Location.getColumn(); j++) {
                 Location location = locations[i][j];
                 String symbol = MapControl.assignScenesToLocations();
                 System.out.print(symbol + " | ");
