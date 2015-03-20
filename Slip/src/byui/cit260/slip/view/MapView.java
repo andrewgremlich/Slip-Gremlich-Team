@@ -44,11 +44,11 @@ public class MapView extends View {
         System.out.println("Slip Map of Mt. McKinley");
         System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10"
                 + "****************************************************");
-        for (int i = 0; i < Location.getRow(); i++) {
+        for (int i = 0; i < locations.length; i++) {
             System.out.print(i + " | ");
-            for (int j = 0; j < Location.getColumn(); j++) {
+            for (int j = 0; j < locations[i].length; j++) {
                 Location location = locations[i][j];
-                String symbol = MapControl.assignScenesToLocations();
+                String symbol = MapControl.assignScenesToLocations(map, scenes);
                 System.out.print(symbol + " | ");
             }
             System.out.println("\n*****************************************");

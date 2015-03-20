@@ -124,7 +124,13 @@ public class MapControl {
         return null;
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+    /**
+     *
+     * @param map
+     * @param scenes
+     * @return
+     */
+    public static String assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
