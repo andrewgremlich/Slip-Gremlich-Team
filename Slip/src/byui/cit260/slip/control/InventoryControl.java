@@ -5,6 +5,8 @@
  */
 package byui.cit260.slip.control;
 
+
+import byui.cit260.slip.exceptions.InventoryControlException;
 import byui.cit260.slip.model.InventoryItem;
 import java.io.IOException;
 import slip.Slip;
@@ -15,19 +17,21 @@ import slip.Slip;
  */
 public class InventoryControl {
 
-    public double calcBoilingPoint(int airPressure, int temperature) {
+    public double calcBoilingPoint(int airPressure, int temperature) throws InventoryControlException{
 
         //the time variable is a static constant for the equation
         int TIME = 20;
 
         //check if the airPressure is inbetween 1-50
         if (airPressure < 1 || 50 < airPressure) {
-            return -1;
+            throw new InventoryControlException("Cannot attack with those numbers."
+                    + "They are out of your ability.");
         }
 
         //check if the temperature is between -20 and 20
         if (temperature < -20 || 20 < temperature) {
-            return -1;
+            throw new InventoryControlException("Cannot attack with those numbers."
+                    + "They are out of your ability.");
         }
 
         //this is a hand-made equation to find boiling point and if it is a number
@@ -35,7 +39,8 @@ public class InventoryControl {
             double boil = Math.abs((temperature * TIME) / airPressure);
             return boil;
         } else {
-            return -1;
+            throw new InventoryControlException("Cannot attack with those numbers."
+                    + "They are out of your ability.");
         }
     }
 

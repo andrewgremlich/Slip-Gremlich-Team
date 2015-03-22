@@ -98,7 +98,8 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
-        Map createMap = MapControl.createMap();
+        MapView map = new MapView();
+        map.display();
     }
 
     private void viewAverageHealth() {

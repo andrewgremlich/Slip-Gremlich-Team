@@ -5,6 +5,8 @@
  */
 package byui.cit260.slip.control;
 
+import byui.cit260.slip.exceptions.FactorControlException;
+import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
 
 /**
@@ -13,7 +15,7 @@ import byui.cit260.slip.model.Actor;
  */
 public class FactorControl {
 
-    public double calcAttackingPower(double energyLevel, double toolPower) {
+    public double calcAttackingPower(double energyLevel, double toolPower) throws FactorControlException {
 
         //Check if any input is 0
         if (energyLevel == 0 || toolPower == 0) {
@@ -22,16 +24,19 @@ public class FactorControl {
 
         //Check for the boundaries of the function
         if (energyLevel < 0 || 10 < energyLevel) {
-            return -1;
+            throw new FactorControlException("Cannot attack with those numbers."
+                    + "They are out of your ability.");
         }
 
         if (toolPower < 0 || 8 < toolPower) {
-            return -1;
+            throw new FactorControlException("Cannot attack with those numbers."
+                    + "They are out of your ability.");
         }
 
         //Check for an integer number.
         if (energyLevel % 1 != 0 && toolPower % 1 != 0) {
-            return -1;
+            throw new FactorControlException("You can only attack with a whole "
+                    + "integer input number.");
         } //Calculate attacking power and return value;
         else {
             double attackingPower = energyLevel + toolPower;

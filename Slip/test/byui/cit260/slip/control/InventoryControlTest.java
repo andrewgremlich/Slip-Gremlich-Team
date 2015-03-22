@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.control;
 
+import byui.cit260.slip.exceptions.InventoryControlException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +32,7 @@ public class InventoryControlTest {
      * Test of calcBoilingPoint method, of class InventoryControl.
      */
     @Test
-    public void testCalcBoilingPoint1() {
+    public void testCalcBoilingPoint1() throws InventoryControlException {
         
         
         //Test Case #1: Valid Input
