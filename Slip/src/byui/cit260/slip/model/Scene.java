@@ -17,6 +17,7 @@ public class Scene implements Serializable{
     public static Object SceneType;
     
     //Class instance variables
+    private String symbol;
     private String description;
     private double travelTime;
     private boolean blocked;
@@ -27,8 +28,22 @@ public class Scene implements Serializable{
 
     public Scene() {
     }   
-    
-    
+
+    public static Object getSceneType() {
+        return SceneType;
+    }
+
+    public static void setSceneType(Object SceneType) {
+        Scene.SceneType = SceneType;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
 
     public String getDescription() {
         return description;

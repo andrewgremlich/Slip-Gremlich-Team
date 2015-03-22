@@ -29,7 +29,7 @@ import byui.cit260.slip.view.StartProgramView;
  */
 public class Slip {
 
-    private static Game currentgame = new Game();
+    private static Game currentGame = new Game();
     private static Player player = null;
 
     /**
@@ -48,12 +48,12 @@ public class Slip {
 
     }
 
-    public static Object getCurrentgame() {
-        return currentgame;
+    public static Game getCurrentGame() {
+        return currentGame;
     }
 
-    public static void setCurrentgame(Game game) {
-        Slip.currentgame = currentgame;
+    public static void setCurrentGame(Game currentgame) {
+        Slip.currentGame = currentgame;
     }
 
     public static Player getPlayer() {
@@ -62,14 +62,6 @@ public class Slip {
 
     public static void setPlayer(Player player) {
         Slip.player = player;
-    }
-
-    public static void setCurrentGame(Game game) {
-        System.out.println("Stubfunction called");
-    }
-
-    public static Game getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }   
 
 }

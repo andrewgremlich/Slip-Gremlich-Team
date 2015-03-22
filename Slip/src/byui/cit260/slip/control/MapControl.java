@@ -12,7 +12,6 @@ import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Scene;
 import java.awt.Point;
-import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import slip.Slip;
 
@@ -22,7 +21,7 @@ import slip.Slip;
  */
 public class MapControl {
 
-    public static Map createMap() {
+    public Map createMap() throws MapControlException {
         //create the map
         Map map = new Map(10, 10);
 
@@ -91,9 +90,8 @@ public class MapControl {
         finish;
     }
 
-    private static Scene[] createScenes() {
-        BufferedImage image = null;
-
+    private static Scene[] createScenes() throws MapControlException{
+        
         Game game = Slip.getCurrentGame();
 
         Scene[] scenes = new Scene[SceneType.values().length];
@@ -107,9 +105,7 @@ public class MapControl {
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
-        ImageIcon startingSceneImage = MapControl.getImage(startingScene, "attach jpg picture here");
-        /*startingScene.setIcon(startingSceneImage);
-         scenes[Scene.SceneType.start.ordinal()] = startingScene;*/
+        scenes[SceneType.start.ordinal()] = startingScene;
 
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
@@ -117,11 +113,10 @@ public class MapControl {
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        ImageIcon finishSceneImage = MapControl.getImage(finishScene, "link to JPG");
-        /*finishScene.setIcon(finishSceneImage);
-         scenes[Scene.SceneType.finish.ordinal()] = finishScene;*/
+        scenes[SceneType.finish.ordinal()] = finishScene;
+        
+        return scenes;
 
-        return null;
     }
 
     private static void assignScenesToLocations(Map map, Scene[] scenes) {

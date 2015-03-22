@@ -5,10 +5,10 @@
  */
 package byui.cit260.slip.model;
 
-import byui.cit260.slip.control.FactorControl;
+
 import java.awt.Point;
 import java.io.Serializable;
-import java.util.Objects;
+
 
 /**
  *

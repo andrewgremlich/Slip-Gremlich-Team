@@ -19,6 +19,30 @@ public class Map implements Serializable {
     private int noOfColumns;
     private Location[][] locations;
 
+    public int getNoOfRows() {
+        return noOfRows;
+    }
+
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
+    }
+
+    public int getNoOfColumns() {
+        return noOfColumns;
+    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
     public Map() {
     }
 
@@ -49,34 +73,6 @@ public class Map implements Serializable {
         }
     }
 
-    public int getNoOfRows() {
-        return noOfRows;
-    }
-
-    public void setNoOfRows(int noOfRows) {
-        this.noOfRows = noOfRows;
-    }
-
-    public int getNoOfColumns() {
-        return noOfColumns;
-    }
-
-    public void setNoOfColumns(int noOfColumns) {
-        this.noOfColumns = noOfColumns;
-    }
-
-    private static Scene[] createScenes() {
-        System.out.println("CALLEDDDD createScenes");
-        return null;
-    }
-
-    public Location[][] getLocations() {
-        return locations;
-    }
-
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
-    }
 
     @Override
     public String toString() {

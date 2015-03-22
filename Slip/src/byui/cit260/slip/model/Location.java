@@ -12,22 +12,14 @@ import java.util.ArrayList;
  *
  * @author Richard
  */
-public class Location implements Serializable{
-    
+public class Location implements Serializable {
+
     //Class instance variables
     private int row;
     private int column;
     private boolean visited;
     private Scene scene;
     private ArrayList<Actor> actors;
-
-    public Location() {
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
-    }
 
     public int getRow() {
         return row;
@@ -51,6 +43,30 @@ public class Location implements Serializable{
 
     public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    public Location() {
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
     }
 
     @Override
@@ -83,10 +99,4 @@ public class Location implements Serializable{
         return true;
     }
 
-    public void setScene(Scene scene) {
-        System.out.println("Set Scene function called");
-    }
-    
-    
-    
 }

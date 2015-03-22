@@ -22,7 +22,6 @@ import slip.Slip;
  * @author Andrew
  */
 public class GameControl {
-   private static Actor tempActorlist;
 
     public static void createNewGame(Player player) throws MapControlException {
 
@@ -61,7 +60,7 @@ public class GameControl {
         for (int i = 0; i < inventoryList.length - 1; i++) {
             for (int j = 0; j < inventoryList.length - 1 - i; j++) {
                 if (inventoryList[j].getDescription().
-                       compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
+                        compareToIgnoreCase(inventoryList[j + 1].getDescription()) > 0) {
                     tempInventoryItem = inventoryList[j];
                     inventoryList[j] = inventoryList[j + 1];
                     inventoryList[j + 1] = tempInventoryItem;
@@ -93,11 +92,13 @@ public class GameControl {
                         compareToIgnoreCase(actorList[j + 1].getDescription()) > 0) {
                     tempActorList = actorList[j];
                     actorList[j] = actorList[j + 1];
-                    actorList[j + 1] = tempActorlist;
-                }  
-                
-}
-           
-        }   return actorList;
+                    actorList[j + 1] = tempActorList;
+                }
+
+            }
+
+        }
+        return actorList;
     }
+
 }
