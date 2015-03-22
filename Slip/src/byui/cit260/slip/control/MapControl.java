@@ -12,7 +12,6 @@ import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Scene;
 import java.awt.Point;
-import java.awt.image.BufferedImage;
 import javax.swing.ImageIcon;
 import slip.Slip;
 
@@ -92,7 +91,6 @@ public class MapControl {
     }
 
     private static Scene[] createScenes() {
-        BufferedImage image = null;
 
         Game game = Slip.getCurrentGame();
 
@@ -107,9 +105,6 @@ public class MapControl {
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
-        ImageIcon startingSceneImage = MapControl.getImage(startingScene, "attach jpg picture here");
-        /*startingScene.setIcon(startingSceneImage);
-         scenes[Scene.SceneType.start.ordinal()] = startingScene;*/
 
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
@@ -117,11 +112,9 @@ public class MapControl {
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        ImageIcon finishSceneImage = MapControl.getImage(finishScene, "link to JPG");
-        /*finishScene.setIcon(finishSceneImage);
-         scenes[Scene.SceneType.finish.ordinal()] = finishScene;*/
+        scenes[SceneType.start.ordinal()] = startingScene;
 
-        return null;
+        return scenes;
     }
 
     /**
@@ -130,7 +123,7 @@ public class MapControl {
      * @param scenes
      * @return
      */
-    public static String assignScenesToLocations(Map map, Scene[] scenes) {
+    public static assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
@@ -242,7 +235,8 @@ public class MapControl {
         locations[9][7].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][8].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
-
+        
+        return locations[][];
     }
 
 }

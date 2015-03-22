@@ -53,6 +53,23 @@ public class Location implements Serializable{
         this.visited = visited;
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -83,9 +100,7 @@ public class Location implements Serializable{
         return true;
     }
 
-    public void setScene(Scene scene) {
-        System.out.println("Set Scene function called");
-    }
+  
     
     
     

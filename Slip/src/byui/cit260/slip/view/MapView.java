@@ -40,7 +40,7 @@ public class MapView extends View {
 
     //Trying to Display the Map
     public Location[][] assignScenesToLocations(Map map, Scene[] scenes) {
-        Location[][] locations = map.getLocations();
+        Location[][] locations = Location.getScene();
         System.out.println("Slip Map of Mt. McKinley");
         System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10"
                 + "****************************************************");
