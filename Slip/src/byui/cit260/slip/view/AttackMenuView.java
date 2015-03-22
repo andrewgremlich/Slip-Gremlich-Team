@@ -6,7 +6,10 @@
 package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.FactorControl;
+import byui.cit260.slip.exceptions.FactorControlException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -58,7 +61,12 @@ public class AttackMenuView extends View {
     @Override
     public boolean doAction(Object obj) {
         double[] inputs = (double[]) obj;
-        double attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]);
+        double attackPower = 0;
+        try {
+            attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]);
+        } catch (FactorControlException ex) {
+            Logger.getLogger(AttackMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.out.println("Your attack power is " + attackPower);
         return true;
     }
