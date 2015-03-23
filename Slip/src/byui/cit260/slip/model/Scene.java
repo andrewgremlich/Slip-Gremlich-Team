@@ -17,7 +17,7 @@ public class Scene implements Serializable{
     public static Object SceneType;
     
     //Class instance variables
-    private String symbol;
+    private String MapSymbol;
     private String description;
     private double travelTime;
     private boolean blocked;
@@ -25,6 +25,7 @@ public class Scene implements Serializable{
     private int snowDepth;
     private String weather;
     private boolean exploredLocation;
+    
 
     public Scene() {
     }   
@@ -37,14 +38,6 @@ public class Scene implements Serializable{
         Scene.SceneType = SceneType;
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -53,6 +46,10 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
+    public String getMapSymbol() {
+        return MapSymbol;
+    }
+   
     public double getTravelTime() {
         return travelTime;
     }
@@ -99,7 +96,8 @@ public class Scene implements Serializable{
 
     public void setExploredLocation(boolean exploredLocation) {
         this.exploredLocation = exploredLocation;
-    }
+    } 
+        
 
     @Override
     public String toString() {

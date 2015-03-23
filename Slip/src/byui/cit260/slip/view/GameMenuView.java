@@ -110,7 +110,7 @@ public class GameMenuView extends View {
             System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10");
             for (int j = 0; j < map.getNoOfColumns(); j++) {
                 Location location = locations[i][j];
-                String symbol = location.getScene().getSymbol();
+                String symbol = location.getScene().getMapSymbol();
                 System.out.println(symbol + " | ");
 
             }
