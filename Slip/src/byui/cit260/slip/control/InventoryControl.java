@@ -44,7 +44,7 @@ public class InventoryControl {
         }
     }
 
-    public double calcRadiusWolf(double circumference) {
+    public double calcRadiusWolf(double circumference) throws InventoryControlException {
 
         //Check to see if circumerfernce input is greater than zero.	
         if (circumference > 0) {
@@ -55,7 +55,8 @@ public class InventoryControl {
             return radius; //return to view layer InventoryMenuView
 
         } else {
-            return -1;
+            throw new InventoryControlException("Sorry. The number must be greater "
+                    + "than zero.");
         }
     }
 

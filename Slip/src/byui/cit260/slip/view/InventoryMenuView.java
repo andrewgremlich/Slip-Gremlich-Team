@@ -7,7 +7,10 @@ package byui.cit260.slip.view;
 
 import java.util.Scanner;
 import byui.cit260.slip.control.InventoryControl;
+import byui.cit260.slip.exceptions.InventoryControlException;
 import byui.cit260.slip.view.MainMenuView;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -30,9 +33,16 @@ public class InventoryMenuView extends View {
     public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
-            case 'h': //Input for data wolf-tool
+            case 'h': {
+            try {
+                //Input for data wolf-tool
                 //System.out.println("*****Test Circumference Input****");
-                this.getCircumference();
+                double circumference = this.getCircumference();
+            } catch (InventoryControlException ex) {
+                System.out.println("\nSorry. You must enter a number greater than Zero."
+                        + "  Try again or enter Q to quit.");
+            }
+        }
                 // this.getPlayersHair();s
                 break;
             case 'q': //Quit program
@@ -45,7 +55,7 @@ public class InventoryMenuView extends View {
     }
 
     //Find the radius for the Anti-Wolf Tool
-    private double getCircumference() {
+    private double getCircumference() throws InventoryControlException {
         boolean valid = false; //Indicates if the name has been retrived.
         double inputSelection = 0;
         Scanner keyboard = new Scanner(System.in); //Keyboard input 

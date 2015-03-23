@@ -90,6 +90,7 @@ public class MapControl {
         finish;
     }
 
+
     private static Scene[] createScenes() throws MapControlException{
         
         Game game = Slip.getCurrentGame();
@@ -107,6 +108,7 @@ public class MapControl {
         startingScene.setTravelTime(240);
         scenes[SceneType.start.ordinal()] = startingScene;
 
+
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
                 + "This experience is something you will share with your children, assuming you find a wife at BYUi.");
@@ -119,7 +121,13 @@ public class MapControl {
 
     }
 
-    private static void assignScenesToLocations(Map map, Scene[] scenes) {
+    /**
+     *
+     * @param map
+     * @param scenes
+     * @return
+     */
+    public static assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
@@ -231,7 +239,8 @@ public class MapControl {
         locations[9][7].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][8].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
-
+        
+        return locations[][];
     }
 
 }
