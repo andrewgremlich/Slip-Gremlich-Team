@@ -106,8 +106,6 @@ public class MapControl {
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
-        scenes[SceneType.start.ordinal()] = startingScene;
-
 
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
@@ -115,8 +113,8 @@ public class MapControl {
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        scenes[SceneType.finish.ordinal()] = finishScene;
-        
+        scenes[SceneType.start.ordinal()] = startingScene;
+
         return scenes;
 
     }
@@ -127,7 +125,7 @@ public class MapControl {
      * @param scenes
      * @return
      */
-    public static assignScenesToLocations(Map map, Scene[] scenes) {
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
@@ -240,7 +238,6 @@ public class MapControl {
         locations[9][8].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
         
-        return locations[][];
     }
-
+    
 }

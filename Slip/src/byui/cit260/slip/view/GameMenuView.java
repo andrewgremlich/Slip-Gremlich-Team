@@ -13,7 +13,6 @@ import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import slip.Slip;
 
-
 /**
  *
  * @author Richard
@@ -105,6 +104,7 @@ public class GameMenuView extends View {
         System.out.println("Slip Map of Mt. McKinley");
         System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10"
                 + "****************************************************");
+
         for (int i = 0; i < map.getNoOfRows(); i++) {
             System.out.println(i + " | ");
             System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10");
