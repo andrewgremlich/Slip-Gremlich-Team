@@ -8,9 +8,7 @@ package byui.cit260.slip.view;
 import java.util.Scanner;
 import byui.cit260.slip.control.InventoryControl;
 import byui.cit260.slip.exceptions.InventoryControlException;
-import byui.cit260.slip.view.MainMenuView;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
