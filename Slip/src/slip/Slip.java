@@ -30,7 +30,7 @@ import byui.cit260.slip.view.StartProgramView;
 public class Slip {
 
     private static Game currentGame = new Game();
-    private static Player player = null;
+    private static Player player = new Player();
 
     /**
      * @param args the command line arguments

@@ -7,13 +7,12 @@ package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.FactorControl;
 import byui.cit260.slip.control.GameControl;
-import byui.cit260.slip.control.MapControl;
 import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import slip.Slip;
-import static slip.Slip.getCurrentGame;
+
 
 /**
  *
