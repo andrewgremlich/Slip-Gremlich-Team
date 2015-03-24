@@ -42,7 +42,8 @@ public class InventoryItem {
 
     public static InventoryItem[] createInventoryList() {
 
-        InventoryItem[] inventory = new InventoryItem[16];
+        InventoryItem[] inventory = 
+                new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
 
         InventoryItem wood = new InventoryItem();
         wood.setDescription("Wood");

@@ -150,9 +150,5 @@ public class Scene implements Serializable{
     public void setMapSymbol(String _st_) {
         System.out.println("MAPSYMBOLLL");
     }
-
-    
-    
-    
     
 }

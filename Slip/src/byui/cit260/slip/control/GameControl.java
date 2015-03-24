@@ -5,7 +5,7 @@
  */
 package byui.cit260.slip.control;
 
-import byui.cit260.slip.control.MapControl;
+
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.InventoryItem;
@@ -13,7 +13,6 @@ import byui.cit260.slip.model.Backpack;
 import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Player;
-import byui.cit260.slip.model.Scene;
 import byui.cit260.slip.model.Sled;
 import slip.Slip;
 
@@ -72,9 +71,6 @@ public class GameControl {
     }
     private Iterable<String> Actor;
 
-    public static void assignScenesToLocations(Map map, Scene[] scenes) {
-        System.out.println("Called assignScenesToLocation");
-    }
 
     public static Actor[] getSortedActorList() {
 
