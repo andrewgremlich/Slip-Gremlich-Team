@@ -78,15 +78,15 @@ public class MainMenuView extends View {
     private String playName() {
         boolean valid = false; //Indicates if the name has been retrived.
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
 
+        try {
         while (!valid) { // while a valid name has not been retrived
 
             //prompt for the player's name
             System.out.println("Please enter your name below:");
 
             //Get the name from the keyboard and trim off the blanks
-            playersName = keyboard.nextLine();
+            playersName = this.keyboard.readLine();
             playersName = playersName.trim();
 
             //If the name is invalid (less than two characters in length)
@@ -95,7 +95,10 @@ public class MainMenuView extends View {
                 continue; //and rpeat again
             }
             break; //stops repetiotion
+        }
 
+        }catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
         return playersName; // returns the players name.
     }

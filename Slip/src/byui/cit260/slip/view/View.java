@@ -5,7 +5,10 @@
  */
 package byui.cit260.slip.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import slip.Slip;
 
 /**
  *
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface { //View SuperClass!!!
 
     String promptMessage;
+
+    protected final BufferedReader keyboard = Slip.getInFile();
+    protected final PrintWriter console = Slip.getOutFile();
 
     public View(String promptMessage) {//Contructor Function!!!!
         this.promptMessage = promptMessage;
@@ -41,30 +47,32 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
             done = this.doAction(value); //do action based on selection
 
         } while (!done); //an selection is not "Quit"
-        
+
     }
 
     @Override
     public String getInput() {
         boolean valid = false; //Indicates if the name has been retrived.
         String selection = null;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
 
-        while (!valid) { // while a valid name has not been retrived
+        try {
+            while (!valid) { // while a valid name has not been retrived
 
-            //prompt for the player's name
-            System.out.println("Please put in your input:");
+                //prompt for the player's name
+                System.out.println("Please put in your input:");
 
-            //Get the name from the keyboard and trim off the blanks
-            selection = keyboard.nextLine();
-            selection = selection.trim();
+                //Get the name from the keyboard and trim off the blanks
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
 
-            if (selection.length() < 1) {
-                System.out.println("\n**** Invalid Selection.  Please try again...");
-                continue;
+                if (selection.length() < 1) {
+                    System.out.println("\n**** Invalid Selection.  Please try again...");
+                    continue;
+                }
+                break; //stops repetiotion
             }
-            break; //stops repetiotion
-
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
         }
         return selection; // returns the players menu selection.
     }
