@@ -97,8 +97,7 @@ public class MapControl {
         startingScene.setDescription(""
                 + "\n You have arrived at the base of Mt. McKinley.  "
                 + "\n It is 14 degrees Fahrenheit.  There is a lot of snow."
-                + "\n The landscape is very beautiful.  Mt. McKinley looms over"
-                + "\n where you are at now.");
+                + "\n The landscape is very beautiful.  Mt. McKinley looms menacingly overhead");
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
         startingScene.setTravelTime(240);
