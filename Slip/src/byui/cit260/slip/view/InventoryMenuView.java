@@ -8,6 +8,7 @@ package byui.cit260.slip.view;
 import java.util.Scanner;
 import byui.cit260.slip.control.InventoryControl;
 import byui.cit260.slip.exceptions.InventoryControlException;
+import static java.lang.Double.parseDouble;
 
 /**
  *
@@ -33,14 +34,14 @@ public class InventoryMenuView extends View {
             case 'h': {
                 try {
                 //Input for data wolf-tool
-                    //System.out.println("*****Test Circumference Input****");
+                    
                     double circumference = this.getCircumference();
                 } catch (InventoryControlException ex) {
                     System.out.println("\nSorry. You must enter a number greater than Zero."
                             + "  Try again or enter Q to quit.");
                 }
             }
-            // this.getPlayersHair();s
+            
             break;
             case 'q': //Quit program
                 return true;
@@ -80,8 +81,7 @@ public class InventoryMenuView extends View {
         // InventoryControl inv = new InventoryControl();  Another way to access method if I want to use 
         // double radius = inv.calcRadiusWolf(inputSelection);
         double radius = new InventoryControl().calcRadiusWolf(inputSelection);
-        //Call Function to find radius
-        //public double calcRadiusWolf(double circumference)          
+                  
         return radius; // returns the players menu selection.
     }
 
