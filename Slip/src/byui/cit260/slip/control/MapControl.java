@@ -105,7 +105,7 @@ public class MapControl {
 
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"
-                + "This experience is something you will share with your children, assuming you find a wife at BYUi.");
+                + "This experience is something you will share with your children, for years to come.");
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
         finishScene.setTravelTime(Double.POSITIVE_INFINITY);

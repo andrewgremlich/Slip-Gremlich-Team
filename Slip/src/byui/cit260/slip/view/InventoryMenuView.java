@@ -67,7 +67,7 @@ public class InventoryMenuView extends View {
             //Get the name from the keyboard and trim off the blanks
             inputSelection = this.keyboard.readLine(); //removed .nextDouble 
             //Go into doAction and use parseDouble to convert String to a double
-
+               // double inputSelection = Double.parseDouble(input)--THis did not work
             //Check to make sure input is valid
             if (inputSelection > 0) 
                 break;
