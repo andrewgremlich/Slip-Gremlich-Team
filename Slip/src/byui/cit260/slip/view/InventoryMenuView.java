@@ -73,9 +73,9 @@ public class InventoryMenuView extends View {
              else 
                 System.out.println("Please enter a number greater than zero");
             
-            }catch (Exception e) {
+            }
+        } catch (Exception e) {
                 System.out.println("Error reading inout: " + e.getMessage());
-        } 
         }
         // InventoryControl inv = new InventoryControl();  Another way to access method if I want to use 
         // double radius = inv.calcRadiusWolf(inputSelection);
