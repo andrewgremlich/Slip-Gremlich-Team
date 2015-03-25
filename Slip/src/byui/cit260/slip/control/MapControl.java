@@ -62,10 +62,6 @@ public class MapControl {
 
     }
 
-    private static ImageIcon getImage(Scene finishScene, String link_to_JPG) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public enum SceneType {
 
         start,

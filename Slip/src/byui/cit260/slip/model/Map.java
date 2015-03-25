@@ -5,7 +5,6 @@
  */
 package byui.cit260.slip.model;
 
-import byui.cit260.slip.control.GameControl;
 import java.io.Serializable;
 
 /**
