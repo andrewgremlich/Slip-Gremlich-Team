@@ -9,7 +9,6 @@ import java.util.Scanner;
 import byui.cit260.slip.control.InventoryControl;
 import byui.cit260.slip.exceptions.InventoryControlException;
 
-
 /**
  *
  * @author Richard
@@ -32,17 +31,17 @@ public class InventoryMenuView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': {
-            try {
+                try {
                 //Input for data wolf-tool
-                //System.out.println("*****Test Circumference Input****");
-                double circumference = this.getCircumference();
-            } catch (InventoryControlException ex) {
-                System.out.println("\nSorry. You must enter a number greater than Zero."
-                        + "  Try again or enter Q to quit.");
+                    //System.out.println("*****Test Circumference Input****");
+                    double circumference = this.getCircumference();
+                } catch (InventoryControlException ex) {
+                    System.out.println("\nSorry. You must enter a number greater than Zero."
+                            + "  Try again or enter Q to quit.");
+                }
             }
-        }
-                // this.getPlayersHair();s
-                break;
+            // this.getPlayersHair();s
+            break;
             case 'q': //Quit program
                 return true;
             default:
@@ -56,33 +55,34 @@ public class InventoryMenuView extends View {
     private double getCircumference() throws InventoryControlException {
         boolean valid = false; //Indicates if the name has been retrived.
         double inputSelection = 0;
-        Scanner keyboard = new Scanner(System.in); //Keyboard input 
 
-        while (!valid) { // while a valid number has not been retrived
+        try {
+            
+            while (!valid) { // while a valid number has not been retrived
 
             //prompt for the player's number
             System.out.println("Please enter the circumference");
 
             //Get the name from the keyboard and trim off the blanks
-            inputSelection = keyboard.nextDouble();
-            //inputSelection = inputSelection.trim(); Used for string
+            inputSelection = this.keyboard.readLine(); //removed .nextDouble 
+            //Go into doAction and use parseDouble to convert String to a double
 
             //Check to make sure input is valid
-            if (inputSelection > 0) {
+            if (inputSelection > 0) 
                 break;
-            } else {
+             else 
                 System.out.println("Please enter a number greater than zero");
-            }
+            
+            }catch (Exception e) {
+                System.out.println("Error reading inout: " + e.getMessage());
+        } 
         }
-
-        //  break; //stops repetiotion
         // InventoryControl inv = new InventoryControl();  Another way to access method if I want to use 
         // double radius = inv.calcRadiusWolf(inputSelection);
         double radius = new InventoryControl().calcRadiusWolf(inputSelection);
-         //Call Function to find radius
+        //Call Function to find radius
         //public double calcRadiusWolf(double circumference)          
         return radius; // returns the players menu selection.
     }
 
-    
 }
