@@ -76,7 +76,7 @@ public class InventoryMenuView extends View {
             
             }
         } catch (Exception e) {
-                System.out.println("Error reading inout: " + e.getMessage());
+                System.out.println("Error reading input: " + e.getMessage());
         }
         // InventoryControl inv = new InventoryControl();  Another way to access method if I want to use 
         // double radius = inv.calcRadiusWolf(inputSelection);
