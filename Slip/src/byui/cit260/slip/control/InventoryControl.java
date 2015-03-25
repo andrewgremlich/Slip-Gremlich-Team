@@ -8,14 +8,14 @@ package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.InventoryControlException;
 import byui.cit260.slip.model.InventoryItem;
-import java.io.IOException;
-import slip.Slip;
+import byui.cit260.slip.view.View;
+
 
 /**
  *
  * @author Andrew
  */
-public class InventoryControl {
+public class InventoryControl extends View{
 
     public double calcBoilingPoint(int airPressure, int temperature) throws InventoryControlException{
 
@@ -50,7 +50,7 @@ public class InventoryControl {
         if (circumference > 0) {
 
             double radius = Math.round(circumference / (2 * Math.PI) * 100.0) / 100.0;
-            System.out.println("You will be protected from the wolves within the radius of " + radius + " feet");
+          this.console.println("You will be protected from the wolves within the radius of " + radius + " feet");
 
             return radius; //return to view layer InventoryMenuView
 

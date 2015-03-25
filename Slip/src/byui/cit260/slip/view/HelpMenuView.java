@@ -31,13 +31,13 @@ public class HelpMenuView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': //How to move
-                System.out.println("*****Test How to move****");
+                this.console.println("*****Test How to move****");
                 break;
             case 'r': //Resources info
-                System.out.println("*****Test Gather Resources****");
+                this.console.println("*****Test Gather Resources****");
                 break;
             case 'g': //Instructions
-                System.out.println("*****Test Goal of game****");
+                this.console.println("*****Test Goal of game****");
                 break;
             case 'q': //return to main menu
                 return true;

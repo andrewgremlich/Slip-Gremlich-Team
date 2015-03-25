@@ -30,16 +30,16 @@ public class HealthView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'e': //How to move
-                System.out.println("Your Energy level is (Call in attribute for hunger)");
+                this.console.println("Your Energy level is (Call in attribute for hunger)");
                 break;
             case 'h': //Resources info
-                System.out.println("Your hunger level is (Call in attribute for hunger)");
+                this.console.println("Your hunger level is (Call in attribute for hunger)");
                 break;
             case 'd': //Instructions
-                System.out.println("Your depression level is (Call in attribute for depression)");
+                this.console.println("Your depression level is (Call in attribute for depression)");
                 break;
             case 'o': //display overall health
-                System.out.println("Your overall health is (Call in attribute for overall health)" );
+                this.console.println("Your overall health is (Call in attribute for overall health)" );
             case 'q': //Quit program
                 return true;
             default:

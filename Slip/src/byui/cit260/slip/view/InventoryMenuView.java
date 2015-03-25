@@ -62,7 +62,7 @@ public class InventoryMenuView extends View {
             while (!valid) { // while a valid number has not been retrived
 
             //prompt for the player's number
-            System.out.println("Please enter the circumference");
+            this.console.println("Please enter the circumference");
 
             //Get the name from the keyboard and trim off the blanks
             inputSelection = this.keyboard.readLine(); //removed .nextDouble 

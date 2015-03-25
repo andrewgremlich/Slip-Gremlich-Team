@@ -29,14 +29,14 @@ public class PlayerMenuView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': //Hair Color Input
-                System.out.println("*****Test Hair Color Input****");
+                this.console.println("*****Test Hair Color Input****");
                 // this.getPlayersHair();
                 break;
             case 'e': //Eye Color Input
-                System.out.println("*****Test Eye Color Input****");
+                this.console.println("*****Test Eye Color Input****");
                 break;
             case 'g': //Gender Input
-                System.out.println("*****Test Gender Input****");
+                this.console.println("*****Test Gender Input****");
                 break;
             case 'q': //Quit program
                  return true;

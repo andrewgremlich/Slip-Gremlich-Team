@@ -83,7 +83,7 @@ public class MainMenuView extends View {
         while (!valid) { // while a valid name has not been retrived
 
             //prompt for the player's name
-            System.out.println("Please enter your name below:");
+            this.console.println("Please enter your name below:");
 
             //Get the name from the keyboard and trim off the blanks
             playersName = this.keyboard.readLine();
@@ -114,7 +114,7 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
 
     private void seeInstructions() {

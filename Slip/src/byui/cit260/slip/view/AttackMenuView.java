@@ -33,14 +33,14 @@ public class AttackMenuView extends View {
 
         while (!valid) {
 
-            System.out.println(this.getPromptMessage()); // display main menu
+            this.console.println(this.getPromptMessage()); // display main menu
             
             try{
-            System.out.println("Enter tool power.");
+            this.console.println("Enter tool power.");
             String input = this.getInput(); //get the user's selection
             double toolPower = Double.parseDouble(input);
 
-            System.out.println("Enter health level.");
+            this.console.println("Enter health level.");
             input = this.getInput(); //get the user's selection
             double energyLevel = Double.parseDouble(input);
             
@@ -67,7 +67,7 @@ public class AttackMenuView extends View {
         } catch (FactorControlException ex) {
             Logger.getLogger(AttackMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Your attack power is " + attackPower);
+        this.console.println("Your attack power is " + attackPower);
         return true;
     }
 

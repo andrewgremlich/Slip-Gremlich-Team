@@ -35,16 +35,16 @@ public class MoveView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'n': //Move Player North
-                System.out.println("You move slowly, but assuredly North.");
+                this.console.println("You move slowly, but assuredly North.");
                 break;
             case 's': //Move Player South
-                System.out.println("Good job, you are moving South.");
+                this.console.println("Good job, you are moving South.");
                 break;
             case 'e': //Move Player East
-                System.out.println("Putting one foot in-front of the other you are moving East.");
+                this.console.println("Putting one foot in-front of the other you are moving East.");
                 break;
             case 'w': //Move Player West
-                System.out.println("Pleased with your ability to walk upright, you move West." );
+                this.console.println("Pleased with your ability to walk upright, you move West." );
             case 'q': //Quit Menu
                 return true;
             default:
