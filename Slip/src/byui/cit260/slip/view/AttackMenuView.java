@@ -7,7 +7,6 @@ package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.FactorControl;
 import byui.cit260.slip.exceptions.FactorControlException;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
