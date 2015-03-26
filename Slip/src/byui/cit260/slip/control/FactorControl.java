@@ -69,4 +69,9 @@ public class FactorControl extends View{
         return average;
     }
 
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
