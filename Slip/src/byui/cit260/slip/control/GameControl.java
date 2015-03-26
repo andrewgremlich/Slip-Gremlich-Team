@@ -5,7 +5,6 @@
  */
 package byui.cit260.slip.control;
 
-
 import byui.cit260.slip.exceptions.GameControlException;
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
@@ -15,8 +14,11 @@ import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Player;
 import byui.cit260.slip.model.Sled;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import slip.Slip;
 
@@ -74,24 +76,37 @@ public class GameControl {
         return inventoryList;
     }
 
-    public static void saveGame(Game game, String filePath) 
-        
-        throws GameControlException {
-        
-        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+    public static void saveGame(Game game, String filePath)
+            throws GameControlException {
+
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
-            
+
             output.writeObject(game); //write the game object out to file
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             throw new GameControlException(e.getMessage());
         }
     }
-    
-    
-   
-    private Iterable<String> Actor;
 
+    public static void loadGame(String filepath) throws GameControlException{
+        Game game = null;
+        
+        try (FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream output = new ObjectInputStream(fips);
+            
+            game = (Game) output.readObject(); //read the game object from file
+        }
+        catch(FileNotFoundException fnfe) {
+            throw new GameControlException(fnfe.getMessage());
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        Slip.setCurrentGame(game); //Save in slip...
+    }
+
+    private Iterable<String> Actor;
 
     public static Actor[] getSortedActorList() {
 
