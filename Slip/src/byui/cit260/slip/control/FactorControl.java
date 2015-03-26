@@ -8,12 +8,13 @@ package byui.cit260.slip.control;
 import byui.cit260.slip.exceptions.FactorControlException;
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
+import byui.cit260.slip.view.View;
 
 /**
  *
  * @author Andrew
  */
-public class FactorControl {
+public class FactorControl extends View{
 
     public double calcAttackingPower(double energyLevel, double toolPower) throws FactorControlException {
 
@@ -40,7 +41,7 @@ public class FactorControl {
         } //Calculate attacking power and return value;
         else {
             double attackingPower = energyLevel + toolPower;
-            System.out.println("Your attacking about is " + attackingPower + ".");
+            this.console.println("Your attacking about is " + attackingPower + ".");
 
             return attackingPower;
         }

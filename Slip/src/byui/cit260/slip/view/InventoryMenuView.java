@@ -37,7 +37,8 @@ public class InventoryMenuView extends View {
                     
                     double circumference = this.getCircumference();
                 } catch (InventoryControlException ex) {
-                    System.out.println("\nSorry. You must enter a number greater than Zero."
+                    ErrorView.display(this.getClass().getName(),
+                            "\nSorry. You must enter a number greater than Zero."
                             + "  Try again or enter Q to quit.");
                 }
             }
@@ -46,7 +47,8 @@ public class InventoryMenuView extends View {
             case 'q': //Quit program
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
         return true;
@@ -72,11 +74,13 @@ public class InventoryMenuView extends View {
             if (inputSelection > 0) 
                 break;
              else 
-                System.out.println("Please enter a number greater than zero");
+                ErrorView.display(this.getClass().getName(),
+                        "Please enter a number greater than zero");
             
             }
         } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                ErrorView.display(this.getClass().getName(),
+                        "Error reading input: " + e.getMessage());
         }
         // InventoryControl inv = new InventoryControl();  Another way to access method if I want to use 
         // double radius = inv.calcRadiusWolf(inputSelection);

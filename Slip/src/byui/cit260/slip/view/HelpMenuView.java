@@ -42,7 +42,8 @@ public class HelpMenuView extends View {
             case 'q': //return to main menu
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
         return true;

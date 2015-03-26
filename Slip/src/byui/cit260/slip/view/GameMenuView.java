@@ -65,7 +65,8 @@ public class GameMenuView extends View {
                 this.viewAverageHealth();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
         return false;

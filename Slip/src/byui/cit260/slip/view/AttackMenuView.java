@@ -51,7 +51,8 @@ public class AttackMenuView extends View {
             this.doAction(inputs);
             
             } catch (NumberFormatException nf) {
-                System.out.println("\nYou must enter a valid number with in the range of 1-10."
+                ErrorView.display(this.getClass().getName(),
+                        "\nYou must enter a valid number with in the range of 1-10."
                         + "  Try again or enter Q to quit.");
             }
         }

@@ -66,13 +66,15 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
                 selection = selection.trim();
 
                 if (selection.length() < 1) {
-                    System.out.println("\n**** Invalid Selection.  Please try again...");
+                    ErrorView.display(this.getClass().getName(),
+                            "\n**** Invalid Selection.  Please try again...");
                     continue;
                 }
                 break; //stops repetiotion
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
         return selection; // returns the players menu selection.
     }

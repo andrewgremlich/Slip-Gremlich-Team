@@ -48,7 +48,8 @@ public class MoveView extends View {
             case 'q': //Quit Menu
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
         return true;
