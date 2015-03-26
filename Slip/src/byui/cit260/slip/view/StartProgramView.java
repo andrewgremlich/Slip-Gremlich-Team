@@ -55,8 +55,8 @@ public class StartProgramView extends View {
 
     private void displayWelcomeMessage(Player player) {
         this.console.println("\n\n===================================");
-        this.console.println("\tWelcome to the game " + player.getName());
-        this.console.println("\tWe hope that you have a lot of fun!");
+        this.console.println("\nWelcome to the game " + player.getName());
+        this.console.println("\nWe hope that you have a lot of fun!");
         this.console.println("=======================================");
     }
 

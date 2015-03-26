@@ -7,6 +7,7 @@ package slip;
 
 import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Player;
+import byui.cit260.slip.view.ErrorView;
 import byui.cit260.slip.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -49,15 +50,16 @@ public class Slip {
             System.out.println("Exception: " + e.toString()
                     + "\nCause: " + e.getCause()
                     + "\nMessage: " + e.getMessage());
+
             return;
         } finally {
             try {
-                if (Slip.inFile != null)
+                if (Slip.inFile != null) {
                     Slip.inFile.close();
-                if (Slip.outFile != null) 
-                    Slip.outFile.close();                
-                if (Slip.logFile != null)
+                }
+                if (Slip.outFile != null) {
                     Slip.outFile.close();
+                }
             } catch (IOException ex) {
                 Logger.getLogger(Slip.class.getName()).log(Level.SEVERE, null, ex);
             }
