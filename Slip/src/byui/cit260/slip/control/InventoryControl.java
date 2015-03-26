@@ -17,6 +17,10 @@ import byui.cit260.slip.view.View;
  */
 public class InventoryControl extends View{
 
+    public InventoryControl(String promptMessage) {
+        super(promptMessage);
+    }
+
     public double calcBoilingPoint(int airPressure, int temperature) throws InventoryControlException{
 
         //the time variable is a static constant for the equation
@@ -58,6 +62,11 @@ public class InventoryControl extends View{
             throw new InventoryControlException("Sorry. The number must be greater "
                     + "than zero.");
         }
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
   
