@@ -35,12 +35,12 @@ public class InventoryMenuView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': {
-            try {
-                //Input for data wolf-tool
-                this.getCircumference();    
-            } catch (InventoryControlException ex) {
-                Logger.getLogger(InventoryMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                try {
+                    //Input for data wolf-tool
+                    this.getCircumference();
+                } catch (InventoryControlException ex) {
+                    Logger.getLogger(InventoryMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
 
             break;
@@ -68,7 +68,6 @@ public class InventoryMenuView extends View {
         // double radius = inv.calcRadiusWolf(inputSelection);
         double radius = new InventoryControl("").calcRadiusWolf(inputSelection);
 
-        
     }
 
 }
