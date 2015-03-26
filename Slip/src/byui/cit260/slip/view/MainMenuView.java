@@ -69,7 +69,8 @@ public class MainMenuView extends View {
             case 'q': //Quit program
                 return true;
             default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
         return true;
@@ -83,7 +84,7 @@ public class MainMenuView extends View {
         while (!valid) { // while a valid name has not been retrived
 
             //prompt for the player's name
-            System.out.println("Please enter your name below:");
+            this.console.println("Please enter your name below:");
 
             //Get the name from the keyboard and trim off the blanks
             playersName = this.keyboard.readLine();
@@ -91,14 +92,16 @@ public class MainMenuView extends View {
 
             //If the name is invalid (less than two characters in length)
             if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be shorter than two characters");
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid name - the name must not be shorter than two characters");
                 continue; //and rpeat again
             }
             break; //stops repetiotion
         }
 
         }catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
         return playersName; // returns the players name.
     }
@@ -114,7 +117,7 @@ public class MainMenuView extends View {
     }
 
     private void loadGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
 
     private void seeInstructions() {

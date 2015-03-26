@@ -5,6 +5,7 @@
  */
 package byui.cit260.slip.control;
 
+import byui.cit260.slip.view.View;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

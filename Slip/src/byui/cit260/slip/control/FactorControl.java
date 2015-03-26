@@ -7,12 +7,17 @@ package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.FactorControlException;
 import byui.cit260.slip.model.Actor;
+import byui.cit260.slip.view.View;
 
 /**
  *
  * @author Andrew
  */
-public class FactorControl {
+public class FactorControl extends View{
+
+    public FactorControl(String promptMessage) { //Added constructor because of yellowPrompt
+        super(promptMessage);
+    }
 
     public double calcAttackingPower(double energyLevel, double toolPower) throws FactorControlException {
 
@@ -39,7 +44,7 @@ public class FactorControl {
         } //Calculate attacking power and return value;
         else {
             double attackingPower = energyLevel + toolPower;
-            System.out.println("Your attacking about is " + attackingPower + ".");
+            this.console.println("Your attacking about is " + attackingPower + ".");
 
             return attackingPower;
         }
@@ -65,6 +70,11 @@ public class FactorControl {
         
         double average = total / health.length;
         return average;
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

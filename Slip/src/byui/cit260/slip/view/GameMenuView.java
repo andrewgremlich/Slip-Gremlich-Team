@@ -65,7 +65,8 @@ public class GameMenuView extends View {
                 this.viewAverageHealth();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Please Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
         return false;
@@ -75,52 +76,52 @@ public class GameMenuView extends View {
         //get the sorted list of inventory items for hte current game
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
 
-        System.out.println("\nList of Inventory Items");
-        System.out.println("Description of " + "\t"
+        this.console.println("\nList of Inventory Items");
+        this.console.println("Description of " + "\t"
                 + "Required" + "\t"
                 + "In Stock");
 
         //for each inventory item
         for (InventoryItem inventoryItem : inventory) {
             //Display the description, the required amount and the amount in stock
-            System.out.println(inventoryItem.getDescription() + "\t    "
+            this.console.println(inventoryItem.getDescription() + "\t    "
                     + inventoryItem.getRequiredAmount() + "\t   "
                     + inventoryItem.getQuantityInStock());
         }
     }
 
     private void viewSledStatus() {
-        System.out.println("Stub function called.");
+        this.console.println("Stub function called.");
     }
 
     private void viewActors() {
         Actor[] sortedActorList = GameControl.getSortedActorList();
-        System.out.println(sortedActorList);
+        this.console.println(sortedActorList);
     }
 
     private Location[][] displayMap() {
         Map map = Slip.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
-        System.out.println("Slip Map of Mt. McKinley");
-        System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10"
+        this.console.println("Slip Map of Mt. McKinley");
+        this.console.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10"
                 + "****************************************************");
 
         for (int i = 0; i < map.getNoOfRows(); i++) {
-            System.out.println(i + " | ");
-            System.out.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10");
+            this.console.println(i + " | ");
+            this.console.println("\n  1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10");
             for (int j = 0; j < map.getNoOfColumns(); j++) {
                 Location location = locations[i][j];
                 String symbol = location.getScene().getMapSymbol();
-                System.out.println(symbol + " | ");
+                this.console.println(symbol + " | ");
 
             }
-            System.out.println("\n*****************************************");
+            this.console.println("\n*****************************************");
         }
         return locations;
     }
 
     private void viewAverageHealth() {
-        System.out.println("The average health of all players is " + FactorControl.calculateAverageHealth());
+        this.console.println("The average health of all players is " + FactorControl.calculateAverageHealth());
     }
 
     private void viewAttackMenu() {

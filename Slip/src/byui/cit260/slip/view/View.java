@@ -39,7 +39,7 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
         boolean done = false;
         do {
             //This line should be the only one to show that it works.
-            System.out.println(this.promptMessage); // display main menu
+            this.console.println(this.promptMessage); // display main menu
 
             value = this.getInput(); //get the user's selection
             //selection = input.charAt(0); //get first character of string
@@ -59,20 +59,22 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
             while (!valid) { // while a valid name has not been retrived
 
                 //prompt for the player's name
-                System.out.println("Please put in your input:");
+                this.console.println("Please put in your input:");
 
                 //Get the name from the keyboard and trim off the blanks
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
 
                 if (selection.length() < 1) {
-                    System.out.println("\n**** Invalid Selection.  Please try again...");
+                    ErrorView.display(this.getClass().getName(),
+                            "\n**** Invalid Selection.  Please try again...");
                     continue;
                 }
                 break; //stops repetiotion
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + e.getMessage());
         }
         return selection; // returns the players menu selection.
     }
