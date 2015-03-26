@@ -63,9 +63,8 @@ public class AttackMenuView extends View {
     public boolean doAction(Object obj) {
         double[] inputs = (double[]) obj;
         double attackPower = 0;
-        try {
-            attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]);
-        } catch (FactorControlException ex) {
+        try {             //error wants to add FactorControl constructor to FactorControlcontrol which already exists
+            attackPower = new FactorControl().calcAttackingPower(inputs[1], inputs[0]); 
             Logger.getLogger(AttackMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.console.println("Your attack power is " + attackPower);

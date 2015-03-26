@@ -16,6 +16,10 @@ import byui.cit260.slip.view.View;
  */
 public class FactorControl extends View{
 
+    public FactorControl(String promptMessage) { //Added constructor because of yellowPrompt
+        super(promptMessage);
+    }
+
     public double calcAttackingPower(double energyLevel, double toolPower) throws FactorControlException {
 
         //Check if any input is 0
