@@ -27,7 +27,9 @@ public class MainMenuView extends View {
                 + "\nL - Load Game"
                 + "\nI - Instructions"
                 + "\nP - Player Menu"
+                + "\n                               "
                 + "\nG - Game Menu"
+                + "\nR - Save Game"
                 + "\n                             "
                 + "\nT  - Inventory Menu"
                 + "\nW  - Move Menu"
@@ -41,13 +43,13 @@ public class MainMenuView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 's': {
-            try {
-                this.startNewGame();
-            } catch (MapControlException ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+                    this.startNewGame();
+                } catch (MapControlException ex) {
+                    Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 'l': //load game
                 this.loadGame();
                 break;
@@ -59,6 +61,9 @@ public class MainMenuView extends View {
                 break;
             case 'g': // Game Menu
                 this.seeGame();
+                break;
+            case 'r': // save game
+                this.saveGame();
                 break;
             case 't': // Inventory Menu
                 this.seeInventory();
@@ -81,32 +86,32 @@ public class MainMenuView extends View {
         String playersName = null;
 
         try {
-        while (!valid) { // while a valid name has not been retrived
+            while (!valid) { // while a valid name has not been retrived
 
-            //prompt for the player's name
-            this.console.println("Please enter your name below:");
+                //prompt for the player's name
+                this.console.println("Please enter your name below:");
 
-            //Get the name from the keyboard and trim off the blanks
-            playersName = this.keyboard.readLine();
-            playersName = playersName.trim();
+                //Get the name from the keyboard and trim off the blanks
+                playersName = this.keyboard.readLine();
+                playersName = playersName.trim();
 
-            //If the name is invalid (less than two characters in length)
-            if (playersName.length() < 2) {
-                ErrorView.display(this.getClass().getName(),
-                        "Invalid name - the name must not be shorter than two characters");
-                continue; //and rpeat again
+                //If the name is invalid (less than two characters in length)
+                if (playersName.length() < 2) {
+                    ErrorView.display(this.getClass().getName(),
+                            "Invalid name - the name must not be shorter than two characters");
+                    continue; //and rpeat again
+                }
+                break; //stops repetiotion
             }
-            break; //stops repetiotion
-        }
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             ErrorView.display(this.getClass().getName(),
                     "Error reading input: " + e.getMessage());
         }
         return playersName; // returns the players name.
     }
 
-    private void startNewGame() 
+    private void startNewGame()
             throws MapControlException {
         //Create new game
         GameControl.createNewGame(Slip.getPlayer());
@@ -139,9 +144,22 @@ public class MainMenuView extends View {
         MoveView moveView = new MoveView();
         moveView.display();
     }
-     private void seeGame() {
+
+    private void seeGame() {
         GameMenuView gameView = new GameMenuView();
         gameView.display();
+    }
+
+    private void saveGame() {
+        this.console.println("\n\nEnter the file path for where the game is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(Slip.getCurrentGame(), filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
 }
