@@ -97,6 +97,12 @@ public class Scene implements Serializable{
     public void setExploredLocation(boolean exploredLocation) {
         this.exploredLocation = exploredLocation;
     } 
+
+    public void setMapSymbol(String MapSymbol) {
+        this.MapSymbol = MapSymbol;
+    }
+    
+    
         
 
     @Override
@@ -145,10 +151,6 @@ public class Scene implements Serializable{
             return false;
         }
         return this.exploredLocation == other.exploredLocation;
-    }
-
-    public void setMapSymbol(String _st_) {
-        System.out.println("MAPSYMBOLLL");
     }
     
 }

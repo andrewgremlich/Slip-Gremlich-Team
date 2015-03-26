@@ -6,7 +6,6 @@
 package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.FactorControlException;
-import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.view.View;
 

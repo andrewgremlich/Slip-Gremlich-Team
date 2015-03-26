@@ -6,6 +6,7 @@
 package byui.cit260.slip.control;
 
 
+import byui.cit260.slip.exceptions.GameControlException;
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.InventoryItem;
@@ -14,6 +15,9 @@ import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Player;
 import byui.cit260.slip.model.Sled;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import slip.Slip;
 
 /**
@@ -69,6 +73,23 @@ public class GameControl {
 
         return inventoryList;
     }
+
+    public static void saveGame(Game game, String filePath) 
+        
+        throws GameControlException {
+        
+        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game); //write the game object out to file
+        }
+        catch (IOException e){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+    
+   
     private Iterable<String> Actor;
 
 
