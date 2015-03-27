@@ -50,17 +50,21 @@ public class Slip {
             System.out.println("Exception: " + e.toString()
                     + "\nCause: " + e.getCause()
                     + "\nMessage: " + e.getMessage());
+
             return;
         } finally {
             try {
-                if (Slip.inFile != null)
+                if (Slip.inFile != null) {
                     Slip.inFile.close();
-                if (Slip.outFile != null) 
-                    Slip.outFile.close();                
-                
+
+                    if (Slip.outFile != null) {
+                        Slip.outFile.close();
+                    }
+                }
+
             } catch (IOException ex) {
                 Logger.getLogger(Slip.class.getName()).log(Level.SEVERE, null, ex);
-                
+
             }
 
         }
