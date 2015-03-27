@@ -67,12 +67,15 @@ public class Slip {
             try {
                 if (Slip.inFile != null) {
                     Slip.inFile.close();
+
+                    if (Slip.outFile != null) {
+                        Slip.outFile.close();
+                    }
                 }
-                if (Slip.outFile != null) {
-                    Slip.outFile.close();
-                }
+
             } catch (IOException ex) {
                 Logger.getLogger(Slip.class.getName()).log(Level.SEVERE, null, ex);
+
             }
 
         }
