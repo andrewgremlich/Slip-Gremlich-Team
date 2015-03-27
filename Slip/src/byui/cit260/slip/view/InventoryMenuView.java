@@ -23,8 +23,10 @@ public class InventoryMenuView extends View {
                 + "\n -------------------------------"
                 + "\n ******* Inventory Menu ********"
                 + "\n--------------------------------"
-                + "\nh - Input Data for the Anti-Wolf Tool"
-                + "\nq - Quit to Previous Menu"
+                + "\nH - Input Data for the Anti-Wolf Tool"
+                + "\nQ - Quit to Previous Menu"
+                + "\n"
+                + "\nR - Print Report of Iventory Items"
                 + "\n--------------------------------");
 
     }
@@ -46,6 +48,9 @@ public class InventoryMenuView extends View {
             break;
             case 'q': //Quit program
                 return true;
+            case 'r': //Quit program
+                this.seeInventoryReport();
+                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid Selection *** Please Try again");
@@ -68,6 +73,10 @@ public class InventoryMenuView extends View {
         // double radius = inv.calcRadiusWolf(inputSelection);
         double radius = new InventoryControl("").calcRadiusWolf(inputSelection);
 
+    }
+
+    private void seeInventoryReport() {
+        System.out.println("DDDDD");
     }
 
 }

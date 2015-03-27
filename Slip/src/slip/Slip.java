@@ -34,6 +34,17 @@ public class Slip {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
+
+        try {
+            startProgramView.display();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
 
         try {
             //open character stream files for end user input and output
@@ -64,16 +75,6 @@ public class Slip {
                 Logger.getLogger(Slip.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        }
-
-        StartProgramView startProgramView = new StartProgramView();
-
-        try {
-            startProgramView.display();
-        } catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.display();
         }
 
     }

@@ -39,7 +39,7 @@ public abstract class View implements ViewInterface { //View SuperClass!!!
         boolean done = false;
         do {
             //This line should be the only one to show that it works.
-            this.console.println(this.promptMessage); // display main menu
+            this.console.println(promptMessage); // display main menu
 
             value = this.getInput(); //get the user's selection
             //selection = input.charAt(0); //get first character of string
