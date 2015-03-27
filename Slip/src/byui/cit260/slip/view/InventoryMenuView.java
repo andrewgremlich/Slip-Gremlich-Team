@@ -5,9 +5,11 @@
  */
 package byui.cit260.slip.view;
 
+import byui.cit260.slip.control.GameControl;
 import java.util.Scanner;
 import byui.cit260.slip.control.InventoryControl;
 import byui.cit260.slip.exceptions.InventoryControlException;
+import byui.cit260.slip.model.InventoryItem;
 import static java.lang.Double.parseDouble;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,7 +28,7 @@ public class InventoryMenuView extends View {
                 + "\nH - Input Data for the Anti-Wolf Tool"
                 + "\nQ - Quit to Previous Menu"
                 + "\n"
-                + "\nR - Print Report of Iventory Items"
+                + "\nR - Print Attack Strength of Iventory items"
                 + "\n--------------------------------");
 
     }
@@ -46,11 +48,11 @@ public class InventoryMenuView extends View {
             }
 
             break;
+            case 'r': //Quit program
+                this.seeAttackReport();
+                break;
             case 'q': //Quit program
                 return true;
-            case 'r': //Quit program
-                this.seeInventoryReport();
-                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid Selection *** Please Try again");
@@ -75,8 +77,20 @@ public class InventoryMenuView extends View {
 
     }
 
-    private void seeInventoryReport() {
-        System.out.println("DDDDD");
+    private void seeAttackReport() {
+        //get the sorted list of inventory items for hte current game
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+
+        this.console.println("\nAttack Strength list of Inventory Items");
+        this.console.println("Description of ");
+
+        //for each inventory item
+        for (InventoryItem inventoryItem : inventory) {
+            //Display the description, the required amount and the amount in stock
+            this.console.println(inventoryItem.getDescription() + "\t    "
+                    + inventoryItem.getRequiredAmount() + "\t   "
+                    + inventoryItem.getQuantityInStock());
+        }
     }
 
 }
