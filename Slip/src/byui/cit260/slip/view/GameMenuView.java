@@ -25,10 +25,11 @@ public class GameMenuView extends View {
                 + "\n ***** Game Menu ********"
                 + "\n--------------------------------"
                 + "\nM - Display Map"
-                + "\nI - View Inventory"
                 + "\nA - View Characters"
                 + "\nS - Sled Status"
                 + "\nQ - Resume Game"
+                + "\n"
+                + "\nT  - Inventory Menu"
                 + "\n"
                 + "\nY - Attack Menu"
                 + "\n"
@@ -47,14 +48,14 @@ public class GameMenuView extends View {
             case 'm': //display map
                 this.displayMap();
                 break;
-            case 'i': //display inventory
-                this.viewInventory();
-                break;
             case 'a'://view actors
                 this.viewActors();
                 break;
             case 's'://view sled
                 this.viewSledStatus();
+                break;
+            case 't'://view inventory menu
+                this.seeInventory();
                 break;
             case 'y'://view sled
                 this.viewAttackMenu();
@@ -72,23 +73,7 @@ public class GameMenuView extends View {
         return false;
     }
 
-    private void viewInventory() {
-        //get the sorted list of inventory items for hte current game
-        InventoryItem[] inventory = GameControl.getSortedInventoryList();
-
-        this.console.println("\nList of Inventory Items");
-        this.console.println("Description of " + "\t"
-                + "Required" + "\t"
-                + "In Stock");
-
-        //for each inventory item
-        for (InventoryItem inventoryItem : inventory) {
-            //Display the description, the required amount and the amount in stock
-            this.console.println(inventoryItem.getDescription() + "\t    "
-                    + inventoryItem.getRequiredAmount() + "\t   "
-                    + inventoryItem.getQuantityInStock());
-        }
-    }
+    
 
     private void viewSledStatus() {
         this.console.println("Stub function called.");
@@ -122,6 +107,11 @@ public class GameMenuView extends View {
 
     private void viewAverageHealth() {
         this.console.println("The average health of all players is " + FactorControl.calculateAverageHealth());
+    }
+
+    private void seeInventory() {
+        InventoryMenuView inventoryMenu = new InventoryMenuView();
+        inventoryMenu.display();
     }
 
     private void viewAttackMenu() {

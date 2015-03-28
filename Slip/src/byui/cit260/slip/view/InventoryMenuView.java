@@ -27,6 +27,7 @@ public class InventoryMenuView extends View {
                 + "\n--------------------------------"
                 + "\nH - Input Data for the Anti-Wolf Tool"
                 + "\nQ - Quit to Previous Menu"
+                + "\nI - View Inventory"
                 + "\n"
                 + "\nR - Print Attack Strength of Iventory items"
                 + "\n--------------------------------");
@@ -50,6 +51,9 @@ public class InventoryMenuView extends View {
             break;
             case 'r': //Quit program
                 this.seeAttackReport();
+                break;
+            case 'i': //display inventory
+                this.viewInventory();
                 break;
             case 'q': //Quit program
                 return true;
@@ -83,6 +87,24 @@ public class InventoryMenuView extends View {
 
         this.console.println("\nAttack Strength list of Inventory Items");
         this.console.println("Description of ");
+
+        //for each inventory item
+        for (InventoryItem inventoryItem : inventory) {
+            //Display the description, the required amount and the amount in stock
+            this.console.println(inventoryItem.getDescription() + "\t    "
+                    + inventoryItem.getRequiredAmount() + "\t   "
+                    + inventoryItem.getQuantityInStock());
+        }
+    }
+
+    private void viewInventory() {
+        //get the sorted list of inventory items for hte current game
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+
+        this.console.println("\nList of Inventory Items");
+        this.console.println("Description of " + "\t"
+                + "Required" + "\t"
+                + "In Stock");
 
         //for each inventory item
         for (InventoryItem inventoryItem : inventory) {

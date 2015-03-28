@@ -28,10 +28,8 @@ public class MainMenuView extends View {
                 + "\nI - Instructions"
                 + "\nP - Player Menu"
                 + "\n                               "
-                + "\nG - Game Menu"
                 + "\nR - Save Game"
                 + "\n                             "
-                + "\nT  - Inventory Menu"
                 + "\nW  - Move Menu"
                 + "\n|                             |"
                 + "\nQ - Quit Program"
@@ -59,14 +57,8 @@ public class MainMenuView extends View {
             case 'p': // Player Menu
                 this.seePlayer();
                 break;
-            case 'g': // Game Menu
-                this.seeGame();
-                break;
             case 'r': // save game
                 this.saveGame();
-                break;
-            case 't': // Inventory Menu
-                this.seeInventory();
                 break;
             case 'w': // Player Menu
                 this.seeMove();
@@ -148,10 +140,6 @@ public class MainMenuView extends View {
         playerMenu.display();
     }
 
-    private void seeInventory() {
-        InventoryMenuView inventoryMenu = new InventoryMenuView();
-        inventoryMenu.display();
-    }
 
     private void seeMove() {
         MoveView moveView = new MoveView();
