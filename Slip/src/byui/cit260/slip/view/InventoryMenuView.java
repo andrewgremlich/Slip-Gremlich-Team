@@ -86,14 +86,12 @@ public class InventoryMenuView extends View {
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
 
         this.console.println("\nAttack Strength list of Inventory Items");
-        this.console.println("Description of ");
 
         //for each inventory item
         for (InventoryItem inventoryItem : inventory) {
             //Display the description, the required amount and the amount in stock
             this.console.println(inventoryItem.getDescription() + "\t    "
-                    + inventoryItem.getRequiredAmount() + "\t   "
-                    + inventoryItem.getQuantityInStock());
+                    + inventoryItem.getAttackPower() );
         }
     }
 
