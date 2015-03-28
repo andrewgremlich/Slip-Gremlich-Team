@@ -13,9 +13,9 @@ import slip.Slip;
  * @author Andrew
  */
 public class ErrorView {
-    
-    private static final PrintWriter logFile = Slip.getLogFile();
+  
     private static final PrintWriter errorFile = Slip.getOutFile();
+    private static final PrintWriter logFile = Slip.getLogFile();
     
     public static void display(String className, String errorMessage) {
         

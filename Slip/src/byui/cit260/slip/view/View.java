@@ -16,7 +16,7 @@ import slip.Slip;
  */
 public abstract class View implements ViewInterface { //View SuperClass!!!
 
-    String promptMessage;
+    private String promptMessage;
 
     protected final BufferedReader keyboard = Slip.getInFile();
     protected final PrintWriter console = Slip.getOutFile();
