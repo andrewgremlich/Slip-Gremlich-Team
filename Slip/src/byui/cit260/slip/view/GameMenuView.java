@@ -73,15 +73,27 @@ public class GameMenuView extends View {
         return false;
     }
 
-    
-
     private void viewSledStatus() {
         this.console.println("Stub function called.");
     }
 
     private void viewActors() {
-        Actor[] sortedActorList = GameControl.getSortedActorList();
-        this.console.println(sortedActorList);
+        this.console.println("Stub function called for Actors.");
+        
+    //Get a list of the actors in the game.
+   //     Actor[] sortedActorList = GameControl.getSortedActorList();
+
+   //     this.console.println(sortedActorList);
+   //     this.console.println("\nList of Characters");
+   //     this.console.println("Description of " + "\t");
+
+        //for each character in the Game
+    //    for (Actor actor : sortedActorList ) {
+            
+        //Display the description, of each of the actors
+    //    this.console.println(actor.getDescription() + "\t    ");
+        
+   // }
     }
 
     private Location[][] displayMap() {
