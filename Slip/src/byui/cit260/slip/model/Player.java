@@ -13,18 +13,19 @@ import java.util.Objects;
  * @author Richard
  */
 public class Player implements Serializable {
-    
+
     //Class instance variables
     //test
-    private String name; 
+    private String name;
     private double bestTime;
     private double attackingPower;
-
+    private int depression;
+    private int hunger;
+    private int energy;
 
     public Player() {
     }
 
-    
     public String getName() {
         return name;
     }
@@ -47,6 +48,30 @@ public class Player implements Serializable {
 
     public void setAttackingPower(double attackingPower) {
         this.attackingPower = attackingPower;
+    }
+
+    public int getDepression() {
+        return depression;
+    }
+
+    public void setDepression(int depression) {
+        this.depression = depression;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
     }
 
     @Override
@@ -83,8 +108,5 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
-    
-    
+
 }

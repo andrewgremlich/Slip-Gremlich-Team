@@ -9,16 +9,14 @@ package byui.cit260.slip.model;
  *
  * @author Andrew
  */
-public class ElectricWrapstove extends Equipment{
-    
+public class ElectricWrapstove extends Equipment {
+
     private double timeToCook;
     private double boilPoint;
     private int battery;
 
     public ElectricWrapstove() {
     }
-    
-    
 
     public double getTimeToCook() {
         return timeToCook;
@@ -78,8 +76,5 @@ public class ElectricWrapstove extends Equipment{
         }
         return true;
     }
-    
-    
-    
-    
+
 }
