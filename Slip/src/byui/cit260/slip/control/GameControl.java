@@ -8,6 +8,7 @@ package byui.cit260.slip.control;
 import byui.cit260.slip.exceptions.GameControlException;
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
+
 import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Backpack;
 import byui.cit260.slip.model.Game;
@@ -108,29 +109,28 @@ public class GameControl {
 
     private Iterable<String> Actor;
 
-    public static Actor[] getSortedActorList() {
+    public static void getSortedActorList() {
 
         //get actor list for the current game
-        Actor[] originalActorList = Slip.getCurrentGame().getActor();
+//        Actor.
 
-        //clone make a copy of original list
-        Actor[] actorList = originalActorList.clone();
+        
 
         //using a bubblesort to sort the list of actorList by name
-        Actor tempActorList;
-        for (int i = 0; i < actorList.length - 1; i++) {
-            for (int j = 0; j < actorList.length - 1 - i; j++) {
-                if (actorList[j].getDescription().
-                        compareToIgnoreCase(actorList[j + 1].getDescription()) > 0) {
-                    tempActorList = actorList[j];
-                    actorList[j] = actorList[j + 1];
-                    actorList[j + 1] = tempActorList;
-                }
-
-            }
-
-        }
-        return actorList;
+//        Actor[] tempActorList;
+//        for (int i = 0; i < actorList.length - 1; i++) {
+//            for (int j = 0; j < actorList.length - 1 - i; j++) {
+//                if (actorList[j].getDescription().
+//                        compareToIgnoreCase(actorList[j + 1].getDescription()) > 0) {
+//                    tempActorList = actorList[j];
+//                    actorList[j] = actorList[j + 1];
+//                    actorList[j + 1] = tempActorList;
+//                }
+//
+//            }
+//
+//        }
+//        return actorList;
     }
 
 }

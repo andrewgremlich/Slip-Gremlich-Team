@@ -14,7 +14,7 @@ import java.io.Serializable;
  *
  * @author Richard
  */
-public enum Actor implements Serializable {
+public enum Actor  {
 
     //Enum List of Actors
     Bill("He is the leader of the expedition.", 8),

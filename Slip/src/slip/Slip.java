@@ -34,6 +34,8 @@ public class Slip {
      */
     public static void main(String[] args) {
 
+            StartProgramView startProgramView = null;
+            
         try {
             //open character stream files for end user input and output
             Slip.inFile = new BufferedReader(new InputStreamReader(System.in));
@@ -43,26 +45,17 @@ public class Slip {
             String filePath = "log.txt";
             Slip.logFile = new PrintWriter(filePath);
 
-            StartProgramView startProgramView = new StartProgramView();
+            startProgramView = new StartProgramView();
             startProgramView.display();
 
-            try {
-                startProgramView.display();
-            } catch (Throwable te) {
-                System.out.println(te.getMessage());
-                te.printStackTrace();
-                startProgramView.display();
-            }
+         
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        
 
-        } catch (Exception e) {
-            System.out.println("Error closing files");
-
-            System.out.println("Exception: " + e.toString()
-                    + "\nCause: " + e.getCause()
-                    + "\nMessage: " + e.getMessage());
-
-            return;
-        } finally {
+        }  finally {
             try {
                 if (Slip.inFile != null) {
                     Slip.inFile.close();
