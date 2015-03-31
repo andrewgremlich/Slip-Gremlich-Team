@@ -34,6 +34,7 @@ public class GameMenuView extends View {
                 + "\nW  - Move Menu"
                 + "\n"
                 + "\nY - Attack Menu"
+                + "\nI - Health Menu"
                 + "\n"
                 + "\nH - Average health of ALL characters"
                 + "\n"
@@ -69,6 +70,9 @@ public class GameMenuView extends View {
                 break;
             case 'w': // Player Menu
                 this.seeMove();
+                break;
+            case 'i': // Player Menu
+                this.seeHealthMenu();
                 break;
             case 'q': //return to main menu
                 return true;
@@ -149,6 +153,11 @@ public class GameMenuView extends View {
     private void seeMove() {
         MoveView moveView = new MoveView();
         moveView.display();
+    }
+    
+    private void seeHealthMenu() {
+        HealthView healthMenu = new HealthView();
+        healthMenu.display();
     }
 
     private void saveGame() {

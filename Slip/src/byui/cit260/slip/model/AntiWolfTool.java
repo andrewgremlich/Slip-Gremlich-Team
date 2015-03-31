@@ -9,8 +9,8 @@ package byui.cit260.slip.model;
  *
  * @author Andrew
  */
-public class AntiWolfTool extends Equipment{
-    
+public class AntiWolfTool extends Equipment {
+
     private double radius;
     private double frequency;
     private double battery;
@@ -18,8 +18,6 @@ public class AntiWolfTool extends Equipment{
 
     public AntiWolfTool() {
     }
-    
-    
 
     public double getRadius() {
         return radius;
@@ -91,7 +89,5 @@ public class AntiWolfTool extends Equipment{
         }
         return true;
     }
-    
-    
-    
+
 }

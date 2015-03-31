@@ -29,13 +29,13 @@ public class HealthView extends View {
     public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
-            case 'e': //How to move
-                this.console.println("Your Energy level is (Call in attribute for hunger)");
+            case 'e': 
+                this.console.println("Your Energy level is (Call in attribute for energy)");
                 break;
-            case 'h': //Resources info
+            case 'h': 
                 this.console.println("Your hunger level is (Call in attribute for hunger)");
                 break;
-            case 'd': //Instructions
+            case 'd': 
                 this.console.println("Your depression level is (Call in attribute for depression)");
                 break;
             case 'o': //display overall health

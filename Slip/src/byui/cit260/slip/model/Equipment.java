@@ -12,16 +12,14 @@ import java.util.Objects;
  *
  * @author Andrew
  */
-public class Equipment implements Serializable{
-    
+public class Equipment implements Serializable {
+
     private String equipmentType;
     private int quantityInStock;
     private boolean statusOfEquipment;
 
     public Equipment() {
     }
-    
-    
 
     public String getEquipmentType() {
         return equipmentType;
@@ -81,9 +79,5 @@ public class Equipment implements Serializable{
         }
         return true;
     }
-    
-    
-    
-    
-    
+
 }

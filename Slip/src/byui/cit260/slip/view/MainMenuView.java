@@ -58,13 +58,13 @@ public class MainMenuView extends View {
                 this.seePlayer();
                 break;
             case 'q': //Quit program
-                return true;
+                System.exit(0);
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid Selection *** Please Try again");
                 return false;
         }
-        return true;
+        return false;
     }
 
     private String playName() {
