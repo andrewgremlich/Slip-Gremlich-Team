@@ -74,19 +74,18 @@ public class Map implements Serializable {
         }
     }
 
-
     @Override
     public String toString() {
         return "Map{" + "rowCount=" + noOfRows + ", columnCount=" + noOfColumns + '}';
     }
 
-   // @Override
-   // public int hashCode() {
-    //    int hash = 3;
-    //    hash = 37 * hash + this.noOfRows;
-    //    hash = 37 * hash + this.noOfColumns;
-    //    return hash;
-   // }
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 37 * hash + this.noOfRows;
+        hash = 37 * hash + this.noOfColumns;
+        return hash;
+    }
 
     @Override
     public boolean equals(Object obj) {
