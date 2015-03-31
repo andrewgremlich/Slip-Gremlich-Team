@@ -26,10 +26,10 @@ public class InventoryMenuView extends View {
                 + "\n ******* Inventory Menu ********"
                 + "\n--------------------------------"
                 + "\nH - Input Data for the Anti-Wolf Tool"
-                + "\nQ - Quit to Previous Menu"
                 + "\nI - View Inventory"
                 + "\n"
                 + "\nR - Print Attack Strength of Iventory items"
+                + "\nQ - Quit to Previous Menu"
                 + "\n--------------------------------");
 
     }

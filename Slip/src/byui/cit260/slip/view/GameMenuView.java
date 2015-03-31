@@ -34,6 +34,8 @@ public class GameMenuView extends View {
                 + "\nY - Attack Menu"
                 + "\n"
                 + "\nH - Average health of ALL characters"
+                + "\n"
+                + "\nQ - Quit to Previous Menu"
                 + "\n--------------------------------");
     }
 
