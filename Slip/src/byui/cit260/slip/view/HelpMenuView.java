@@ -31,13 +31,17 @@ public class HelpMenuView extends View {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
             case 'h': //How to move
-                this.console.println("*****Test How to move****");
+                this.console.println("Just go ahead...");
                 break;
             case 'r': //Resources info
-                this.console.println("*****Test Gather Resources****");
+                this.console.println("The Player may gather resources by seeing"
+                        + "\nwhat materials are in a specific location.  Choose wisely!");
                 break;
             case 'g': //Instructions
-                this.console.println("*****Test Goal of game****");
+                this.console.println("The Goal of the game is to stay alive throughout"
+                        + "\nthe whole game, and maybe get to the Top of Mt. McKinley.  "
+                        + "\nThe player along the way may gather resources, go across dangerous"
+                        + "\nterrains, and fight wild animals.");
                 break;
             case 'q': //return to main menu
                 return true;
