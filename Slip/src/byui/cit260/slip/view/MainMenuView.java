@@ -28,9 +28,9 @@ public class MainMenuView extends View {
                 + "\nI - Instructions"
                 + "\nP - Player Menu"
                 + "\n                               "
-                + "\nR - Save Game"
+                + ""
                 + "\n                             "
-                + "\nW  - Move Menu"
+                + ""
                 + "\n|                             |"
                 + "\nQ - Quit Program"
                 + "\n-------------------------------");
@@ -56,12 +56,6 @@ public class MainMenuView extends View {
                 break;
             case 'p': // Player Menu
                 this.seePlayer();
-                break;
-            case 'r': // save game
-                this.saveGame();
-                break;
-            case 'w': // Player Menu
-                this.seeMove();
                 break;
             case 'q': //Quit program
                 return true;
@@ -115,16 +109,16 @@ public class MainMenuView extends View {
 
     private void loadGame() {
         this.console.println("\n\nEnter the file path where the game is saved.");
-        
+
         String filePath = this.getInput();
-        
+
         try {
             //start a saved game
             GameControl.loadGame(filePath);
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
-        
+
         //display game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
@@ -140,27 +134,9 @@ public class MainMenuView extends View {
         playerMenu.display();
     }
 
-
-    private void seeMove() {
-        MoveView moveView = new MoveView();
-        moveView.display();
-    }
-
     private void seeGame() {
         GameMenuView gameView = new GameMenuView();
         gameView.display();
-    }
-
-    private void saveGame() {
-        this.console.println("\n\nEnter the file path for where the game is to be saved");
-        String filePath = this.getInput();
-        
-        try {
-            //save the game to the specified file
-            GameControl.saveGame(Slip.getCurrentGame(), filePath);
-        }catch (Exception ex){
-            ErrorView.display("MainMenuView", ex.getMessage());
-        }
     }
 
 }
