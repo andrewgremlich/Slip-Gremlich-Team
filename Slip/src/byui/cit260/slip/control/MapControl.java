@@ -98,7 +98,7 @@ public class MapControl {
                 + "\n You have arrived at the base of Mt. McKinley.  "
                 + "\n It is 14 degrees Fahrenheit.  There is a lot of snow."
                 + "\n The landscape is very beautiful."
-                + "\n To the east you can see the Traleika Glacier. To the North West you can just make out the Peters Glacier. "
+                + "\n To the far east lies the Traleika Glacier. To the North West you can just make out the Peters Glacier. "
                 + "\n Mt. McKinley looms menacingly overhead. "
                 + "\n You have spent the last year preparing to summit the south face of McKinley."
                 + "\n You and your team will summit the mountain following the West Bustress Route.");
