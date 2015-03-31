@@ -28,8 +28,10 @@ public class GameMenuView extends View {
                 + "\nA - View Characters"
                 + "\nS - Sled Status"
                 + "\nQ - Resume Game"
+                + "\nR - Save Game"
                 + "\n"
                 + "\nT  - Inventory Menu"
+                + "\nW  - Move Menu"
                 + "\n"
                 + "\nY - Attack Menu"
                 + "\n"
@@ -59,8 +61,14 @@ public class GameMenuView extends View {
             case 't'://view inventory menu
                 this.seeInventory();
                 break;
+            case 'r': // save game
+                this.saveGame();
+                break;
             case 'y'://view sled
                 this.viewAttackMenu();
+                break;
+            case 'w': // Player Menu
+                this.seeMove();
                 break;
             case 'q': //return to main menu
                 return true;
@@ -81,22 +89,22 @@ public class GameMenuView extends View {
 
     private void viewActors() {
        // this.console.println("Stub function called for Actors.");
-        
-      // Get a list of the actors in the game.
-       Actor[] sortedActorList = GameControl.getSortedActorList();
+
+        // Get a list of the actors in the game.
+        Actor[] sortedActorList = GameControl.getSortedActorList();
 
         //this.console.println(sortedActorList);
         this.console.println("\nList of Characters");
-       this.console.println("Description of " + "\t");
+        this.console.println("Description of " + "\t");
 
         //for each character in the Game
-        for (Actor actor : sortedActorList ) {
-            
-        //Display the description, of each of the actors
-        this.console.println(actor.name() + "\t    ");
-        this.console.println(actor.getDescription() + "\t    ");
-        
-   }
+        for (Actor actor : sortedActorList) {
+
+            //Display the description, of each of the actors
+            this.console.println(actor.name() + "\t    ");
+            this.console.println(actor.getDescription() + "\t    ");
+
+        }
     }
 
     private Location[][] displayMap() {
@@ -111,17 +119,16 @@ public class GameMenuView extends View {
             for (int j = 0; j < map.getNoOfColumns(); j++) {
                 Location location = locations[i][j];
                 String symbol = location.getScene().getMapSymbol();
-                if (location.isVisited()){
-                    this.console.print(symbol + "|"); 
+                if (location.isVisited()) {
+                    this.console.print(symbol + "|");
                 } else {
-                    this.console.print("??"  + "|");
+                    this.console.print("??" + "|");
                 }
-                
+
             }
             this.console.println("\n*****************************************");
         }
-        
-        
+
         return locations;
     }
 
@@ -137,6 +144,23 @@ public class GameMenuView extends View {
     private void viewAttackMenu() {
         AttackMenuView attackMenu = new AttackMenuView();
         attackMenu.display();
+    }
+
+    private void seeMove() {
+        MoveView moveView = new MoveView();
+        moveView.display();
+    }
+
+    private void saveGame() {
+        this.console.println("\n\nEnter the file path for where the game is to be saved");
+        String filePath = this.getInput();
+
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(Slip.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
 }
