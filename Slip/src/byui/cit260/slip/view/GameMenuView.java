@@ -162,13 +162,13 @@ public class GameMenuView extends View {
 
     private void saveGame() {
         this.console.println("\n\nEnter the file path for where the game is to be saved");
-        String filePath = this.getInput();
+        String filepath = this.getInput();
 
         try {
             //save the game to the specified file
-            GameControl.saveGame(Slip.getCurrentGame(), filePath);
+            GameControl.saveGame(Slip.getCurrentGame(), filepath);
         } catch (Exception ex) {
-            ErrorView.display("MainMenuView", ex.getMessage());
+            ErrorView.display("GameMenuView", ex.getMessage());
         }
     }
 

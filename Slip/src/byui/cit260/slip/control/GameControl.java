@@ -77,10 +77,10 @@ public class GameControl {
         return inventoryList;
     }
 
-    public static void saveGame(Game game, String filePath)
+    public static void saveGame(Game game, String filepath)
             throws GameControlException {
 
-        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+        try (FileOutputStream fops = new FileOutputStream(filepath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
 
             output.writeObject(game); //write the game object out to file
