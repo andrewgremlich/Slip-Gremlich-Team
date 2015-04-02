@@ -198,7 +198,7 @@ public class MapControl {
         scenes[SceneType.cliff.ordinal()] = cliffScene;
 
         Scene deathScene = new Scene();
-        deathScene.setDescription("You died.  Felecious the wolf found you and ate you. "
+        deathScene.setDescription("You died. Felecious the wolf found you and ate you. "
                 + "\nDon't feel too bad, the whole circle of life thing, you know.");
         deathScene.setMapSymbol("##");
         deathScene.setBlocked(true);
@@ -238,7 +238,7 @@ public class MapControl {
         
         Scene normalScene = new Scene();
         normalScene.setDescription("You pass through this scene and you enjoy"
-                + "\nthe view.");
+                + "\nthe view. It's times like this that puts life into perpective.");
         normalScene.setMapSymbol("NN");
         normalScene.setBlocked(false);
         normalScene.setTravelTime(25);
