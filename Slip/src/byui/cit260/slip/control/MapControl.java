@@ -75,6 +75,7 @@ public class MapControl {
         death,
         crevasse,
         camp,
+        normal,
         finish;
     }
 
@@ -197,7 +198,7 @@ public class MapControl {
         scenes[SceneType.cliff.ordinal()] = cliffScene;
 
         Scene deathScene = new Scene();
-        deathScene.setDescription("You died.  The wolf found you and ate you.");
+        deathScene.setDescription("You died.  Felecious the wolf found you and ate you.");
         deathScene.setMapSymbol("##");
         deathScene.setBlocked(true);
         deathScene.setTravelTime(300);
@@ -233,6 +234,19 @@ public class MapControl {
         campScene.setSteepTerrain(4);
         campScene.setSnowDepth(3);
         scenes[SceneType.camp.ordinal()] = campScene;
+        
+        Scene normalScene = new Scene();
+        normalScene.setDescription("You pass through this scene and you enjoy"
+                + "\nthe view.");
+        normalScene.setMapSymbol("NN");
+        normalScene.setBlocked(false);
+        normalScene.setTravelTime(25);
+        normalScene.setDepression(2);
+        normalScene.setEnergy(10);
+        normalScene.setHunger(2);
+        normalScene.setSteepTerrain(2);
+        normalScene.setSnowDepth(3);
+        scenes[SceneType.normal.ordinal()] = normalScene;
 
         Scene finishScene = new Scene();
         finishScene.setDescription("\n Congratulations!  You survived the wilderness of Mt. McKinley!"

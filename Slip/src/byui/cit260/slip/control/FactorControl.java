@@ -17,6 +17,9 @@ import java.util.logging.Logger;
  */
 public class FactorControl {
 
+    public FactorControl(String string) {
+    }
+
     public double calcAttackingPower(double energyLevel, double toolPower)
             throws FactorControlException {
 
@@ -70,22 +73,22 @@ public class FactorControl {
         return average;
     }
 
-    public static int findOverallHealth()
-            throws FactorControlException {
-
-        int calculateOverallHealth = calculateOverallHealth();
-
-        if (calculateOverallHealth <= 0) {
-            throw new FactorControlException("You are dead.  Try again?  "
-                    + "\nStart a new game.");
-        } else {
-            return calculateOverallHealth;
-        }
-    }
-
-    private static int calculateOverallHealth() {
-        int health = energy - ((depression + hunger) / 2);
-        return health;
-    }
+//    public static int findOverallHealth()
+//            throws FactorControlException {
+//
+//        int calculateOverallHealth = calculateOverallHealth();
+//
+//        if (calculateOverallHealth <= 0) {
+//            throw new FactorControlException("You are dead.  Try again?  "
+//                    + "\nStart a new game.");
+//        } else {
+//            return calculateOverallHealth;
+//        }
+//    }
+//
+//    private static int calculateOverallHealth() {
+//        int health = energy - ((depression + hunger) / 2);
+//        return health;
+//    }
 
 }

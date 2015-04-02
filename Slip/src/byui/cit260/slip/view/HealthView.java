@@ -45,14 +45,14 @@ public class HealthView extends View {
             case 'd': 
                 this.console.println("Your depression level is (get attribute for depression)");
                 break;
-            case 'o': {
-            try {
-                //display overall health
-                this.console.println("Your overall health is " + FactorControl.findOverallHealth());
-            } catch (FactorControlException ex) {
-                Logger.getLogger(HealthView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//            case 'o': {
+//            try {
+//                //display overall health
+//                this.console.println("Your overall health is " + FactorControl.findOverallHealth());
+//            } catch (FactorControlException ex) {
+//                Logger.getLogger(HealthView.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
             case 'q': //Quit program
                 return true;
             default:
