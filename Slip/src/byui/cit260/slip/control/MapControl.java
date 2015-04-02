@@ -349,15 +349,15 @@ public class MapControl {
         locations[7][9].setScene(scenes[SceneType.start.ordinal()]);
 
         locations[8][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][1].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][2].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][3].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][4].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][5].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][6].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][1].setScene(scenes[SceneType.trees.ordinal()]);
+        locations[8][2].setScene(scenes[SceneType.rocks.ordinal()]);
+        locations[8][3].setScene(scenes[SceneType.mountainIncline.ordinal()]);
+        locations[8][4].setScene(scenes[SceneType.death.ordinal()]);
+        locations[8][5].setScene(scenes[SceneType.rocks.ordinal()]);
+        locations[8][6].setScene(scenes[SceneType.trees.ordinal()]);
         locations[8][7].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][8].setScene(scenes[SceneType.start.ordinal()]);
-        locations[8][9].setScene(scenes[SceneType.start.ordinal()]);
+        locations[8][8].setScene(scenes[SceneType.elf.ordinal()]);
+        locations[8][9].setScene(scenes[SceneType.river.ordinal()]);
 
         locations[9][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][1].setScene(scenes[SceneType.start.ordinal()]);
