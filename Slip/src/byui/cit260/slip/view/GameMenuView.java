@@ -22,7 +22,7 @@ public class GameMenuView extends View {
     public GameMenuView() {
         super("\n"
                 + "\n -------------------------------"
-                + "\n ***** Game Menu ********"
+                + "\n *****   Game Menu  *******"
                 + "\n--------------------------------"
                 + "\nM - Display Map"
                 + "\nA - View Characters"
@@ -95,20 +95,20 @@ public class GameMenuView extends View {
        // this.console.println("Stub function called for Actors.");
 
         // Get a list of the actors in the game.
-        Actor[] sortedActorList = GameControl.getSortedActorList();
+//        Actor[] sortedActorList = GameControl.getSortedActorList();
 
-        //this.console.println(sortedActorList);
-        this.console.println("\nList of Characters");
-        this.console.println("Description of " + "\t");
-
-        //for each character in the Game
-        for (Actor actor : sortedActorList) {
-
-            //Display the description, of each of the actors
-            this.console.println(actor.name() + "\t    ");
-            this.console.println(actor.getDescription() + "\t    ");
-
-        }
+//        //this.console.println(sortedActorList);
+//        this.console.println("\nList of Characters");
+//        this.console.println("Description of " + "\t");
+//
+//        //for each character in the Game
+//        for (Actor actor : sortedActorList) {
+//
+//            //Display the description, of each of the actors
+//            this.console.println(actor.name() + "\t    ");
+//            this.console.println(actor.getDescription() + "\t    ");
+//
+//        }
     }
 
     private Location[][] displayMap() {
@@ -162,13 +162,13 @@ public class GameMenuView extends View {
 
     private void saveGame() {
         this.console.println("\n\nEnter the file path for where the game is to be saved");
-        String filePath = this.getInput();
+        String filepath = this.getInput();
 
         try {
             //save the game to the specified file
-            GameControl.saveGame(Slip.getCurrentGame(), filePath);
+            GameControl.saveGame(Slip.getCurrentGame(), filepath);
         } catch (Exception ex) {
-            ErrorView.display("MainMenuView", ex.getMessage());
+            ErrorView.display("GameMenuView", ex.getMessage());
         }
     }
 
