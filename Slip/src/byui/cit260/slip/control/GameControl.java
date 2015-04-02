@@ -7,8 +7,6 @@ package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.GameControlException;
 import byui.cit260.slip.exceptions.MapControlException;
-import byui.cit260.slip.model.Actor;
-
 import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Backpack;
 import byui.cit260.slip.model.Game;

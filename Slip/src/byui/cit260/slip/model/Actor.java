@@ -17,6 +17,7 @@ import java.io.Serializable;
 public enum Actor  {
 
     //Enum List of Actors
+    Gil("You take control of this character", 10),
     Bill("He is the leader of the expedition.", 8),
     John("The wealthy and stuck up expedition member.", 7),
     Sarah("The sweet girl that breaks her leg.", 5),
