@@ -148,7 +148,8 @@ public class MapControl {
 
         Scene riverScene = new Scene();
         riverScene.setDescription("There is a running river.  The river calms you down"
-                + "\njust a little bit and you continue with your course.");
+                + "\njust a little bit and you continue with your course. Unfortunatley you really have the urge"
+                + "to use the restroom. Dang it!--Just ignore it, I'm sure the urge will go away.");
         riverScene.setMapSymbol(" ~~ ");
         riverScene.setBlocked(false);
         riverScene.setTravelTime(75);
