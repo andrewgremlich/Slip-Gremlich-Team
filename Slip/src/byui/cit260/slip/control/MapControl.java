@@ -119,8 +119,9 @@ public class MapControl {
         scenes[SceneType.santaClaus.ordinal()] = santaClausScene;
 
         Scene elfScene = new Scene();
-        elfScene.setDescription("You have found an elf!  How strange.  The elf tells you that you "
-                + "\nare close to finding Santa Claus.  He gives you energy and you feel great to "
+        elfScene.setDescription("You have found an elf!  How strange.  The elf tells you to keep"
+                + "an eye out for Santa Claus. Little does the Elf know, you stoped beliving "
+                + "in Santa Claus months ago. He gives you energy and you feel great too."
                 + "\ncontinue playing.");
         elfScene.setMapSymbol(" EF ");
         elfScene.setBlocked(false);
