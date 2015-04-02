@@ -5,6 +5,12 @@
  */
 package byui.cit260.slip.view;
 
+import byui.cit260.slip.control.FactorControl;
+import byui.cit260.slip.exceptions.FactorControlException;
+import byui.cit260.slip.model.Player;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Andrew
@@ -28,18 +34,25 @@ public class HealthView extends View {
     @Override
     public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
+        
         switch (choice) {
             case 'e': 
-                this.console.println("Your Energy level is (Call in attribute for energy)");
+                this.console.println("Your Energy level is " );
                 break;
             case 'h': 
-                this.console.println("Your hunger level is (Call in attribute for hunger)");
+                this.console.println("Your hunger level is (get attribute for hunger)");
                 break;
             case 'd': 
-                this.console.println("Your depression level is (Call in attribute for depression)");
+                this.console.println("Your depression level is (get attribute for depression)");
                 break;
-            case 'o': //display overall health
-                this.console.println("Your overall health is (Call in attribute for overall health)" );
+            case 'o': {
+            try {
+                //display overall health
+                this.console.println("Your overall health is " + FactorControl.findOverallHealth());
+            } catch (FactorControlException ex) {
+                Logger.getLogger(HealthView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
             case 'q': //Quit program
                 return true;
             default:

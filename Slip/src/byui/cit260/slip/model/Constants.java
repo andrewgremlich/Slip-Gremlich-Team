@@ -11,6 +11,6 @@ package byui.cit260.slip.model;
  */
 public class Constants {
     
-    public static final int NUMBER_OF_INVENTORY_ITEMS = 17;
+    public static final int NUMBER_OF_INVENTORY_ITEMS = 19;
     
 }

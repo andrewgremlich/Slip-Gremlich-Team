@@ -37,6 +37,8 @@ public class InventoryItem {
         rope,
         ascender,
         mre,
+        tent,
+        sleepingBag,     
         flares;
 
     }
@@ -157,6 +159,20 @@ public class InventoryItem {
         mre.setRequiredAmount(0);
         mre.setAttackPower(0);
         inventory[Item.mre.ordinal()] = mre;
+        
+        InventoryItem tent = new InventoryItem();
+        tent.setDescription("MRE");
+        tent.setQuantityInStock(0);
+        tent.setRequiredAmount(0);
+        tent.setAttackPower(0);
+        inventory[Item.tent.ordinal()] = mre;
+        
+        InventoryItem sleepingBag = new InventoryItem();
+        sleepingBag.setDescription("MRE");
+        sleepingBag.setQuantityInStock(0);
+        sleepingBag.setRequiredAmount(0);
+        sleepingBag.setAttackPower(0);
+        inventory[Item.sleepingBag.ordinal()] = mre;
 
         InventoryItem flares = new InventoryItem();
         flares.setDescription("Flares");

@@ -12,10 +12,10 @@ import java.util.Objects;
  *
  * @author Richard
  */
-public class Scene implements Serializable{
-    
+public class Scene implements Serializable {
+
     public static Object SceneType;
-    
+
     //Class instance variables
     private String MapSymbol;
     private String description;
@@ -23,12 +23,13 @@ public class Scene implements Serializable{
     private boolean blocked;
     private int steepTerrain;
     private int snowDepth;
-    private String weather;
-    private boolean exploredLocation;
-    
+    private int depression;
+    private int hunger;
+    private int energy;
+    private int airPressure;
 
     public Scene() {
-    }   
+    }
 
     public static Object getSceneType() {
         return SceneType;
@@ -49,7 +50,7 @@ public class Scene implements Serializable{
     public String getMapSymbol() {
         return MapSymbol;
     }
-   
+
     public double getTravelTime() {
         return travelTime;
     }
@@ -82,44 +83,60 @@ public class Scene implements Serializable{
         this.snowDepth = snowDepth;
     }
 
-    public String getWeather() {
-        return weather;
-    }
-
-    public void setWeather(String weather) {
-        this.weather = weather;
-    }
-
-    public boolean isExploredLocation() {
-        return exploredLocation;
-    }
-
-    public void setExploredLocation(boolean exploredLocation) {
-        this.exploredLocation = exploredLocation;
-    } 
-
     public void setMapSymbol(String MapSymbol) {
         this.MapSymbol = MapSymbol;
     }
-    
-    
-        
 
-    @Override
-    public String toString() {
-        return "Scene{" + "description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", steepTerrain=" + steepTerrain + ", snowDepth=" + snowDepth + ", weather=" + weather + ", exploredLocation=" + exploredLocation + '}';
+    public int getDepression() {
+        return depression;
+    }
+
+    public void setDepression(int depression) {
+        this.depression = depression;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
+
+    public int getAirPressure() {
+        return airPressure;
+    }
+
+    public void setAirPressure(int airPressure) {
+        this.airPressure = airPressure;
     }
 
     @Override
+    public String toString() {
+        return "Scene{" + "MapSymbol=" + MapSymbol + ", description=" + description + ", travelTime=" + travelTime + ", blocked=" + blocked + ", steepTerrain=" + steepTerrain + ", snowDepth=" + snowDepth + ", depression=" + depression + ", hunger=" + hunger + ", energy=" + energy + ", airPressure=" + airPressure + '}';
+    }   
+
+    @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.description);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
-        hash = 37 * hash + (this.blocked ? 1 : 0);
-        hash = 37 * hash + this.steepTerrain;
-        hash = 37 * hash + this.snowDepth;
-        hash = 37 * hash + Objects.hashCode(this.weather);
-        hash = 37 * hash + (this.exploredLocation ? 1 : 0);
+        int hash = 3;
+        hash = 67 * hash + Objects.hashCode(this.MapSymbol);
+        hash = 67 * hash + Objects.hashCode(this.description);
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
+        hash = 67 * hash + (this.blocked ? 1 : 0);
+        hash = 67 * hash + this.steepTerrain;
+        hash = 67 * hash + this.snowDepth;
+        hash = 67 * hash + this.depression;
+        hash = 67 * hash + this.hunger;
+        hash = 67 * hash + this.energy;
+        hash = 67 * hash + this.airPressure;
         return hash;
     }
 
@@ -132,6 +149,9 @@ public class Scene implements Serializable{
             return false;
         }
         final Scene other = (Scene) obj;
+        if (!Objects.equals(this.MapSymbol, other.MapSymbol)) {
+            return false;
+        }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
@@ -147,10 +167,22 @@ public class Scene implements Serializable{
         if (this.snowDepth != other.snowDepth) {
             return false;
         }
-        if (!Objects.equals(this.weather, other.weather)) {
+        if (this.depression != other.depression) {
             return false;
         }
-        return this.exploredLocation == other.exploredLocation;
+        if (this.hunger != other.hunger) {
+            return false;
+        }
+        if (this.energy != other.energy) {
+            return false;
+        }
+        if (this.airPressure != other.airPressure) {
+            return false;
+        }
+        return true;
     }
     
+    
+
+
 }

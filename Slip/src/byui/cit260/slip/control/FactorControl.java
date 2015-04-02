@@ -8,18 +8,17 @@ package byui.cit260.slip.control;
 import byui.cit260.slip.exceptions.FactorControlException;
 import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.view.View;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Andrew
  */
-public class FactorControl extends View{
+public class FactorControl {
 
-    public FactorControl(String promptMessage) { //Added constructor because of yellowPrompt
-        super(promptMessage);
-    }
-
-    public double calcAttackingPower(double energyLevel, double toolPower) throws FactorControlException {
+    public double calcAttackingPower(double energyLevel, double toolPower)
+            throws FactorControlException {
 
         //Check if any input is 0
         if (energyLevel == 0 || toolPower == 0) {
@@ -44,37 +43,49 @@ public class FactorControl extends View{
         } //Calculate attacking power and return value;
         else {
             double attackingPower = energyLevel + toolPower;
-            this.console.println("Your attacking about is " + attackingPower + ".");
+            System.out.println("Your attacking about is " + attackingPower + ".");
 
             return attackingPower;
         }
 
     }
 
-    
     public static double calculateAverageHealth() {
-        
+
         Actor[] health = Actor.values();
-        
+
         double findAverageHealth = FactorControl.findAverageHealth(health);
         return findAverageHealth;
     }
 
     private static double findAverageHealth(Actor[] health) {
-        
+
         int total = 0;
-        
+
         for (Actor totalHealth : health) {
             total = total + totalHealth.getHealth();
         }
-        
+
         double average = total / health.length;
         return average;
     }
 
-    @Override
-    public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static int findOverallHealth()
+            throws FactorControlException {
+
+        int calculateOverallHealth = calculateOverallHealth();
+
+        if (calculateOverallHealth <= 0) {
+            throw new FactorControlException("You are dead.  Try again?  "
+                    + "\nStart a new game.");
+        } else {
+            return calculateOverallHealth;
+        }
+    }
+
+    private static int calculateOverallHealth() {
+        int health = energy - ((depression + hunger) / 2);
+        return health;
     }
 
 }

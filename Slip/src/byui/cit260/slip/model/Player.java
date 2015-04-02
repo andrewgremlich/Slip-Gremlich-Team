@@ -19,9 +19,8 @@ public class Player implements Serializable {
     private String name;
     private double bestTime;
     private double attackingPower;
-    private int depression;
-    private int hunger;
-    private int energy;
+    private double health = 0;
+    private Location location;
 
     public Player() {
     }
@@ -50,28 +49,20 @@ public class Player implements Serializable {
         this.attackingPower = attackingPower;
     }
 
-    public int getDepression() {
-        return depression;
+    public double getHealth() {
+        return health;
     }
 
-    public void setDepression(int depression) {
-        this.depression = depression;
+    public void setHealth(double health) {
+        this.health = health;
     }
 
-    public int getHunger() {
-        return hunger;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
-    }
-
-    public int getEnergy() {
-        return energy;
-    }
-
-    public void setEnergy(int energy) {
-        this.energy = energy;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     @Override
