@@ -7,6 +7,7 @@ package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.GameControlException;
 import byui.cit260.slip.exceptions.MapControlException;
+import byui.cit260.slip.model.Actor;
 import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Backpack;
 import byui.cit260.slip.model.Game;
@@ -30,9 +31,9 @@ public class GameControl {
     public static void createNewGame(Player player) throws MapControlException {
 
         Game game = new Game();
-        Slip.setCurrentGame(game);
+        Slip.setCurrentGame(game);      
 
-        game.setPlayer(player);
+        
 
         InventoryItem[] inventoryList = InventoryItem.createInventoryList();
         game.setInventory(inventoryList);
@@ -105,7 +106,6 @@ public class GameControl {
         Slip.setCurrentGame(game); //Save in slip...
     }
 
-    private Iterable<String> Actor;
 
     public static void getSortedActorList() {
 

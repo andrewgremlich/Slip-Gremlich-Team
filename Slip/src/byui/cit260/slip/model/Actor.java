@@ -5,18 +5,16 @@
  */
 package byui.cit260.slip.model;
 
-
 import java.awt.Point;
 import java.io.Serializable;
 
-
 /**
  *
- * @author Richard
+ * @author Andrew
  */
-public enum Actor  {
-
-    //Enum List of Actors
+public enum Actor implements Serializable{
+    
+     //Enum List of Actors
     Phil("You take control of this character", 10),
     Bill("He is the leader of the expedition.", 8),
     John("The wealthy and stuck up expedition member.", 7),
@@ -51,5 +49,5 @@ public enum Actor  {
     public int getHealth() {
         return health;
     }
-
+    
 }

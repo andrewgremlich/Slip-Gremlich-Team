@@ -274,9 +274,9 @@ public class MapControl {
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
-        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][0].setScene(scenes[SceneType.crevasse.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.elf.ordinal()]);
         locations[0][3].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][4].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][5].setScene(scenes[SceneType.start.ordinal()]);
@@ -289,7 +289,7 @@ public class MapControl {
         locations[1][1].setScene(scenes[SceneType.start.ordinal()]);
         locations[1][2].setScene(scenes[SceneType.start.ordinal()]);
         locations[1][3].setScene(scenes[SceneType.start.ordinal()]);
-        locations[1][4].setScene(scenes[SceneType.start.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.crevasse.ordinal()]);
         locations[1][5].setScene(scenes[SceneType.start.ordinal()]);
         locations[1][6].setScene(scenes[SceneType.start.ordinal()]);
         locations[1][7].setScene(scenes[SceneType.start.ordinal()]);
@@ -316,10 +316,10 @@ public class MapControl {
         locations[3][6].setScene(scenes[SceneType.start.ordinal()]);
         locations[3][7].setScene(scenes[SceneType.start.ordinal()]);
         locations[3][8].setScene(scenes[SceneType.start.ordinal()]);
-        locations[3][9].setScene(scenes[SceneType.start.ordinal()]);
+        locations[3][9].setScene(scenes[SceneType.crevasse.ordinal()]);
 
         locations[4][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[4][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.crevasse.ordinal()]);
         locations[4][2].setScene(scenes[SceneType.start.ordinal()]);
         locations[4][3].setScene(scenes[SceneType.start.ordinal()]);
         locations[4][4].setScene(scenes[SceneType.start.ordinal()]);
@@ -381,7 +381,7 @@ public class MapControl {
         locations[9][5].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][6].setScene(scenes[SceneType.start.ordinal()]);
         locations[9][7].setScene(scenes[SceneType.start.ordinal()]);
-        locations[9][8].setScene(scenes[SceneType.start.ordinal()]);
+        locations[9][8].setScene(scenes[SceneType.crevasse.ordinal()]);
         locations[9][9].setScene(scenes[SceneType.finish.ordinal()]);
 
     }

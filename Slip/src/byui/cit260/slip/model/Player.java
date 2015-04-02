@@ -21,6 +21,7 @@ public class Player implements Serializable {
     private double attackingPower;
     private double health = 0;
     private Location location;
+    private Actor actor;
 
     public Player() {
     }
@@ -64,6 +65,16 @@ public class Player implements Serializable {
     public void setLocation(Location location) {
         this.location = location;
     }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }
+
+    
 
     @Override
     public String toString() {
