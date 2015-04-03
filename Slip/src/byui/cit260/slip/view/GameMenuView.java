@@ -119,7 +119,7 @@ public class GameMenuView extends View {
         Map map = Slip.getCurrentGame().getMap();
         Location[][] locations = map.getLocations();
         this.console.println("Slip Map of Mt. McKinley");
-        this.console.println("\n    1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10");
+        this.console.println("\n     1 ,  2 ,  3 ,  4 ,  5 ,  6 ,  7 ,  8 ,  9 ,  10");
         this.console.println("****************************************************");
 
         for (int i = 0; i < map.getNoOfRows(); i++) {
@@ -127,14 +127,14 @@ public class GameMenuView extends View {
             for (int j = 0; j < map.getNoOfColumns(); j++) {
                 Location location = locations[i][j];
                 String symbol = location.getScene().getMapSymbol();
-                if (location.isVisited()) {
+                if (location.isVisited()==false) {
                     this.console.print(symbol + "|");
                 } else {
                     this.console.print("??" + "|");
                 }
 
             }
-            this.console.println("\n*****************************************");
+            this.console.println("\n****************************************************");
         }
 
         return locations;
