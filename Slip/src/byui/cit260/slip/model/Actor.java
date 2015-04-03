@@ -21,11 +21,7 @@ public enum Actor implements Serializable{
     Sarah("The sweet girl that breaks her leg.", 5),
     Samantha("Sarah's best friend. She is crazy.", 5),
     Travis("The big clown of the group, heart bigger than his head", 7),
-    Wil("Big lovly bear of a fella, your close associate.", 7),
-    SantaClaus("Yes. That's Santa Claus--Fat joyful individual.", 10),
-    BuddyTheElf("Santa's prideful servant.", 5),
-    AbominableSnowman("Constantly hungry and dangerous.", 10),
-    Felecious("The big bad wolf that is always on the prowl", 10);
+    Wil("Big lovly bear of a fella, your close associate.", 7);
 
     //Class instance variables
     private final String description;

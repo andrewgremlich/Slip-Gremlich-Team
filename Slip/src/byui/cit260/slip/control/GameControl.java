@@ -28,7 +28,8 @@ import slip.Slip;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) throws MapControlException {
+    public static void createNewGame(Player player) 
+            throws MapControlException {
 
         Game game = new Game();
         Slip.setCurrentGame(game);      
