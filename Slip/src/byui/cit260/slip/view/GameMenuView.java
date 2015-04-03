@@ -25,6 +25,7 @@ public class GameMenuView extends View {
                 + "\n *****   Game Menu  *******"
                 + "\n--------------------------------"
                 + "\nM - Display Map"
+                + "\nV - View Mountain"
                 + "\nA - View Characters"
                 + "\nS - Sled Status"
                 + "\nQ - Resume Game"
@@ -52,6 +53,9 @@ public class GameMenuView extends View {
         switch (selection) {
             case 'm': //display map
                 this.displayMap();
+                break;
+            case 'v': //display map
+                this.viewMountain();
                 break;
             case 'a'://view actors
                 this.viewActors();
@@ -158,6 +162,11 @@ public class GameMenuView extends View {
     private void seeHealthMenu() {
         HealthView healthMenu = new HealthView();
         healthMenu.display();
+    }
+    
+    private void viewMountain() {
+        MountainView mountainView = new MountainView();
+        mountainView.display();
     }
 
     private void saveGame() {
