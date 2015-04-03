@@ -176,7 +176,7 @@ public class MapControl {
         Scene treesScene = new Scene();
         treesScene.setDescription("You are walking through a small forest.  It is"
                 + "beautiful and very relaxing.  But there is the wolf!  Be careful!");
-        treesScene.setMapSymbol("/!");
+        treesScene.setMapSymbol(" /! ");
         treesScene.setBlocked(false);
         treesScene.setTravelTime(65);
         treesScene.setDepression(2);
@@ -189,7 +189,7 @@ public class MapControl {
         Scene cliffScene = new Scene();
         cliffScene.setDescription("A cliff is in front of you.  There is no way to go"
                 + "\nthrough.  You must go around.");
-        cliffScene.setMapSymbol("-|");
+        cliffScene.setMapSymbol(" -| ");
         cliffScene.setBlocked(true);
         cliffScene.setTravelTime(300);
         cliffScene.setDepression(4);
@@ -202,7 +202,7 @@ public class MapControl {
         Scene deathScene = new Scene();
         deathScene.setDescription("You died. Felecious the wolf found you and ate you. "
                 + "\nDon't feel too bad, the whole circle of life thing, you know.");
-        deathScene.setMapSymbol("##");
+        deathScene.setMapSymbol(" ## ");
         deathScene.setBlocked(true);
         deathScene.setTravelTime(300);
         deathScene.setDepression(4);
@@ -214,7 +214,7 @@ public class MapControl {
 
         Scene crevasseScene = new Scene();
         crevasseScene.setDescription("That last step was a doozy. You fell into a crevasse and died.");
-        crevasseScene.setMapSymbol("||");
+        crevasseScene.setMapSymbol(" || ");
         crevasseScene.setBlocked(true);
         crevasseScene.setTravelTime(300);
         crevasseScene.setDepression(4);
@@ -228,7 +228,7 @@ public class MapControl {
         campScene.setDescription("There is a camp here.  You go to the camp to get"
                 + "\nmore energy and to eat.  You feel well the next morning and you"
                 + "\ncontinue to hike.");
-        campScene.setMapSymbol("CP");
+        campScene.setMapSymbol(" CP ");
         campScene.setBlocked(false);
         campScene.setTravelTime(70);
         campScene.setDepression(0);
@@ -241,7 +241,7 @@ public class MapControl {
         Scene normalScene = new Scene();
         normalScene.setDescription("You pass through this scene and you enjoy"
                 + "\nthe view. It's times like this that puts life into perpective.");
-        normalScene.setMapSymbol("NN");
+        normalScene.setMapSymbol(" NN ");
         normalScene.setBlocked(false);
         normalScene.setTravelTime(25);
         normalScene.setDepression(2);
