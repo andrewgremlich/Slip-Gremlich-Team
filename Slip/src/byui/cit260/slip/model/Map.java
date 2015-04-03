@@ -43,9 +43,6 @@ public class Map implements Serializable {
         this.locations = locations;
     }
 
-    public Map() {
-    }
-
     public Map(int noOfRows, int noOfColumns) {
         if (noOfRows < 1 || noOfColumns < 1) {
             ErrorView.display(this.getClass().getName(),
