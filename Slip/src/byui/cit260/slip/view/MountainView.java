@@ -12,7 +12,8 @@ package byui.cit260.slip.view;
 public class MountainView extends View{
     public MountainView() {
       super ("\n West Face of Mount McKinley." +
-"\n  (highest peak in N. America)                       A" +
+"\n  (highest peak in N. America)                       "
+ +"\n                                                    A" +
 "\n                                                     /\\_," +
 "\n                                            ______,-' .::\\__" +
 "\n                                 _,--------'      (_    .:::\\__" +
@@ -33,7 +34,7 @@ public class MountainView extends View{
 "\n       |    ::      ::    \\  D" +
 "\n     _/    .:'" +
 "\n    '" +
-"\n***********KEY***********" +
+"\n***********Legend***********" +
 "\nA : South Summit. (6194m)" +
 "\nB : North Summit. (5935m)" +
 "\nC : Denali Pass." +
@@ -43,17 +44,30 @@ public class MountainView extends View{
 "\nG : Hourglass Culoir." +
 "\nH : Messner Corner." +
 "\nI : The West Rib." +
-"\nJ : Thunder Ridge.");
+"\nJ : Thunder Ridge."
+  + "\n"
+  + "\nPress Q to exit.");
     
     
 }
 
-  //  void display() {
-   //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   // }
+    public MountainView(String promptMessage) {
+        super(promptMessage);
+    }
+
+  
 
     @Override
     public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        char selection = ((String) obj).toLowerCase().charAt(0);
+            switch (selection) {
+            case 'q': //return to main menu
+                return true;
+            default:
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
+                return false; //To change body of generated methods, choose Tools | Templates.
     }
+        
 }
+} 
