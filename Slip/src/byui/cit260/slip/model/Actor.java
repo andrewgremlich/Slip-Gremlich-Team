@@ -34,7 +34,7 @@ public enum Actor implements Serializable{
 
     Actor(String description, int health) {
         this.description = description;
-        coordinates = new Point(1, 1);
+        coordinates = new Point(5, 5);
         this.health = health;
     }
 

@@ -55,7 +55,6 @@ public class AttackMenuView extends View {
                         + "  Try again or enter Q to quit.");
             }
         }
-
     }
 
     @Override
@@ -68,7 +67,7 @@ public class AttackMenuView extends View {
             Logger.getLogger(AttackMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.console.println("Your attack power is " + attackPower);
-        return true;
+        return false;
     }
         
 }

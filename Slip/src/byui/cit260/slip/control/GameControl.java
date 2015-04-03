@@ -32,8 +32,8 @@ public class GameControl {
 
         Game game = new Game();
         Slip.setCurrentGame(game);      
-
         
+        game.setPlayer(player);
 
         InventoryItem[] inventoryList = InventoryItem.createInventoryList();
         game.setInventory(inventoryList);
