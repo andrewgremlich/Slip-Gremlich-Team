@@ -74,6 +74,7 @@ public class MapControl {
         cliff,
         death,
         crevasse,
+        abominable,
         camp,
         normal,
         finish;
@@ -212,6 +213,23 @@ public class MapControl {
         deathScene.setSnowDepth(2);
         scenes[SceneType.death.ordinal()] = deathScene;
 
+        Scene abominableScene = new Scene();
+        deathScene.setDescription("Amazing! As you glance around you notice the Abominable Snowman. "
+                + "As you reach for your camera with the thought of riches and fame, it occurs to you that"
+                + "the Abominable Snowman is moving quickly. Before you can react the Abonimable Snowman"
+                + "is upon you seperating you from your beloved legs. Don't worry the Abominable Snowman"
+                + "uses all parts of the individual, your femers will make wonderful rainstcks."
+                + "You die wondering, are those my feet?");
+        abominableScene.setMapSymbol(" @@ ");
+        abominableScene.setBlocked(true);
+        abominableScene.setTravelTime(300);
+        abominableScene.setDepression(4);
+        abominableScene.setEnergy(0);
+        abominableScene.setHunger(1);
+        abominableScene.setSteepTerrain(2);
+        abominableScene.setSnowDepth(2);
+        scenes[SceneType.abominable.ordinal()] = abominableScene;
+        
         Scene crevasseScene = new Scene();
         crevasseScene.setDescription("That last step was a doozy. You fell into a crevasse and died.");
         crevasseScene.setMapSymbol(" || ");
@@ -362,7 +380,7 @@ public class MapControl {
         locations[7][5].setScene(scenes[SceneType.trees.ordinal()]);
         locations[7][6].setScene(scenes[SceneType.mountainIncline.ordinal()]);
         locations[7][7].setScene(scenes[SceneType.rocks.ordinal()]);
-        locations[7][8].setScene(scenes[SceneType.normal.ordinal()]);
+        locations[7][8].setScene(scenes[SceneType.abominable.ordinal()]);
         locations[7][9].setScene(scenes[SceneType.river.ordinal()]);
 
         locations[8][0].setScene(scenes[SceneType.start.ordinal()]);

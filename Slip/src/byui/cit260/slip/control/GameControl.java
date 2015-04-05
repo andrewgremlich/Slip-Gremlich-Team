@@ -28,12 +28,12 @@ import slip.Slip;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) 
+    public static void createNewGame(Player player)
             throws MapControlException {
 
         Game game = new Game();
-        Slip.setCurrentGame(game);      
-        
+        Slip.setCurrentGame(game);
+
         game.setPlayer(player);
 
         InventoryItem[] inventoryList = InventoryItem.createInventoryList();
@@ -89,32 +89,26 @@ public class GameControl {
         }
     }
 
-    public static void loadGame(String filepath) throws GameControlException{
+    public static void loadGame(String filepath) throws GameControlException {
         Game game = null;
-        
+
         try (FileInputStream fips = new FileInputStream(filepath)) {
             ObjectInputStream output = new ObjectInputStream(fips);
-            
+
             game = (Game) output.readObject(); //read the game object from file
-        }
-        catch(FileNotFoundException fnfe) {
+        } catch (FileNotFoundException fnfe) {
             throw new GameControlException(fnfe.getMessage());
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             throw new GameControlException(e.getMessage());
         }
-        
+
         Slip.setCurrentGame(game); //Save in slip...
     }
-
 
     public static void getSortedActorList() {
 
         //get actor list for the current game
 //        Actor.
-
-        
-
         //using a bubblesort to sort the list of actorList by name
 //        Actor[] tempActorList;
 //        for (int i = 0; i < actorList.length - 1; i++) {
