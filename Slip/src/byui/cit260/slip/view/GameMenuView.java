@@ -128,12 +128,13 @@ public class GameMenuView extends View {
                 Location location = locations[i][j];
                 String symbol = location.getScene().getMapSymbol();
                 if (location.isVisited()==false) {
-                    this.console.print(symbol + "|");
-                } else {
                     this.console.print("??" + "|");
+                } else {
+                    this.console.print(symbol + "|");
                 }
 
             }
+            
             this.console.println("\n****************************************************");
         }
 

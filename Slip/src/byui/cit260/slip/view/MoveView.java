@@ -34,7 +34,7 @@ public class MoveView extends View {
     public boolean doAction(Object obj) {
         char choice = ((String) obj).toLowerCase().charAt(0);
         switch (choice) {
-            case 'n': //Move Player North
+            case 'n': //Move Player North                
                 this.console.println("You move slowly, but assuredly North.");
                 break;
             case 's': //Move Player South
