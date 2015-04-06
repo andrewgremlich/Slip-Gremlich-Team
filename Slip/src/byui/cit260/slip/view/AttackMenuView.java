@@ -20,10 +20,12 @@ public class AttackMenuView extends View {
         super("\n"
                 + "\n-------------------------------"
                 + "\n|        Attack Input         |"
+                + "\n-------------------------------"
+                + "\n T - To run the attack."
+                + "\n Q- Return to previous menu."
                 + "\n-------------------------------");
-
     }
-
+    
     @Override
     public void display() {
 
@@ -33,32 +35,35 @@ public class AttackMenuView extends View {
         while (!valid) {
 
             this.console.println(this.getPromptMessage()); // display main menu
-            
-            try{
-            this.console.println("Enter tool power.");
-            String input = this.getInput(); //get the user's selection
-            double toolPower = Double.parseDouble(input);
 
-            this.console.println("Enter health level.");
-            input = this.getInput(); //get the user's selection
-            double energyLevel = Double.parseDouble(input);
-            
-            double[] inputs = new double[2];
-            inputs[0] = toolPower;
-            inputs[1] = energyLevel;
-            
-            this.doAction(inputs);
-            
+            try {
+                this.console.println("Enter tool power.");
+                String input = this.getInput(); //get the user's selection
+                double toolPower = Double.parseDouble(input);
+
+                this.console.println("Enter health level.");
+                input = this.getInput(); //get the user's selection
+                double energyLevel = Double.parseDouble(input);
+
+                double[] inputs = new double[2];
+                inputs[0] = toolPower;
+                inputs[1] = energyLevel;
+
+                this.doAction(inputs);
+
             } catch (NumberFormatException nf) {
                 ErrorView.display(this.getClass().getName(),
                         "\nYou must enter a valid number with in the range of 1-10."
                         + "  Try again or enter Q to quit.");
             }
+
         }
+
     }
 
     @Override
     public boolean doAction(Object obj) {
+                
         double[] inputs = (double[]) obj;
         double attackPower = 0;
         try {
@@ -67,7 +72,7 @@ public class AttackMenuView extends View {
             Logger.getLogger(AttackMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.console.println("Your attack power is " + attackPower);
-        return false;
+        return true;        
     }
-        
+
 }
