@@ -54,14 +54,12 @@ public class MapControl {
         Location[][] locations = map.getLocations();
 
         Point oldCoordinates = actor.getCoordinates();
-        Location oldLocation = locations [oldCoordinates.x-1][oldCoordinates.y-1]; 
-         
-        Location newLocation = locations[newCoordinates.x-1][newCoordinates.y-1];
-        
+        Location oldLocation = locations[oldCoordinates.x - 1][oldCoordinates.y - 1];
+
+        Location newLocation = locations[newCoordinates.x - 1][newCoordinates.y - 1];
+        newLocation[actor.Phil];
+
         oldLocation = null;
-        
-        newLocation = Phil;
-        
 
         if (newCoordinates.x < 0 || newCoordinates.x >= map.getNoOfRows() || newCoordinates.y < 0 || newCoordinates.y >= map.getNoOfColumns()) {
             throw new MapControlException("Can not move actor to location "
@@ -72,7 +70,7 @@ public class MapControl {
         newLocation.setVisited(true);
 
     }
-    
+
     public enum SceneType {
 
         start,
