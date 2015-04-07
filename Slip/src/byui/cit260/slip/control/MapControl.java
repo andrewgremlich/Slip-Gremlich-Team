@@ -11,8 +11,8 @@ import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Scene;
+import byui.cit260.slip.view.MoveView;
 import java.awt.Point;
-import javax.swing.ImageIcon;
 import slip.Slip;
 
 /**
@@ -50,6 +50,21 @@ public class MapControl {
             throws MapControlException {
 
         Map map = Slip.getCurrentGame().getMap();
+        Location[][] locations = map.getLocations();
+
+        Point oldCoordinates = actor.getCoordinates();
+        location oldLocation = locations [oldCoordinates.x][oldCoordinates.y]; 
+        
+        Point newCoordinates = MoveView.getInput();  
+        location newLocation = locations [newCoordinates.x][newCoordinates.y];
+        
+        newCoordinates = actor.setCoordinates();
+        
+        Point newCoordinates = actor.newLocation;
+        Point oldCoordinates = null;
+        
+        newLocation.setVisited(true);
+
         int newRow = coordinates.x - 1;
         int newColumn = coordinates.y - 1;
 
@@ -59,6 +74,8 @@ public class MapControl {
                     + "because that location is outside "
                     + "the bounds of the map.");
         }
+        
+        isVisited = true;
 
     }
 
@@ -229,7 +246,7 @@ public class MapControl {
         abominableScene.setSteepTerrain(2);
         abominableScene.setSnowDepth(2);
         scenes[SceneType.abominable.ordinal()] = abominableScene;
-        
+
         Scene crevasseScene = new Scene();
         crevasseScene.setDescription("That last step was a doozy. You fell into a crevasse and died.");
         crevasseScene.setMapSymbol(" || ");
@@ -255,7 +272,7 @@ public class MapControl {
         campScene.setSteepTerrain(4);
         campScene.setSnowDepth(3);
         scenes[SceneType.camp.ordinal()] = campScene;
-        
+
         Scene normalScene = new Scene();
         normalScene.setDescription("You pass through this scene and you enjoy"
                 + "\nthe view. It's times like this that puts life into perpective.");

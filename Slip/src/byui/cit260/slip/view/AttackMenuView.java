@@ -25,9 +25,25 @@ public class AttackMenuView extends View {
                 + "\n Q- Return to previous menu."
                 + "\n-------------------------------");
     }
-    
+
     @Override
-    public void display() {
+    public boolean doAction(Object obj) {
+        char selection = ((String) obj).toLowerCase().charAt(0);
+        switch (selection) {
+            case 't': //display map
+                this.method();
+                break;
+            case 'q': //return to main menu
+                return true;
+            default:
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Please Try again");
+                return false;
+        }
+        return false;
+    }
+
+    public void method() {
 
         boolean valid = false;
         double display = 0;
@@ -49,7 +65,7 @@ public class AttackMenuView extends View {
                 inputs[0] = toolPower;
                 inputs[1] = energyLevel;
 
-                this.doAction(inputs);
+                this.attackPower(inputs);
 
             } catch (NumberFormatException nf) {
                 ErrorView.display(this.getClass().getName(),
@@ -61,9 +77,8 @@ public class AttackMenuView extends View {
 
     }
 
-    @Override
-    public boolean doAction(Object obj) {
-                
+    public boolean attackPower(Object obj) {
+
         double[] inputs = (double[]) obj;
         double attackPower = 0;
         try {
@@ -72,7 +87,7 @@ public class AttackMenuView extends View {
             Logger.getLogger(AttackMenuView.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.console.println("Your attack power is " + attackPower);
-        return true;        
+        return true;
     }
 
 }

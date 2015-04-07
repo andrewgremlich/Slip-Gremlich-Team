@@ -44,6 +44,6 @@ public enum Actor implements Serializable{
 
     public int getHealth() {
         return health;
-    }
+    }  
     
 }
