@@ -7,6 +7,7 @@ package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
+import static byui.cit260.slip.model.Actor.Phil;
 import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
@@ -46,7 +47,7 @@ public class MapControl {
 
     }
 
-    public static void moveActorToLocation(Actor actor, Point coordinates)
+    public static void moveActorToLocation(Actor actor, Point newCoordinates)
             throws MapControlException {
 
         Map map = Slip.getCurrentGame().getMap();
@@ -54,29 +55,24 @@ public class MapControl {
 
         Point oldCoordinates = actor.getCoordinates();
         Location oldLocation = locations [oldCoordinates.x-1][oldCoordinates.y-1]; 
-        
-        Point newCoordinates = MoveView.getInput();  
+         
         Location newLocation = locations[newCoordinates.x-1][newCoordinates.y-1];
         
-        coordinates=newLocation;
         oldLocation = null;
         
-        newLocation.setVisited(true);
+        newLocation = Phil;
+        
 
-        int newRow = coordinates.x;
-        int newColumn = coordinates.y;
-
-        if (newRow < 0 || newRow >= map.getNoOfRows() || newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+        if (newCoordinates.x < 0 || newCoordinates.x >= map.getNoOfRows() || newCoordinates.y < 0 || newCoordinates.y >= map.getNoOfColumns()) {
             throw new MapControlException("Can not move actor to location "
-                    + coordinates.x + ", " + coordinates.y
+                    + newCoordinates.x + ", " + newCoordinates.y
                     + "because that location is outside "
                     + "the bounds of the map.");
         }
-        
-        Location.isVisited() = true;
+        newLocation.setVisited(true);
 
     }
-
+    
     public enum SceneType {
 
         start,
