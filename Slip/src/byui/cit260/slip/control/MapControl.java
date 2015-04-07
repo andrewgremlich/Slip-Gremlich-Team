@@ -53,20 +53,18 @@ public class MapControl {
         Location[][] locations = map.getLocations();
 
         Point oldCoordinates = actor.getCoordinates();
-        location oldLocation = locations [oldCoordinates.x][oldCoordinates.y]; 
+        Location oldLocation = locations [oldCoordinates.x-1][oldCoordinates.y-1]; 
         
         Point newCoordinates = MoveView.getInput();  
-        location newLocation = locations [newCoordinates.x][newCoordinates.y];
+        Location newLocation = locations[newCoordinates.x-1][newCoordinates.y-1];
         
-        newCoordinates = actor.setCoordinates();
-        
-        Point newCoordinates = actor.newLocation;
-        Point oldCoordinates = null;
+        coordinates=newLocation;
+        oldLocation = null;
         
         newLocation.setVisited(true);
 
-        int newRow = coordinates.x - 1;
-        int newColumn = coordinates.y - 1;
+        int newRow = coordinates.x;
+        int newColumn = coordinates.y;
 
         if (newRow < 0 || newRow >= map.getNoOfRows() || newColumn < 0 || newColumn >= map.getNoOfColumns()) {
             throw new MapControlException("Can not move actor to location "
@@ -75,7 +73,7 @@ public class MapControl {
                     + "the bounds of the map.");
         }
         
-        isVisited = true;
+        Location.isVisited() = true;
 
     }
 
