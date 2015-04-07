@@ -136,8 +136,8 @@ public class MapControl {
 
         Scene elfScene = new Scene();
         elfScene.setDescription("You have found an elf!  How strange.  The elf tells you to keep"
-                + "an eye out for Santa Claus. Little does the Elf know, you stoped beliving "
-                + "in Santa Claus months ago. He gives you energy and you feel great too."
+                + "\nan eye out for Santa Claus. Little does the elf know, you stopped believing "
+                + "\nin Santa Claus months ago. He gives you energy and you feel great too."
                 + "\ncontinue playing.");
         elfScene.setMapSymbol(" EF ");
         elfScene.setBlocked(false);
@@ -164,8 +164,8 @@ public class MapControl {
 
         Scene riverScene = new Scene();
         riverScene.setDescription("There is a running river.  The river calms you down"
-                + "\njust a little bit and you continue with your course. Unfortunatley you really have the urge"
-                + "to use the restroom. Dang it!--Just ignore it, I'm sure the urge will go away.");
+                + "\njust a little bit and you continue with your course. Unfortunately you really have the urge"
+                + "\nto use the restroom. Dang it!--Just ignore it, I'm sure the urge will go away.");
         riverScene.setMapSymbol(" ~~ ");
         riverScene.setBlocked(false);
         riverScene.setTravelTime(75);
@@ -178,7 +178,7 @@ public class MapControl {
 
         Scene rocksScene = new Scene();
         rocksScene.setDescription("There are a lot of rocks!  You carefully go across them"
-                + "\nsothat you do not slip and sprain an ankle.");
+                + "\nso that you do not slip and sprain an ankle.");
         rocksScene.setMapSymbol(" oo ");
         rocksScene.setBlocked(false);
         rocksScene.setTravelTime(150);
@@ -230,11 +230,11 @@ public class MapControl {
 
         Scene abominableScene = new Scene();
         deathScene.setDescription("Amazing! As you glance around you notice the Abominable Snowman. "
-                + "As you reach for your camera with the thought of riches and fame, it occurs to you that"
-                + "the Abominable Snowman is moving quickly. Before you can react the Abonimable Snowman"
-                + "is upon you seperating you from your beloved legs. Don't worry the Abominable Snowman"
-                + "uses all parts of the individual, your femers will make wonderful rainstcks."
-                + "You die wondering, are those my feet?");
+                + "\nAs you reach for your camera with the thought of riches and fame, it occurs to you that"
+                + "\nthe Abominable Snowman is moving quickly. Before you can react the Abonimable Snowman"
+                + "\nis upon you seperating you from your beloved legs. Don't worry the Abominable Snowman"
+                + "\nuses all parts of the individual, your femers will make wonderful rainsticks."
+                + "\nYou die wondering, are those my feet?");
         abominableScene.setMapSymbol(" @@ ");
         abominableScene.setBlocked(true);
         abominableScene.setTravelTime(300);
@@ -246,7 +246,7 @@ public class MapControl {
         scenes[SceneType.abominable.ordinal()] = abominableScene;
 
         Scene crevasseScene = new Scene();
-        crevasseScene.setDescription("That last step was a doozy. You fell into a crevasse and died.");
+        crevasseScene.setDescription("That last step was a doozy! You fell into a crevasse and died.");
         crevasseScene.setMapSymbol(" || ");
         crevasseScene.setBlocked(true);
         crevasseScene.setTravelTime(300);
