@@ -9,8 +9,12 @@ import byui.cit260.slip.control.GameControl;
 import byui.cit260.slip.control.InventoryControl;
 import byui.cit260.slip.exceptions.InventoryControlException;
 import byui.cit260.slip.model.InventoryItem;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import slip.Slip;
 
 /**
  *
@@ -24,7 +28,7 @@ public class InventoryMenuView extends View {
                 + "\n ******* Inventory Menu ********"
                 + "\n--------------------------------"
                 + "\nH - Input Data for the Anti-Wolf Tool"
-                + "\nI - View Inventory"
+                + "\nI - Save Inventory to file"
                 + "\n"
                 + "\nR - Print Attack Strength of Iventory items"
                 + "\nQ - Quit to Previous Menu"
@@ -91,25 +95,37 @@ public class InventoryMenuView extends View {
         for (InventoryItem inventoryItem : inventory) {
             //Display the description, the required amount and the amount in stock
             this.console.println(inventoryItem.getDescription() + "\t    "
-                    + inventoryItem.getAttackPower() );
+                    + inventoryItem.getAttackPower());
         }
     }
 
     private void viewInventory() {
-        //get the sorted list of inventory items for the current game
-        InventoryItem[] inventory = GameControl.getSortedInventoryList();
 
-        this.console.println("\nList of Inventory Items");
-        this.console.println("Description of " + "\t"
-                + "Required" + "\t"
-                + "In Stock");
+        try {
+            
+            Slip.inFile = 
+                    new BufferedReader(new InputStreamReader(System.in));
 
-        //for each inventory item
-        for (InventoryItem inventoryItem : inventory) {
-            //Display the description, the required amount and the amount in stock
-            this.console.println(inventoryItem.getDescription() + "\t    "
-                    + inventoryItem.getRequiredAmount() + "\t   "
-                    + inventoryItem.getQuantityInStock());
+            Slip.outFile = new PrintWriter(System.out, true);
+            //get the sorted list of inventory items for the current game
+            
+
+        } catch (Throwable e) {
+            
+            InventoryItem[] inventory = GameControl.getSortedInventoryList();
+            
+            this.console.println("\nList of Inventory Items");
+            this.console.println("Description of " + "\t"
+                    + "Required" + "\t"
+                    + "In Stock");
+
+            //for each inventory item
+            for (InventoryItem inventoryItem : inventory) {
+                //Display the description, the required amount and the amount in stock
+                this.console.println(inventoryItem.getDescription() + "\t    "
+                        + inventoryItem.getRequiredAmount() + "\t   "
+                        + inventoryItem.getQuantityInStock());
+            }
         }
     }
 

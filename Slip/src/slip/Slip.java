@@ -24,8 +24,8 @@ public class Slip {
     private static Game currentGame = new Game();
     private static Player player = new Player();
 
-    private static PrintWriter outFile = null;
-    private static BufferedReader inFile = null;
+    public static PrintWriter outFile = null;
+    public static BufferedReader inFile = null;
 
     private static PrintWriter logFile = null;
 
