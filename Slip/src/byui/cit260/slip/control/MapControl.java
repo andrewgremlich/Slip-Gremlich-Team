@@ -14,6 +14,7 @@ import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Scene;
 import byui.cit260.slip.view.MoveView;
 import java.awt.Point;
+import java.util.ArrayList;
 import slip.Slip;
 
 /**
@@ -57,7 +58,8 @@ public class MapControl {
         Location oldLocation = locations[oldCoordinates.x - 1][oldCoordinates.y - 1];
 
         Location newLocation = locations[newCoordinates.x - 1][newCoordinates.y - 1];
-        newLocation[actor.Phil];
+//        locations = Actor.Phil.getCoordinates();
+        
 
         oldLocation = null;
 

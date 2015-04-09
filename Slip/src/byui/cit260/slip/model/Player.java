@@ -19,7 +19,7 @@ public class Player implements Serializable {
     private String name;
     private double bestTime;
     private double attackingPower;
-    private double health = 0;
+    private double health;
     private Location location;
     private Actor actor;
 

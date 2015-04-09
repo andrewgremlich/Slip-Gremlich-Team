@@ -105,25 +105,26 @@ public class GameControl {
         Slip.setCurrentGame(game); //Save in slip...
     }
 
-    public static void getSortedActorList() {
+    public static Actor[] getSortedActorList() {
+        Actor[] Actor = null;
 
         //get actor list for the current game
-//        Actor.
+        Actor[] actorList = Actor;
         //using a bubblesort to sort the list of actorList by name
-//        Actor[] tempActorList;
-//        for (int i = 0; i < actorList.length - 1; i++) {
-//            for (int j = 0; j < actorList.length - 1 - i; j++) {
-//                if (actorList[j].getDescription().
-//                        compareToIgnoreCase(actorList[j + 1].getDescription()) > 0) {
-//                    tempActorList = actorList[j];
-//                    actorList[j] = actorList[j + 1];
-//                    actorList[j + 1] = tempActorList;
-//                }
-//
-//            }
-//
-//        }
-//        return actorList;
+       Actor tempActorList;
+       for (int i = 0; i < actorList.length - 1; i++) {
+            for (int j = 0; j < actorList.length - 1 - i; j++) {
+               if (actorList[j].getDescription().
+                        compareToIgnoreCase(actorList[j + 1].getDescription()) > 0) {
+                    tempActorList = actorList[j];
+                    actorList[j] = actorList[j + 1];
+                    actorList[j + 1] = tempActorList;
+                }
+
+            }
+
+        }
+        return actorList;
     }
 
 }
