@@ -6,11 +6,9 @@
 package byui.cit260.slip.view;
 
 import byui.cit260.slip.control.GameControl;
-import java.util.Scanner;
 import byui.cit260.slip.control.InventoryControl;
 import byui.cit260.slip.exceptions.InventoryControlException;
 import byui.cit260.slip.model.InventoryItem;
-import static java.lang.Double.parseDouble;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

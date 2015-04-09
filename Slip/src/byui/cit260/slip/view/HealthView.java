@@ -5,11 +5,8 @@
  */
 package byui.cit260.slip.view;
 
-import byui.cit260.slip.control.FactorControl;
-import byui.cit260.slip.exceptions.FactorControlException;
-import byui.cit260.slip.model.Player;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import byui.cit260.slip.model.Scene;
+
 
 /**
  *
@@ -25,7 +22,7 @@ public class HealthView extends View {
                 + "\n-- E -Energy                  "
                 + "\n-- H -Hunger                  "
                 + "\n-- D -Depresssion             "
-                + "\n-- O -Overall Health          "
+                //+ "\n-- O -Overall Health          "
                 + "\n                               "
                 + "\n  Q - Return                   ");
 
@@ -37,7 +34,7 @@ public class HealthView extends View {
         
         switch (choice) {
             case 'e': 
-                this.console.println("Your Energy level is " );
+                this.console.println("Your Energy level is whatever");
                 break;
             case 'h': 
                 this.console.println("Your hunger level is (get attribute for hunger)");

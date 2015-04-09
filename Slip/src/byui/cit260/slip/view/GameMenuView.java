@@ -8,7 +8,6 @@ package byui.cit260.slip.view;
 import byui.cit260.slip.control.FactorControl;
 import byui.cit260.slip.control.GameControl;
 import byui.cit260.slip.model.Actor;
-import byui.cit260.slip.model.InventoryItem;
 import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import slip.Slip;
@@ -88,23 +87,23 @@ public class GameMenuView extends View {
     }
 
     private void viewActors() {
-       // this.console.println("Stub function called for Actors.");
-        
+
         // Get a list of the actors in the game.
         Actor[] ActorList = GameControl.getSortedActorList();
 
         //this.console.println(sortedActorList);
         this.console.println("\nList of Characters");
-        this.console.println("Description of " + "\t");
+        this.console.println("Name" + "\t"
+                + "Description of " + "\t");
 
         //for each character in the Game
         for (Actor actor : ActorList) {
 
             //Display the description, of each of the actors
-            this.console.println(actor.name() + "\t    ");
-            this.console.println(actor.getDescription() + "\t    ");
+            this.console.println(actor.name() + "\t    "
+                    + actor.getDescription());
 
-       }
+            }
     }
 
     private Location[][] displayMap() {
@@ -126,7 +125,7 @@ public class GameMenuView extends View {
                 }
 
             }
-            
+
             this.console.println("\n****************************************************");
         }
 
@@ -151,12 +150,12 @@ public class GameMenuView extends View {
         MoveView moveView = new MoveView();
         moveView.display();
     }
-    
+
     private void seeHealthMenu() {
         HealthView healthMenu = new HealthView();
         healthMenu.display();
     }
-    
+
     private void viewMountain() {
         MountainView mountainView = new MountainView();
         mountainView.display();

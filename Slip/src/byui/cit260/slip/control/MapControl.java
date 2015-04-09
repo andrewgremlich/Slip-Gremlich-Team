@@ -7,14 +7,11 @@ package byui.cit260.slip.control;
 
 import byui.cit260.slip.exceptions.MapControlException;
 import byui.cit260.slip.model.Actor;
-import static byui.cit260.slip.model.Actor.Phil;
 import byui.cit260.slip.model.Game;
 import byui.cit260.slip.model.Location;
 import byui.cit260.slip.model.Map;
 import byui.cit260.slip.model.Scene;
-import byui.cit260.slip.view.MoveView;
 import java.awt.Point;
-import java.util.ArrayList;
 import slip.Slip;
 
 /**
