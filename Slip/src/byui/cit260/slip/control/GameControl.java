@@ -106,10 +106,9 @@ public class GameControl {
     }
 
     public static Actor[] getSortedActorList() {
-        Actor[] Actor = null;
-
+        Actor[] actor = Actor.values();
         //get actor list for the current game
-        Actor[] actorList = Actor;
+        Actor[] actorList = actor;
         //using a bubblesort to sort the list of actorList by name
        Actor tempActorList;
        for (int i = 0; i < actorList.length - 1; i++) {
